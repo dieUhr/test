@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- RMA, 06/04/09: Create empty forms for every dialog (37642). -->
+<!-- JSV, 02/07/09: Insert Original layout converted from mdl and filter layout (37802). -->
+<!-- MJA, 27/10/09: Update Original layout and remove Empty layout (37802). -->
+<!-- CSK, 29/01/10: Minimal and Overview views added for Companies workspace (37818). -->
+<!-- CSK, 05/02/10: Minimal filter includes only current employees (37818). -->
+<!-- CSK, 23/04/10: Minimal filter aligned with Company Overview (37818). -->
+<!-- JSV, 29/04/10: Use FullBoolean for Boolean fields open in new or update state (38472). -->
+<!-- SJK, 20/05/10: Filter button restrictions converted to common expression language (38492). -->
+<!-- JSV, 28/06/10: Remove CompanyName1Var (38482). -->
+<!-- KUN, 07/07/10: Added group and columns for user update information (38625). -->
+<!-- MJA, 06/07/10: Move "Option List Fields" group to global include file (38627). -->
+<!-- KUN, 16/08/10: Use of include file for dimension groups and columns (38731). -->
+<!-- BPE, 08/09/10: Changed layout to use global definition dimensions (38788). -->
+<!-- MJA, 14/09/10: Implement conditional layout (38461). -->
+<!-- BPE, 17/09/10: Changed layout to use global definition dimensions (38788). -->
+<!-- JSV, 29/11/10: Compact block for Original filter (39106). -->
+<!-- CSK, 03/12/10: Send mail action added to Minimal filter (39093). -->
+<!-- PSZ, 06/12/10: Use onDemand suggestions for relevant fields (39127). -->
+<!-- CSK, 09/12/10: urlEncode strings in links (39203). -->
+<!-- JSV, 09/12/10: Show field TransferToPeoplePlanner (38640). -->
+<!-- CSK, 13/12/10: Use global style fullWidth for anchoring (39214). -->
+<!-- JSV, 17/12/10: Only show TransferToPeoplePlanner if has addon 128 (38640). -->
+<!-- CSK, 21/12/10: Unnecessary appearance removed from CostPrice field (39093). -->
+<!-- CSK, 25/02/11: New Overview_Vertical view added, used as entry assistant (39379). -->
+<!-- PSZ, 11/03/11: New workspace for employee management (39467). -->
+<!-- CSK, 27/04/11: DimensionOrigin view added (39547). -->
+<!-- PSZ, 20/06/11: Original layout should be placed as the first layout (39299). -->
+<!-- JSV, 22/06/11: New fields for base salary rate and overhead rate (39696). -->
+<!-- CSK, 28/06/11: Link added to Overview form (39747). -->
+<!-- PSZ, 18/08/11: Introduced parameter on Overview_Vertical (39467). -->
+<!-- JSV, 17/08/11: Icon on links (39862). -->
+<!-- JSV, 24/08/11: Use reference element where possible (39874). -->
+<!-- PSZ, 15/09/11: Add links to UserManagement and Vendor workspaces (39939). -->
+<!-- KUN, 26/09/11: Add substitutes to by used in absence periods (39895). -->
+<!-- JSV, 28/09/11: Fields for base salary rate and overhead cost, again (39696). -->
+<!-- KUN, 04/10/11: New approval workspace (40000). -->
+<!-- KUN, 11/10/11: Reduce no. of fields in approval workspace (40000). -->
+<!-- CSK, 11/10/11: Possible to edit account in DimensionOrigin (39547). -->
+<!-- KUN, 11/10/11: Option to show inactive approval task (40000). -->
+<!-- CSK, 19/10/11: New removed from creation wizard title (40064). -->
+<!-- PSZ, 21/10/11: Added missing CommissionAccount and CommissionSetOffAccount fields (40095). -->
+<!-- KUN, 17/11/11: Remove e-mail icon from filters, if no e-mail address is specified (40183) -->
+<!-- LPA, 26/10/11: New layout Recruitment_Overview_Vertical (40140).-->
+<!-- KUN, 05/12/11: Support for substitutes (40229). -->
+<!-- KUN, 06/12/11: Remove default for selections (40229). -->
+<MDML xmlns="http://www.deltek.com/ns/mdml" version="0.78">
+  <Layout source="Employees">
+    <FilterPane>
+      <Filter name="Standard">
+        <Compact>
+          <Description template="^1 (^2)" arguments="Name1;EmployeeNumber" />
+        </Compact>
+        <Columns>
+          <Field source="EmployeeNumber" />
+          <Field source="Name1" />
+          <Field source="Name2" />
+          <Field source="Name3" />
+          <Field source="ZipCode" />
+          <Field source="PostalDistrict" />
+          <Field source="Name4" />
+          <Field source="Name5" />
+          <Field source="Telephone" />
+          <Field source="ElectronicMailAddress" />
+        </Columns>
+      </Filter>
+      <Filter name="Minimal">
+        <ControlBar>
+          <Selection default="CurrentEmployees">
+            <Option name="CurrentEmployees" title="Current Employees" restriction="DateEmployed le currentDate() and (DateEndEmployment gt currentDate() or DateEndEmployment = date(nulldate))" />
+          </Selection>
+        </ControlBar>
+        <Columns>
+          <Field source="EmployeeNumber" />
+          <Field source="Name1" />
+          <Field source="Telephone" />
+          <Link template="^1" arguments="ElectronicMailAddress" tooltip="Send email to employee" url="'mailto:'+urlEncode(ElectronicMailAddress)" icon="Mail" title="Email">
+            <Override condition="ElectronicMailAddress = ''">
+              <Link template="-" icon="" disabled="true" style="justifyCenter" />
+            </Override>
+          </Link>
+          <Field source="DepartmentNumber" />
+          <Field source="Country" />
+          <Field source="Position" />
+          <Field source="DateEmployed" />
+          <Field source="DateEndEmployment" />
+          <Field source="Blocked" />
+        </Columns>
+      </Filter>
+      <Filter name="Approvals">
+        <ControlBar>
+          <Selection>
+            <Option name="DueActiveTasks" title="Due Active Approval Tasks" restriction="numberOfDueApprovals &gt; 0" />
+            <Option name="ActiveTasks" title="Active Approval Tasks" restriction="numberOfActiveApprovals &gt; 0" />
+            <Option name="DueInactiveTasks" title="Due Inactive Approval Tasks" restriction="numberOfDueInactiveApprovals &gt; 0" />
+            <Option name="InctiveTasks" title="Inactive Approval Tasks" restriction="numberOfInactiveApprovals &gt; 0" />
+            <Option name="DueSubstituteTasks" title="Due Substitute Tasks" restriction="numberOfDueSubstituteTasks &gt; 0 or numberOfDueInactiveSubstituteTasks &gt; 0" />
+            <Option name="CurrentEmployees" title="Current Employees" restriction="DateEmployed le currentDate() and (DateEndEmployment gt currentDate() or DateEndEmployment = date(nulldate))" />
+            <Option name="AllEmployees" title="All Employees" />
+          </Selection>
+        </ControlBar>
+        <Compact>
+          <Description template="^1 (^2)" arguments="Name1;EmployeeNumber" />
+        </Compact>
+        <Columns>
+          <Field source="EmployeeNumber" />
+          <Field source="Name1" />
+          <Field source="Telephone" />
+          <Link template="^1" arguments="ElectronicMailAddress" tooltip="Send email to employee" url="'mailto:'+urlEncode(ElectronicMailAddress)" icon="Mail" title="Email">
+            <Override condition="ElectronicMailAddress = ''">
+              <Link template="-" icon="" disabled="true" style="justifyCenter" />
+            </Override>
+          </Link>
+          <Field source="DepartmentNumber" />
+          <Field source="Country" />
+          <Field source="Position" />
+          <Field source="DateEmployed" />
+          <Field source="DateEndEmployment" />
+          <Field source="Blocked" />
+          <Field source="CalculatedAbsenceType" />
+          <Field source="FirstDayOfAbsence" />
+          <Field source="LastDayOfAbsence" />
+        </Columns>
+      </Filter>
+      <Filter name="Employees">
+        <Actions>
+          <Action source="with.Create" wizard="CreateEmployeeWizard" title="New Employee" />
+          <Action source="mount-&gt;ImportEmployees.Import" wizard="ImportWizard" disabled="false" />
+        </Actions>
+        <ControlBar>
+          <Selection default="CurrentEmployees">
+            <Option name="CurrentEmployees" title="Current Employees" restriction="DateEmployed le currentDate() and (DateEndEmployment gt currentDate() or DateEndEmployment = date(nulldate))" />
+            <Option name="AllEmployees" title="All Employees" />
+          </Selection>
+        </ControlBar>
+        <Compact>
+          <Description template="^1 (^2)" arguments="Name1;EmployeeNumber" />
+        </Compact>
+        <Columns>
+          <Field source="EmployeeNumber" />
+          <Field source="Name1" />
+          <Field source="Telephone" />
+          <Link template="^1" arguments="ElectronicMailAddress" tooltip="Send email to employee" url="'mailto:'+urlEncode(ElectronicMailAddress)" icon="Mail" title="Email">
+            <Override condition="ElectronicMailAddress = ''">
+              <Link template="-" icon="" disabled="true" style="justifyCenter" />
+            </Override>
+          </Link>
+          <Field source="DepartmentNumber" />
+          <Field source="Country" />
+          <Field source="Position" />
+          <Field source="DateEmployed" />
+          <Field source="DateEndEmployment" />
+          <Field source="Blocked" />
+        </Columns>
+      </Filter>
+    </FilterPane>
+    <UpperPane>
+      <Define>
+        <Include fragment="GD_OptionLists" />
+        <Include fragment="GD_Dimensions" />
+        <Style name="fixedHours" size="small" />
+        <Function name="isAccount" parameters="FieldPar" value="FieldPar=Parent.DimensionCombNumber" />
+      </Define>
+      <Wizard name="CreateEmployeeWizard" title="Create Employee">
+        <Page form="CreateEmployeeWizardPage" title="Employee Information" />
+      </Wizard>
+      <Form name="Full">
+        <Actions all="true" />
+        <Row>
+          <Column>
+            <Group title="Employee Information">
+              <Field source="EmployeeNumber" />
+              <Field source="Name1" appearance="maximized" shadowTitle="Name 1" />
+              <Field source="Name2" appearance="maximized" shadowTitle="Name 2" />
+              <Field source="Name3" appearance="maximized" shadowTitle="Name 3" />
+              <ZipCity citySource="PostalDistrict" zipSource="ZipCode" appearance="maximized" cityShadowTitle="Postal District{District}" zipShadowTitle="Zip Code" />
+              <Field source="Name4" appearance="maximized" shadowTitle="Name 4" />
+              <Field source="Name5" appearance="maximized" shadowTitle="Name 5" />
+              <Field source="Initials" />
+              <Field source="Gender" />
+              <Field source="DateOfBirth" />
+              <Field source="AgeVar" title="Age" />
+              <Field source="CNRNumber" />
+              <Field source="Country" />
+              <Boolean source="SalesEmployee" />
+              <Field source="Position" />
+              <Field source="Profession" />
+              <Field source="Education" />
+              <Field source="DepartmentNumber" />
+              <Field source="PrimaryEmployeeCategoryNumber" title="Primary Category" />
+              <Field source="EmployeeType" />
+              <If condition="hasAddOn(128)">
+                <Boolean source="TransferToPeoplePlanner" />
+              </If>
+            </Group>
+            <Group title="Employement">
+              <Field source="DateEmployed" />
+              <Field source="DateEndEmployment" />
+              <Boolean source="Blocked" />
+              <Field source="NoticeDate" />
+              <Field source="PensionDate" />
+              <Field source="PensionAgeVar" title="Retirement Age" size="small" />
+            </Group>
+            <Group title="Contact Information">
+              <Field source="Telephone" />
+              <Field source="Telephone2" />
+              <Field source="MobilePhone" />
+              <Field source="MobilePhone2" />
+              <Field source="ElectronicMailAddress" />
+            </Group>
+            <Group title="Related Employees">
+              <Reference foreignKey="SuperiorEmployee_Employee" title="Supervisor" />
+              <Reference foreignKey="SecretaryEmployee_Employee" title="Secretary" />
+              <Reference foreignKey="TutorEmployee_Employee" title="Mentor" />
+              <If condition="booleanSysPar('ApprovalOfAbsence')">
+                <Reference foreignKey="AbsenceApprover_Employee" title="Absence Approver" />
+              </If>
+            </Group>
+            <Group title="Substitutes">
+              <Reference foreignKey="Substitute1_Employee" />
+              <Reference foreignKey="Substitute2_Employee" />
+              <Reference foreignKey="Substitute3_Employee" />
+              <Reference foreignKey="Substitute4_Employee" />
+              <Reference foreignKey="Substitute5_Employee" />
+            </Group>
+            <Group title="Outlay Settlement">
+              <Reference foreignKey="VendorNumber_Vendor" keySource="VendorNumber" />
+            </Group>
+            <Group title="Fixed Working Hours">
+              <Field source="WeekCalendarNumber" />
+              <Label title="" />
+              <Grid style="fixedHours">
+                <Header cells="|Working Hours|;|Check in|;|Check out|;|Absence|" title="" style="label" />
+                <Row cells="FixedWorkHoursMonday;TimeCheckedInMondayExpected;TimeCheckedOutMondayExpected;FixedAbsenceMonday" title="Monday" />
+                <Row cells="FixedWorkHoursTuesday;TimeCheckedInTuesdayExpected;TimeCheckedOutTuesdayExpected;FixedAbsenceTuesday" title="Tuesday" />
+                <Row cells="FixedWorkHoursWednesday;TimeCheckedInWednesdayExpected;TimeCheckedOutWednesdayExpected;FixedAbsenceWednesday" title="Wednesday" />
+                <Row cells="FixedWorkHoursThursday;TimeCheckedInThursdayExpected;TimeCheckedOutThursdayExpected;FixedAbsenceThursday" title="Thursday" />
+                <Row cells="FixedWorkHoursFriday;TimeCheckedInFridayExpected;TimeCheckedOutFridayExpected;FixedAbsenceFriday" title="Friday" />
+                <Row cells="FixedWorkHoursSaturday;TimeCheckedInSaturdayExpected;TimeCheckedOutSaturdayExpected;FixedAbsenceSaturday" title="Saturday" />
+                <Row cells="FixedWorkHoursSunday;TimeCheckedInSundayExpected;TimeCheckedOutSundayExpected;FixedAbsenceSunday" title="Sunday" />
+              </Grid>
+            </Group>
+            <Group title="Dimension Combination">
+              <Field source="DimensionCombNumber" title="Dim. Comb. No." />
+            </Group>
+            <Group title="Commission">
+              <Field source="CommissionAccount" title="Posting Reference" />
+              <Field source="CommissionSetOffAccount" title="Posting Reference, Offset" />
+            </Group>
+            <Group ref="DerivedAccountGroup" />
+            <Group ref="DerivedDimensionGroup" />
+            <Group title="Tax{General}">
+              <Field source="IncomeTaxRate" />
+              <Field source="TaxAllowancePerMonth" />
+              <Field source="TaxAllowance14Days" />
+              <Field source="TaxAllowancePerWeek" />
+              <Field source="TaxAllowancePerDay" />
+              <Boolean source="TaxAllowanceCard" />
+              <Field source="TaxAllowanceYear" />
+            </Group>
+            <Group title="Planning Time">
+              <Field source="ReductionPercentage" />
+            </Group>
+            <Group ref="UserUpdateGroup" />
+          </Column>
+          <Column>
+            <Group title="Company">
+              <Reference foreignKey="EmployeeCompanyNumber_CompanyInformation" keySource="CompanyNumber" />
+              <Field source="BaseCurrencyVar" title="Base Currency" />
+            </Group>
+            <Group title="Personnel Requisition">
+              <Reference foreignKey="PurchaseOrderNumber_PersonnelRequisition" />
+            </Group>
+            <Group title="Creation">
+              <Field source="CreateFromEmployeeNumberVar" title="Create from Employee No." />
+            </Group>
+            <Group title="Access Level">
+              <Reference foreignKey="AccessLevelName_AccessLevelHeader" keySource="AccessLevelName" keyShadowTitle="Name" descriptionShadowTitle="Description" />
+            </Group>
+            <Group title="Bank">
+              <Field source="Bank" />
+              <Field source="RegistrationNumber" title="Reg. No.{1}" />
+              <Field source="BankAccountNumber" title="Account No." />
+            </Group>
+            <Group title="Vendor{Creditor}">
+              <Field source="LastApprovalListNumber" title="Last Approval List" />
+            </Group>
+            <Group title="Job Cost">
+              <Field source="CostPrice" />
+              <Field source="BaseSalaryRate" />
+              <Field source="OverheadCostRate" />
+              <Field source="IntercompanyPrice" />
+              <Field source="BillingPrice" />
+              <Field source="StandardBillingPrice" />
+              <Field source="ItemNumber" />
+              <Field source="JobPriceGroupNumber" />
+            </Group>
+            <Group title="Time Registration">
+              <Field source="MaxHoursPerDay" />
+              <Boolean source="MinHoursPerDay" />
+              <Field source="AllowedVariance" />
+              <Boolean source="MustUseTimeSheets" />
+            </Group>
+            <Group title="Check-in/out Time Entry">
+              <Field source="WorkHoursRegistration" title="Registration" />
+              <Field source="AllowedVarianceWorkHours" title="Deviation Allowed" />
+            </Group>
+            <Group title="Document Archive">
+              <Reference foreignKey="DocumentArchiveNumber_DocumentArchiveHeader" keySource="DocumentArchiveNumber" descriptionShadowTitle="Description{0}" />
+            </Group>
+            <Group title="Contact Person">
+              <Field source="ContactPersonNumber" title="Contact Person No." />
+            </Group>
+            <Group title="Subcontractor">
+              <Reference foreignKey="SubcontractorVendorNumber_Vendor" title="Subcontractor" />
+            </Group>
+            <Group title="Salary">
+              <Grid style="grid_compact">
+                <Header cells="|Code|;|Amount|" title="">
+                  <Style ref="label;grid_header" />
+                </Header>
+                <Row cells="BasicSalaryCode;BasicSalary" title="Base Salary" />
+                <Row cells="SalarySupplementCode;SalarySupplement" title="Salary Supplement" />
+                <Row cells="OvertimeRateCode;OvertimeRate" title="Overtime Rate" />
+              </Grid>
+            </Group>
+            <Group title="Pension">
+              <Grid>
+                <Header cells="|Company|;|Personal|" title="" style="label" />
+                <Row cells="PensionScheme#;PensionSchemeOwn#" title="Pension Plan" />
+                <Row cells="PensionTypeCompany;PensionTypeOwn" title="Pension Type" />
+                <Row cells="PensionAmountCompany;PensionAmountOwn" title="Amount" />
+              </Grid>
+            </Group>
+            <Group title="Notify Employee When">
+              <Boolean source="ElectronicMailWhenAllocationResponsible" title="Specified as Responsible for Invoice Allocation" />
+              <Boolean source="ElectronicMailWhenApprovalResponsible" title="Specified as Responsible for Approval" />
+            </Group>
+            <Group title="Remarks{sg}">
+              <Field source="Remark1" appearance="maximized" />
+              <Field source="Remark2" appearance="maximized" />
+              <Field source="Remark3" appearance="maximized" />
+              <Field source="Remark4" appearance="maximized" />
+              <Field source="Remark5" appearance="maximized" />
+            </Group>
+            <Group title="Print Control">
+              <Field source="Statistic1" />
+              <Field source="Statistic2" />
+              <Field source="Statistic3" />
+              <Field source="Statistic4" />
+            </Group>
+            <Group ref="OptionListGroup_5" />
+            <Group title="Extra Fields">
+              <Field source="EmployeePopup1" />
+              <Field source="EmployeePopup2" />
+              <Field source="EmployeePopup3" />
+              <Field source="EmployeePopup4" />
+              <Field source="EmployeePopup5" />
+            </Group>
+          </Column>
+        </Row>
+      </Form>
+      <Form name="CreateEmployeeWizardPage">
+        <Actions>
+          <Create />
+        </Actions>
+        <Group>
+          <Field source="EmployeeNumber" shadowTitle="Blank for default employee no." size="large" />
+          <Field source="Name1" />
+          <Field source="Name2" />
+          <Field source="Name3" />
+          <ZipCity citySource="PostalDistrict" zipSource="ZipCode" />
+          <Field source="Name4" />
+          <Field source="Name5" />
+          <Field source="Country" mandatory="true" />
+        </Group>
+        <Group title="Contact Information">
+          <Field source="MobilePhone" />
+          <Field source="ElectronicMailAddress" />
+        </Group>
+        <Group title="Employment Information">
+          <Field source="DateEmployed" />
+          <Field source="Position" />
+          <Reference foreignKey="EmployeeCompanyNumber_CompanyInformation" />
+          <Reference foreignKey="SuperiorEmployee_Employee" title="Supervisor" />
+        </Group>
+        <Group title="Creation">
+          <Field source="CreateFromEmployeeNumberVar" title="Create from Employee No." />
+        </Group>
+      </Form>
+      <Form name="DimensionOrigin" open="false">
+        <Actions>
+          <Update />
+          <Print />
+          <PrintThis />
+        </Actions>
+        <Column>
+          <Group title="Employee Information" style="fullWidth">
+            <Field source="EmployeeNumber" />
+            <Field source="Name1" appearance="maximized" />
+            <Field source="Name2" appearance="maximized" />
+            <Field source="Name3" appearance="maximized" />
+            <ZipCity citySource="PostalDistrict" zipSource="ZipCode" appearance="maximized" />
+            <Field source="Name4" appearance="maximized" />
+            <Field source="Name5" appearance="maximized" />
+            <Field source="Initials" />
+            <Field source="AgeVar" title="Age" />
+            <Field source="Telephone" />
+            <Field source="MobilePhone" />
+            <Field source="ElectronicMailAddress" />
+            <Field source="CNRNumber" />
+            <Field source="Position" />
+            <Field source="Profession" />
+            <Field source="Country" />
+            <Field source="DepartmentNumber" />
+            <Field source="EmployeeType" />
+          </Group>
+        </Column>
+        <Column>
+          <Group title="Commission">
+            <If condition="isAccount(CommissionAccount)">
+              <Field source="CommissionAccount" open="true" style="highlightRow" />
+            </If>
+            <Else>
+              <Field source="CommissionAccount" />
+            </Else>
+            <If condition="isAccount(CommissionSetOffAccount)">
+              <Field source="CommissionSetOffAccount" open="true" style="highlightRow" />
+            </If>
+            <Else>
+              <Field source="CommissionSetOffAccount" />
+            </Else>
+          </Group>
+          <Group title="Job Cost">
+            <Field source="CostPrice" />
+            <Field source="BaseSalaryRate" />
+            <Field source="OverheadCostRate" />
+            <Field source="IntercompanyPrice" />
+            <Field source="BillingPrice" />
+            <Field source="StandardBillingPrice" />
+          </Group>
+          <Group title="Related Contacts">
+            <Reference foreignKey="SuperiorEmployee_Employee" descriptionSource="SuperiorEmployeeName" title="Supervisor" />
+            <Reference foreignKey="SecretaryEmployee_Employee" descriptionSource="SecretaryEmployeeName" title="Secretary" />
+            <Reference foreignKey="TutorEmployee_Employee" descriptionSource="TutorEmployeeNameVar" title="Mentor" />
+            <If condition="booleanSysPar('ApprovalOfAbsence')">
+              <Reference foreignKey="AbsenceApprover_Employee" descriptionSource="AbsenceApproverNameVar" title="Absence Approver" />
+            </If>
+            <Reference foreignKey="SubcontractorVendorNumber_Vendor" descriptionSource="SubcontractorVendorName1Var" title="Subcontractor" />
+          </Group>
+          <Group title="Salary">
+            <Grid style="grid_compact">
+              <Header cells="|Code|;|Amount|" title="">
+                <Style ref="label;grid_header" />
+              </Header>
+              <Row cells="BasicSalaryCode;BasicSalary" title="Base Salary" />
+              <Row cells="SalarySupplementCode;SalarySupplement" title="Salary Supplement  " />
+              <Row cells="OvertimeRateCode;OvertimeRate" title="Overtime Rate" />
+            </Grid>
+          </Group>
+        </Column>
+      </Form>
+      <Form name="Overview">
+        <Column>
+          <Group title="Employee Information" style="fullWidth">
+            <Field source="EmployeeNumber" />
+            <Field source="Name1" appearance="maximized" />
+            <Field source="Name2" appearance="maximized" />
+            <Field source="Name3" appearance="maximized" />
+            <ZipCity citySource="PostalDistrict" zipSource="ZipCode" appearance="maximized" />
+            <Field source="Name4" appearance="maximized" />
+            <Field source="Name5" appearance="maximized" />
+            <Field source="Initials" />
+            <Field source="AgeVar" title="Age" />
+            <Field source="Telephone" />
+            <Field source="MobilePhone" />
+            <Field source="ElectronicMailAddress" />
+            <Field source="CNRNumber" />
+            <Field source="Position" />
+            <Field source="Profession" />
+            <Field source="Country" />
+            <Field source="DepartmentNumber" />
+            <Field source="EmployeeType" />
+          </Group>
+        </Column>
+        <Column>
+          <Group title="Related Contacts">
+            <Reference foreignKey="SuperiorEmployee_Employee" descriptionSource="SuperiorEmployeeName" title="Supervisor" />
+            <Reference foreignKey="SecretaryEmployee_Employee" descriptionSource="SecretaryEmployeeName" title="Secretary" />
+            <Reference foreignKey="TutorEmployee_Employee" descriptionSource="TutorEmployeeNameVar" title="Mentor" />
+            <If condition="booleanSysPar('ApprovalOfAbsence')">
+              <Reference foreignKey="AbsenceApprover_Employee" descriptionSource="AbsenceApproverNameVar" title="Absence Approver" />
+            </If>
+            <Reference foreignKey="SubcontractorVendorNumber_Vendor" descriptionSource="SubcontractorVendorName1Var" title="Subcontractor" />
+          </Group>
+          <Group title="Salary">
+            <Grid style="grid_compact">
+              <Header cells="|Code|;|Amount|" title="">
+                <Style ref="label;grid_header" />
+              </Header>
+              <Row cells="BasicSalaryCode;BasicSalary" title="Base Salary" />
+              <Row cells="SalarySupplementCode;SalarySupplement" title="Salary Supplement  " />
+              <Row cells="OvertimeRateCode;OvertimeRate" title="Overtime Rate" />
+            </Grid>
+          </Group>
+          <Group title="Job Cost">
+            <Field source="CostPrice" />
+            <Field source="BaseSalaryRate" />
+            <Field source="OverheadCostRate" />
+            <Field source="IntercompanyPrice" />
+            <Field source="BillingPrice" />
+            <Field source="StandardBillingPrice" />
+          </Group>
+          <Group>
+            <Link workspace="Employees" template="More details..." title=" " appearance="maximized" icon="WorkspaceLink">
+              <Target pane="EmployeeFilter">
+                <Restriction template="Selected Employee" expression="EmployeeNumber=target.EmployeeNumber" />
+                <Focus>
+                  <Match field="EmployeeNumber" value="EmployeeNumber" />
+                </Focus>
+              </Target>
+            </Link>
+          </Group>
+        </Column>
+      </Form>
+      <Form name="Overview_Vertical">
+        <Parameters>
+          <Parameter name="ShowSensitiveInformation" type="boolean" />
+        </Parameters>
+        <Column>
+          <Group title="Employee Information" style="fullWidth">
+            <Field source="EmployeeNumber" />
+            <If condition="ShowSensitiveInformation">
+              <Field source="Name1" appearance="maximized" />
+              <Field source="Name2" appearance="maximized" />
+              <Field source="Name3" appearance="maximized" />
+              <ZipCity citySource="PostalDistrict" zipSource="ZipCode" appearance="maximized" />
+              <Field source="Name4" appearance="maximized" />
+              <Field source="Name5" appearance="maximized" />
+              <Field source="AgeVar" title="Age" />
+            </If>
+            <Else>
+              <Field source="Name1" title="Name" />
+            </Else>
+            <Field source="Initials" />
+            <Field source="Telephone" />
+            <Field source="MobilePhone" />
+            <Field source="ElectronicMailAddress" />
+            <If condition="ShowSensitiveInformation">
+              <Field source="CNRNumber" />
+            </If>
+            <Field source="Position" />
+            <Field source="Profession" />
+            <Field source="Country" />
+            <Field source="DepartmentNumber" />
+            <Reference foreignKey="EmployeeCompanyNumber_CompanyInformation" keySource="CompanyNumber" />
+            <Field source="EmployeeType" />
+            <Field source="DateEmployed" />
+          </Group>
+          <Group title="Related Contacts">
+            <Reference foreignKey="SuperiorEmployee_Employee" descriptionSource="SuperiorEmployeeName" title="Supervisor" />
+            <Reference foreignKey="SecretaryEmployee_Employee" descriptionSource="SecretaryEmployeeName" title="Secretary" />
+            <Reference foreignKey="TutorEmployee_Employee" descriptionSource="TutorEmployeeNameVar" title="Mentor" />
+            <If condition="booleanSysPar('ApprovalOfAbsence')">
+              <Reference foreignKey="AbsenceApprover_Employee" descriptionSource="AbsenceApproverNameVar" title="Absence Approver" />
+            </If>
+            <Reference foreignKey="SubcontractorVendorNumber_Vendor" descriptionSource="SubcontractorVendorName1Var" title="Subcontractor" />
+          </Group>
+          <If condition="ShowSensitiveInformation">
+            <Group title="Salary">
+              <Grid style="grid_compact">
+                <Header cells="|Code|;|Amount|" title="">
+                  <Style ref="label;grid_header" />
+                </Header>
+                <Row cells="BasicSalaryCode;BasicSalary" title="Base Salary" />
+                <Row cells="SalarySupplementCode;SalarySupplement" title="Salary Supplement  " />
+                <Row cells="OvertimeRateCode;OvertimeRate" title="Overtime Rate" />
+              </Grid>
+            </Group>
+            <Group title="Job Cost">
+              <Field source="CostPrice" />
+              <Field source="BaseSalaryRate" />
+              <Field source="OverheadCostRate" />
+              <Field source="IntercompanyPrice" />
+              <Field source="BillingPrice" />
+              <Field source="StandardBillingPrice" />
+            </Group>
+          </If>
+        </Column>
+      </Form>
+      <Form name="Recruitment_Overview_Vertical">
+        <Column>
+          <Group title="Employee Information" style="fullWidth">
+            <Reference keySource="EmployeeNumber" descriptionSource="Name1" title="Employee" />
+            <Field source="Initials" />
+            <Field source="Telephone" />
+            <Field source="MobilePhone" />
+            <Field source="ElectronicMailAddress" />
+            <Field source="Position" />
+            <Field source="Profession" />
+            <Field source="Country" />
+            <Field source="DepartmentNumber" />
+            <Reference foreignKey="EmployeeCompanyNumber_CompanyInformation" keySource="CompanyNumber" />
+            <Field source="EmployeeType" />
+            <Field source="DateEmployed" />
+          </Group>
+          <Group title="Related Contacts">
+            <Reference foreignKey="SuperiorEmployee_Employee" descriptionSource="SuperiorEmployeeName" title="Supervisor" />
+          </Group>
+        </Column>
+      </Form>
+      <Form name="Employees">
+        <Actions all="true">
+          <Exclude>
+            <Create />
+            <Action source="AttachDocument" />
+          </Exclude>
+        </Actions>
+        <Row>
+          <Column>
+            <Group title="Employee Information">
+              <Field source="EmployeeNumber" />
+              <Field source="Name1" appearance="maximized" shadowTitle="Name 1" />
+              <Field source="Name2" appearance="maximized" shadowTitle="Name 2" />
+              <Field source="Name3" appearance="maximized" shadowTitle="Name 3" />
+              <ZipCity citySource="PostalDistrict" zipSource="ZipCode" appearance="maximized" cityShadowTitle="Postal District{District}" zipShadowTitle="Zip Code" />
+              <Field source="Name4" appearance="maximized" shadowTitle="Name 4" />
+              <Field source="Name5" appearance="maximized" shadowTitle="Name 5" />
+              <Field source="Initials" />
+              <Field source="Gender" />
+              <Field source="DateOfBirth" size="large" />
+              <Field source="AgeVar" title="Age" />
+              <Field source="CNRNumber" />
+              <Field source="Country" />
+              <Boolean source="SalesEmployee" />
+              <Field source="Position" />
+              <Field source="Profession" />
+              <Field source="Education" />
+              <Field source="DepartmentNumber" />
+              <Field source="PrimaryEmployeeCategoryNumber" title="Primary Category" size="large" />
+              <Field source="EmployeeType" />
+              <If condition="hasAddOn(128)">
+                <Boolean source="TransferToPeoplePlanner" />
+              </If>
+            </Group>
+            <Group title="Employement">
+              <Style size="large" />
+              <Field source="DateEmployed" />
+              <Field source="DateEndEmployment" />
+              <Boolean source="Blocked" />
+              <Field source="NoticeDate" />
+              <Field source="PensionDate" />
+              <Field source="PensionAgeVar" title="Retirement Age" size="small" />
+            </Group>
+            <Group title="Contact Information">
+              <Field source="Telephone" />
+              <Field source="Telephone2" />
+              <Field source="MobilePhone" />
+              <Field source="MobilePhone2" />
+              <Field source="ElectronicMailAddress" />
+            </Group>
+            <Group title="Notify Employee When">
+              <Boolean source="ElectronicMailWhenAllocationResponsible" title="Specified as Responsible for Invoice Allocation" />
+              <Boolean source="ElectronicMailWhenApprovalResponsible" title="Specified as Responsible for Approval" />
+            </Group>
+            <Group title="Dimension Combination">
+              <Field source="DimensionCombNumber" title="Dim. Comb. No." />
+            </Group>
+            <Group title="Commission">
+              <Field source="CommissionAccount" title="Posting Reference" />
+              <Field source="CommissionSetOffAccount" title="Posting Reference, Offset" />
+            </Group>
+            <Group ref="DerivedAccountGroup" />
+            <Group ref="DerivedDimensionGroup" />
+          </Column>
+          <Column>
+            <Group title="Company">
+              <Reference foreignKey="EmployeeCompanyNumber_CompanyInformation" keySource="CompanyNumber" />
+              <Field source="BaseCurrencyVar" title="Base Currency" />
+            </Group>
+            <Group title="Personnel Requisition">
+              <Reference foreignKey="PurchaseOrderNumber_PersonnelRequisition" keySource="PurchaseOrderNumber" descriptionShadowTitle="Description{0}" />
+            </Group>
+            <Group title="Access Level">
+              <Reference foreignKey="AccessLevelName_AccessLevelHeader" keySource="AccessLevelName" keyShadowTitle="Name" descriptionShadowTitle="Description" />
+            </Group>
+            <Group title="Related Employees">
+              <Reference foreignKey="SuperiorEmployee_Employee" title="Supervisor" />
+              <Reference foreignKey="SecretaryEmployee_Employee" title="Secretary" />
+              <Reference foreignKey="TutorEmployee_Employee" title="Mentor" />
+              <If condition="booleanSysPar('ApprovalOfAbsence')">
+                <Reference foreignKey="AbsenceApprover_Employee" title="Absence Approver" />
+              </If>
+            </Group>
+            <Group title="Substitutes">
+              <Reference foreignKey="Substitute1_Employee" />
+              <Reference foreignKey="Substitute2_Employee" />
+              <Reference foreignKey="Substitute3_Employee" />
+              <Reference foreignKey="Substitute4_Employee" />
+              <Reference foreignKey="Substitute5_Employee" />
+            </Group>
+            <Group title="Vendor{Creditor}">
+              <Field source="LastApprovalListNumber" title="Last Approval List" />
+            </Group>
+            <Group title="Document Archive">
+              <Reference foreignKey="DocumentArchiveNumber_DocumentArchiveHeader" keySource="DocumentArchiveNumber" descriptionShadowTitle="Description{0}" />
+            </Group>
+            <Group title="Contact Person">
+              <Link workspace="ContactPersons" arguments="ContactPersonNumber" template="^1" tooltip="Contact Persons workspace" title="Contact Person No." icon="WorkspaceLink">
+                <Waypoint pane="ContactPersons_Filter">
+                  <Restriction template="Selected Contact Person" expression="ContactPersonNumber=target.ContactPersonNumber" />
+                  <Focus>
+                    <Match value="ContactPersonNumber" field="ContactPersonNumber" />
+                  </Focus>
+                </Waypoint>
+                <Target pane="ContactPersons_Card" />
+                <Override condition="ContactPersonNumber = ''">
+                  <Link disabled="true" />
+                </Override>
+              </Link>
+            </Group>
+            <Group title="Subcontractor">
+              <Reference foreignKey="SubcontractorVendorNumber_Vendor" title="Subcontractor" />
+            </Group>
+            <Group title="Outlay Settlement">
+              <Reference foreignKey="VendorNumber_Vendor" keySource="VendorNumber" />
+            </Group>
+            <Group title="Fixed Working Hours">
+              <Field source="WeekCalendarNumber" />
+              <Label title="" />
+              <Grid style="fixedHours">
+                <Header cells="|Working Hours|;|Check in|;|Check out|;|Absence|" title="" style="label" />
+                <Row cells="FixedWorkHoursMonday;TimeCheckedInMondayExpected;TimeCheckedOutMondayExpected;FixedAbsenceMonday" title="Monday" />
+                <Row cells="FixedWorkHoursTuesday;TimeCheckedInTuesdayExpected;TimeCheckedOutTuesdayExpected;FixedAbsenceTuesday" title="Tuesday" />
+                <Row cells="FixedWorkHoursWednesday;TimeCheckedInWednesdayExpected;TimeCheckedOutWednesdayExpected;FixedAbsenceWednesday" title="Wednesday" />
+                <Row cells="FixedWorkHoursThursday;TimeCheckedInThursdayExpected;TimeCheckedOutThursdayExpected;FixedAbsenceThursday" title="Thursday" />
+                <Row cells="FixedWorkHoursFriday;TimeCheckedInFridayExpected;TimeCheckedOutFridayExpected;FixedAbsenceFriday" title="Friday" />
+                <Row cells="FixedWorkHoursSaturday;TimeCheckedInSaturdayExpected;TimeCheckedOutSaturdayExpected;FixedAbsenceSaturday" title="Saturday" />
+                <Row cells="FixedWorkHoursSunday;TimeCheckedInSundayExpected;TimeCheckedOutSundayExpected;FixedAbsenceSunday" title="Sunday" />
+              </Grid>
+            </Group>
+            <Group title="Remarks{sg}">
+              <Field source="Remark1" appearance="maximized" />
+              <Field source="Remark2" appearance="maximized" />
+              <Field source="Remark3" appearance="maximized" />
+              <Field source="Remark4" appearance="maximized" />
+              <Field source="Remark5" appearance="maximized" />
+            </Group>
+            <Group ref="OptionListGroup_5" />
+            <Group ref="UserUpdateGroup" />
+          </Column>
+          <Column>
+            <Group title="Job Cost">
+              <Field source="CostPrice" />
+              <Field source="BaseSalaryRate" />
+              <Field source="OverheadCostRate" />
+              <Field source="IntercompanyPrice" />
+              <Field source="BillingPrice" />
+              <Field source="StandardBillingPrice" />
+              <Field source="ItemNumber" />
+              <Field source="JobPriceGroupNumber" />
+            </Group>
+            <Group title="Time Registration">
+              <Field source="MaxHoursPerDay" />
+              <Boolean source="MinHoursPerDay" />
+              <Field source="AllowedVariance" />
+              <Boolean source="MustUseTimeSheets" />
+            </Group>
+            <Group title="Extra Fields">
+              <Field source="EmployeePopup1" />
+              <Field source="EmployeePopup2" />
+              <Field source="EmployeePopup3" />
+              <Field source="EmployeePopup4" />
+              <Field source="EmployeePopup5" />
+            </Group>
+            <Group title="Links">
+              <Link workspace="UserManagement" template="Users for this employee" title="" icon="WorkspaceLink" appearance="maximized">
+                <Target pane="Users_Filter">
+                  <Restriction template="Users for Employee No. ^1" arguments="EmployeeNumber" expression="EmployeeNumber=target.EmployeeNumber" />
+                  <Focus>
+                    <Match value="EmployeeNumber" field="EmployeeNumber" />
+                  </Focus>
+                </Target>
+              </Link>
+              <Link workspace="Vendors" template="Vendors workspace" title="" appearance="maximized" icon="WorkspaceLink" />
+            </Group>
+          </Column>
+        </Row>
+      </Form>
+      <Form name="Approvals">
+        <Column>
+          <Group title="Employee Information" style="fullWidth">
+            <Reference keySource="EmployeeNumber" descriptionSource="Name1" title="Employee" />
+            <Field source="Telephone" />
+            <Field source="MobilePhone" />
+            <Field source="ElectronicMailAddress" />
+            <Field source="Position" />
+            <Field source="EmployeeType" />
+          </Group>
+        </Column>
+        <Column>
+          <Group title="Related Contacts">
+            <Reference foreignKey="SuperiorEmployee_Employee" descriptionSource="SuperiorEmployeeName" title="Supervisor" />
+            <Reference foreignKey="SecretaryEmployee_Employee" descriptionSource="SecretaryEmployeeName" title="Secretary" />
+            <Reference foreignKey="TutorEmployee_Employee" descriptionSource="TutorEmployeeNameVar" title="Mentor" />
+            <If condition="booleanSysPar('ApprovalOfAbsence')">
+              <Reference foreignKey="AbsenceApprover_Employee" descriptionSource="AbsenceApproverNameVar" title="Absence Approver" />
+            </If>
+            <Reference foreignKey="SubcontractorVendorNumber_Vendor" descriptionSource="SubcontractorVendorName1Var" title="Subcontractor" />
+          </Group>
+        </Column>
+        <Column>
+          <Group title="Substitutes">
+            <Reference foreignKey="Substitute1_Employee" />
+            <Reference foreignKey="Substitute2_Employee" />
+            <Reference foreignKey="Substitute3_Employee" />
+            <Reference foreignKey="Substitute4_Employee" />
+            <Reference foreignKey="Substitute5_Employee" />
+          </Group>
+          <Group>
+            <Link workspace="Employees" template="More details..." title=" " appearance="maximized" icon="WorkspaceLink">
+              <Target pane="EmployeeFilter">
+                <Restriction template="Selected Employee" expression="EmployeeNumber=target.EmployeeNumber" />
+                <Focus>
+                  <Match field="EmployeeNumber" value="EmployeeNumber" />
+                </Focus>
+              </Target>
+            </Link>
+          </Group>
+        </Column>
+      </Form>
+      <Form name="Overview_For_Job_Closing">
+        <Column>
+          <Group title="Employee Information" style="fullWidth">
+            <Field source="EmployeeNumber" />
+            <Field source="Name1" title="Name" />
+            <Field source="Initials" />
+            <Field source="Telephone" />
+            <Field source="MobilePhone" />
+            <Link template="^1" arguments="ElectronicMailAddress" tooltip="Send email to employee" title="E-mail" icon="Mail">
+              <Url value="'mailto:'+urlEncode(ElectronicMailAddress)">
+                <Query field="body" value="Details:%0A^1, Job: ^2 ^3%0A" arguments="parent.Details;parent.JobNumber;urlEncode(parent.parent.JobName)" />
+              </Url>
+            </Link>
+            <Field source="Position" />
+            <Field source="Profession" />
+            <Field source="Country" />
+            <Field source="DepartmentNumber" />
+            <Reference foreignKey="EmployeeCompanyNumber_CompanyInformation" keySource="CompanyNumber" />
+            <Field source="EmployeeType" />
+            <Field source="DateEmployed" />
+          </Group>
+          <Group title="Related Contacts">
+            <Reference foreignKey="SuperiorEmployee_Employee" descriptionSource="SuperiorEmployeeName" title="Supervisor" />
+            <Reference foreignKey="SecretaryEmployee_Employee" descriptionSource="SecretaryEmployeeName" title="Secretary" />
+            <Reference foreignKey="TutorEmployee_Employee" descriptionSource="TutorEmployeeNameVar" title="Mentor" />
+            <If condition="booleanSysPar('ApprovalOfAbsence')">
+              <Reference foreignKey="AbsenceApprover_Employee" descriptionSource="AbsenceApproverNameVar" title="Absence Approver" />
+            </If>
+            <Reference foreignKey="SubcontractorVendorNumber_Vendor" descriptionSource="SubcontractorVendorName1Var" title="Subcontractor" />
+          </Group>
+        </Column>
+      </Form>
+      <Form name="Info_For_Asset_Employee">
+        <Column>
+          <Group title="Employee Information" style="fullWidth">
+            <Field source="EmployeeNumber" />
+            <Field source="Name1" title="Name" />
+            <Field source="Initials" />
+            <Field source="Telephone" />
+            <Field source="MobilePhone" />
+            <Field source="ElectronicMailAddress" />
+            <Field source="Position" />
+            <Field source="Profession" />
+            <Field source="Country" />
+            <Field source="DepartmentNumber" />
+            <Reference foreignKey="EmployeeCompanyNumber_CompanyInformation" keySource="CompanyNumber" />
+            <Field source="EmployeeType" />
+            <Field source="DateEmployed" />
+          </Group>
+          <Group title="Related Contacts">
+            <Reference foreignKey="SuperiorEmployee_Employee" descriptionSource="SuperiorEmployeeName" title="Supervisor" />
+            <Reference foreignKey="SecretaryEmployee_Employee" descriptionSource="SecretaryEmployeeName" title="Secretary" />
+            <Reference foreignKey="TutorEmployee_Employee" descriptionSource="TutorEmployeeNameVar" title="Mentor" />
+            <If condition="booleanSysPar('ApprovalOfAbsence')">
+              <Reference foreignKey="AbsenceApprover_Employee" descriptionSource="AbsenceApproverNameVar" title="Absence Approver" />
+            </If>
+            <Reference foreignKey="SubcontractorVendorNumber_Vendor" descriptionSource="SubcontractorVendorName1Var" title="Subcontractor" />
+          </Group>
+        </Column>
+      </Form>
+    </UpperPane>
+    <LowerPane>
+      <Define>
+        <Include fragment="GD_OptionLists" />
+        <Include fragment="GD_Dimensions" />
+        <Function name="isAccount" parameters="FieldPar" value="FieldPar=Parent.Parent.DimensionCombNumber" />
+      </Define>
+      <Table name="Full">
+        <Actions all="true" />
+        <Columns>
+          <Field source="FromDate" />
+          <Field source="ToDate" />
+          <Field source="IsCurrent" />
+          <Field source="ChangeDescription" />
+          <Field source="Name1" />
+          <Field source="Name2" />
+          <Field source="Name3" />
+          <Field source="Name4" />
+          <Field source="Name5" />
+          <Field source="Telephone" />
+          <Field source="CNRNumber" />
+          <Field source="Country" />
+          <Field source="Blocked" />
+          <Field source="CostPrice" />
+          <Field source="BaseSalaryRate" />
+          <Field source="OverheadCostRate" />
+          <Field source="IntercompanyPrice" />
+          <Field source="BillingPrice" />
+          <Field source="ItemNumber" />
+          <Field source="SalesEmployee" />
+          <Field source="ZipCode" />
+          <Field source="PostalDistrict" />
+          <Field source="Profession" />
+          <Field source="Education" />
+          <Field source="Position" />
+          <Field source="Bank" />
+          <Field source="RegistrationNumber" />
+          <Field source="BankAccountNumber" />
+          <Field source="DateEmployed" />
+          <Field source="DateEndEmployment" />
+          <Field source="BasicSalaryCode" />
+          <Field source="BasicSalary" />
+          <Field source="SalarySupplementCode" />
+          <Field source="SalarySupplement" />
+          <Field source="OvertimeRateCode" />
+          <Field source="OvertimeRate" />
+          <Field source="IncomeTaxRate" />
+          <Field source="TaxAllowancePerMonth" />
+          <Field source="TaxAllowance14Days" />
+          <Field source="TaxAllowancePerWeek" />
+          <Field source="TaxAllowancePerDay" />
+          <Field source="TaxAllowanceCard" />
+          <Field source="TaxAllowanceYear" />
+          <Field source="PensionScheme" />
+          <Field source="PensionTypeCompany" />
+          <Field source="PensionAmountCompany" />
+          <Field source="PensionSchemeOwn" />
+          <Field source="PensionTypeOwn" />
+          <Field source="PensionAmountOwn" />
+          <Field source="Remark1" />
+          <Field source="Remark2" />
+          <Field source="Remark3" />
+          <Field source="Remark4" />
+          <Field source="Remark5" />
+          <Field source="SuperiorEmployee" />
+          <Field source="MaxHoursPerDay" />
+          <Field source="EmployeeType" />
+          <Field source="EmploymentTermsNumber" />
+          <Field source="SubcontractorVendorNumber" />
+          <Field source="DepartmentNumber" />
+          <Field source="SecretaryEmployee" />
+          <Field source="FixedWorkHoursMonday" />
+          <Field source="FixedWorkHoursTuesday" />
+          <Field source="FixedWorkHoursWednesday" />
+          <Field source="FixedWorkHoursThursday" />
+          <Field source="FixedWorkHoursFriday" />
+          <Field source="FixedWorkHoursSaturday" />
+          <Field source="FixedWorkHoursSunday" />
+          <Field source="MinHoursPerDay" />
+          <Field source="AllowedVariance" />
+          <Field source="WeekCalendarNumber" />
+          <Field source="JobPriceGroupNumber" />
+          <Field source="EmployeePopup1" />
+          <Field source="EmployeePopup2" />
+          <Field source="EmployeePopup3" />
+          <Field source="EmployeePopup4" />
+          <Field source="EmployeePopup5" />
+          <Field source="Statistic1" />
+          <Field source="Statistic2" />
+          <Field source="Statistic3" />
+          <Field source="Statistic4" />
+          <Field source="VendorNumber" />
+          <Field source="PrimaryEmployeeCategoryNumber" />
+          <Field source="ReductionPercentage" />
+          <Field source="DocumentArchiveNumber" />
+          <Field source="ElectronicMailAddress" />
+          <Field source="ElectronicMailWhenApprovalResponsible" />
+          <Field source="ElectronicMailWhenAllocationResponsible" />
+          <Field source="StandardBillingPrice" />
+          <Field source="Initials" />
+          <Field source="Gender" />
+          <Field source="DateOfBirth" />
+          <Field source="MobilePhone" />
+          <Field source="MobilePhone2" />
+          <Field source="Telephone2" />
+          <Field source="NoticeDate" />
+          <Field source="PensionDate" />
+          <Field source="Date1" />
+          <Field source="Date2" />
+          <Field source="Date3" />
+          <Field source="Date4" />
+          <Field source="Date5" />
+          <Field source="Amount1" />
+          <Field source="Amount2" />
+          <Field source="Amount3" />
+          <Field source="Amount4" />
+          <Field source="Amount5" />
+          <Columns ref="OptionListColumn_10" />
+          <Field source="Text1" />
+          <Field source="Text2" />
+          <Field source="Text3" />
+          <Field source="Text4" />
+          <Field source="Text5" />
+          <Field source="Real1" />
+          <Field source="Real2" />
+          <Field source="Real3" />
+          <Field source="Real4" />
+          <Field source="Real5" />
+          <Field source="AbsenceApprover" />
+          <Field source="FixedAbsenceMonday" />
+          <Field source="FixedAbsenceTuesday" />
+          <Field source="FixedAbsenceWednesday" />
+          <Field source="FixedAbsenceThursday" />
+          <Field source="FixedAbsenceFriday" />
+          <Field source="FixedAbsenceSaturday" />
+          <Field source="FixedAbsenceSunday" />
+          <Field source="WorkHoursRegistration" />
+          <Field source="AllowedVarianceWorkHours" />
+          <Field source="TimeCheckedInMondayExpected" />
+          <Field source="TimeCheckedInTuesdayExpected" />
+          <Field source="TimeCheckedInWednesdayExpected" />
+          <Field source="TimeCheckedInThursdayExpected" />
+          <Field source="TimeCheckedInFridayExpected" />
+          <Field source="TimeCheckedInSaturdayExpected" />
+          <Field source="TimeCheckedInSundayExpected" />
+          <Field source="TimeCheckedOutMondayExpected" />
+          <Field source="TimeCheckedOutTuesdayExpected" />
+          <Field source="TimeCheckedOutWednesdayExpected" />
+          <Field source="TimeCheckedOutThursdayExpected" />
+          <Field source="TimeCheckedOutFridayExpected" />
+          <Field source="TimeCheckedOutSaturdayExpected" />
+          <Field source="TimeCheckedOutSundayExpected" />
+          <Field source="TutorEmployee" />
+          <Field source="Substitute1" />
+          <Field source="Substitute2" />
+          <Field source="Substitute3" />
+          <Field source="Substitute4" />
+          <Field source="Substitute5" />
+          <Field source="MustUseTimeSheets" />
+          <Field source="CommissionAccount" />
+          <Field source="CommissionSetOffAccount" />
+          <Columns ref="DimensionTransferColumns" />
+        </Columns>
+      </Table>
+      <Table name="DimensionOrigin">
+        <Actions all="true" />
+        <Columns>
+          <Field source="FromDate" />
+          <Field source="ToDate" />
+          <Field source="IsCurrent" />
+          <Field source="ChangeDescription" />
+          <Field source="CommissionAccount">
+            <Style ref="highlightRow" condition="isAccount(CommissionAccount)" />
+          </Field>
+          <Field source="CommissionSetOffAccount" style="highlightRow">
+            <Style ref="highlightRow" condition="isAccount(CommissionSetOffAccount)" />
+          </Field>
+          <Field source="Name1" />
+          <Field source="Name2" />
+          <Field source="Name3" />
+          <Field source="Name4" />
+          <Field source="Name5" />
+          <Field source="Telephone" />
+          <Field source="CNRNumber" />
+          <Field source="Country" />
+          <Field source="Blocked" />
+          <Field source="CostPrice" />
+          <Field source="BaseSalaryRate" />
+          <Field source="OverheadCostRate" />
+          <Field source="BillingPrice" />
+          <Field source="ItemNumber" />
+          <Field source="SalesEmployee" />
+          <Field source="ZipCode" />
+          <Field source="PostalDistrict" />
+          <Field source="Profession" />
+          <Field source="Education" />
+          <Field source="Position" />
+          <Field source="Bank" />
+          <Field source="RegistrationNumber" />
+          <Field source="BankAccountNumber" />
+          <Field source="DateEmployed" />
+          <Field source="DateEndEmployment" />
+          <Field source="BasicSalaryCode" />
+          <Field source="BasicSalary" />
+          <Field source="SalarySupplementCode" />
+          <Field source="SalarySupplement" />
+          <Field source="OvertimeRateCode" />
+          <Field source="OvertimeRate" />
+          <Field source="IncomeTaxRate" />
+          <Field source="TaxAllowancePerMonth" />
+          <Field source="TaxAllowance14Days" />
+          <Field source="TaxAllowancePerWeek" />
+          <Field source="TaxAllowancePerDay" />
+          <Field source="TaxAllowanceCard" />
+          <Field source="TaxAllowanceYear" />
+          <Field source="PensionScheme" />
+          <Field source="PensionTypeCompany" />
+          <Field source="PensionAmountCompany" />
+          <Field source="PensionSchemeOwn" />
+          <Field source="PensionTypeOwn" />
+          <Field source="PensionAmountOwn" />
+          <Field source="Remark1" />
+          <Field source="Remark2" />
+          <Field source="Remark3" />
+          <Field source="Remark4" />
+          <Field source="Remark5" />
+          <Field source="SuperiorEmployee" />
+          <Field source="MaxHoursPerDay" />
+          <Field source="EmployeeType" />
+          <Field source="EmploymentTermsNumber" />
+          <Field source="SubcontractorVendorNumber" />
+          <Field source="DepartmentNumber" />
+          <Field source="SecretaryEmployee" />
+          <Field source="FixedWorkHoursMonday" />
+          <Field source="FixedWorkHoursTuesday" />
+          <Field source="FixedWorkHoursWednesday" />
+          <Field source="FixedWorkHoursThursday" />
+          <Field source="FixedWorkHoursFriday" />
+          <Field source="FixedWorkHoursSaturday" />
+          <Field source="FixedWorkHoursSunday" />
+          <Field source="IntercompanyPrice" />
+          <Field source="MinHoursPerDay" />
+          <Field source="AllowedVariance" />
+          <Field source="WeekCalendarNumber" />
+          <Field source="JobPriceGroupNumber" />
+          <Field source="EmployeePopup1" />
+          <Field source="EmployeePopup2" />
+          <Field source="EmployeePopup3" />
+          <Field source="EmployeePopup4" />
+          <Field source="EmployeePopup5" />
+          <Field source="Statistic1" />
+          <Field source="Statistic2" />
+          <Field source="Statistic3" />
+          <Field source="Statistic4" />
+          <Field source="VendorNumber" />
+          <Field source="PrimaryEmployeeCategoryNumber" />
+          <Field source="ReductionPercentage" />
+          <Field source="DocumentArchiveNumber" />
+          <Field source="ElectronicMailAddress" />
+          <Field source="ElectronicMailWhenApprovalResponsible" />
+          <Field source="ElectronicMailWhenAllocationResponsible" />
+          <Field source="StandardBillingPrice" />
+          <Field source="Initials" />
+          <Field source="Gender" />
+          <Field source="DateOfBirth" />
+          <Field source="MobilePhone" />
+          <Field source="MobilePhone2" />
+          <Field source="Telephone2" />
+          <Field source="NoticeDate" />
+          <Field source="PensionDate" />
+          <Field source="Date1" />
+          <Field source="Date2" />
+          <Field source="Date3" />
+          <Field source="Date4" />
+          <Field source="Date5" />
+          <Field source="Amount1" />
+          <Field source="Amount2" />
+          <Field source="Amount3" />
+          <Field source="Amount4" />
+          <Field source="Amount5" />
+          <Columns ref="OptionListColumn_10" />
+          <Field source="Text1" />
+          <Field source="Text2" />
+          <Field source="Text3" />
+          <Field source="Text4" />
+          <Field source="Text5" />
+          <Field source="Real1" />
+          <Field source="Real2" />
+          <Field source="Real3" />
+          <Field source="Real4" />
+          <Field source="Real5" />
+          <Field source="AbsenceApprover" />
+          <Field source="FixedAbsenceMonday" />
+          <Field source="FixedAbsenceTuesday" />
+          <Field source="FixedAbsenceWednesday" />
+          <Field source="FixedAbsenceThursday" />
+          <Field source="FixedAbsenceFriday" />
+          <Field source="FixedAbsenceSaturday" />
+          <Field source="FixedAbsenceSunday" />
+          <Field source="WorkHoursRegistration" />
+          <Field source="AllowedVarianceWorkHours" />
+          <Field source="TimeCheckedInMondayExpected" />
+          <Field source="TimeCheckedInTuesdayExpected" />
+          <Field source="TimeCheckedInWednesdayExpected" />
+          <Field source="TimeCheckedInThursdayExpected" />
+          <Field source="TimeCheckedInFridayExpected" />
+          <Field source="TimeCheckedInSaturdayExpected" />
+          <Field source="TimeCheckedInSundayExpected" />
+          <Field source="TimeCheckedOutMondayExpected" />
+          <Field source="TimeCheckedOutTuesdayExpected" />
+          <Field source="TimeCheckedOutWednesdayExpected" />
+          <Field source="TimeCheckedOutThursdayExpected" />
+          <Field source="TimeCheckedOutFridayExpected" />
+          <Field source="TimeCheckedOutSaturdayExpected" />
+          <Field source="TimeCheckedOutSundayExpected" />
+          <Field source="TutorEmployee" />
+          <Field source="Substitute1" />
+          <Field source="Substitute2" />
+          <Field source="Substitute3" />
+          <Field source="Substitute4" />
+          <Field source="Substitute5" />
+          <Field source="MustUseTimeSheets" />
+        </Columns>
+      </Table>
+    </LowerPane>
+  </Layout>
+</MDML>
+

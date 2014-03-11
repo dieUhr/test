@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- KUN, 04/10/11: New approval workspace (40000).-->
+<!-- KUN, 11/10/11: Sections for named employees, employee type and employee (40000).-->
+<!-- KUN, 12/10/11: Added name to be use in link (40001).-->
+<MWSL xmlns="http://www.deltek.com/ns/mwsl" version="0.23">
+  <Workspace name="Approvals" title="Approvals">
+    <Formation>
+      <Section title="Approvals by employee">
+        <Mount>
+          <Filter source="Employees" view="Approvals" title="Employees" name="EmployeeFilter">
+            <Expansions>
+              <With>
+                <Card view="Approvals" title="Employee">
+                  <Expansions minimized="false" parentSize="small">
+                    <Mount>
+                      <Filter source="Approvals" view="ApprovalByNameUser" name="ApprovalByNameUser">
+                        <With>
+                          <Hidden name="ApprovalCard">
+                            <Expansions>
+                              <Bind foreignKey="ApprovalGroupInstanceKey_ApprovalGroup">
+                                <Workspace source="ApprovalDetails" />
+                              </Bind>
+                            </Expansions>
+                          </Hidden>
+                        </With>
+                      </Filter>
+                    </Mount>
+                    <Bind foreignKey="primary">
+                      <Hidden source="EmployeeAbsenceCalendars">
+                        <Expansions>
+                          <With>
+                            <Table view="Approvals" />
+                          </With>
+                        </Expansions>
+                      </Hidden>
+                    </Bind>
+                  </Expansions>
+                </Card>
+              </With>
+            </Expansions>
+          </Filter>
+        </Mount>
+      </Section>
+      <Section title="Approvals by employee type">
+        <Mount>
+          <Filter source="Approvals" view="ApprovedByEmployeeType">
+            <Expansions>
+              <Bind foreignKey="ApprovalGroupInstanceKey_ApprovalGroup">
+                <Workspace source="ApprovalDetails" />
+              </Bind>
+            </Expansions>
+          </Filter>
+        </Mount>
+      </Section>
+      <Section title="Approvals by all">
+        <Mount>
+          <Filter source="Approvals" view="ApprovedByAll">
+            <Expansions>
+              <Bind foreignKey="ApprovalGroupInstanceKey_ApprovalGroup">
+                <Workspace source="ApprovalDetails" />
+              </Bind>
+            </Expansions>
+          </Filter>
+        </Mount>
+      </Section>
+    </Formation>
+  </Workspace>
+</MWSL>
+

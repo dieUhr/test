@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ASCII"?>
+<ServerSpecific:FileMappings xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ServerSpecific="http:///com/maconomy/tools/maconomyextender/ext/serverspecific/model/serverspecific.ecore">
+  <mappings resourcePath="jobs.mdml.xml" serverId="Development" installLocation="CustomizationDir/Custom/jobs.mdml.xml"/>
+</ServerSpecific:FileMappings>

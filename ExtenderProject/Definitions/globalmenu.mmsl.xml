@@ -1,0 +1,1396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- RMA, 13/03/09: Creation of Reminder Workspace (37554).-->
+<!-- RMA, 31/03/09: Creation of Interest Workspace (37623).-->
+<!-- MJA, 13/03/09: Creation of Subscriptions Workspace (37626).-->
+<!-- RMA, 31/03/09: Creation of Interest Workspace (37623).-->
+<!-- AMC, 03/04/09: Creation of Customer Home Workspace (37635).-->
+<!-- MJA, 13/03/09: Creation of Subscriptions Workspace (37626).-->
+<!-- CSK, 03/04/09: Creation of Companies workspace (37654).-->
+<!-- CSK, 22/04/09: Creation of Posting Principles workspace (37669).-->
+<!-- CSK, 24/04/09: Creation of Dimensions workspace (37673).-->
+<!-- CSK, 04/05/09: Creation of Accounts workspace(37691).-->
+<!-- CSK, 04/05/09: Creation of Transaction Types workspace(37665).-->
+<!-- MJA, 11/05/09: Creation of System Setup workspace (37693).-->
+<!-- MJA, 11/05/09: Subscription Setup workspace added (37733).-->
+<!-- MJA, 25/05/09: GL Setup workspace added (37734).-->
+<!-- JSV, 02/07/09: New group with all single dialog workspaces (37802).-->
+<!-- SJK, 23/06/09: Workspaces for the sales order module (37801).-->
+<!-- CSK, 06/07/09: Companies workspace moved to General Ledger folder (37818).-->
+<!-- SJK, 07/07/09: Dialog 'Time Estimation Categories' -> 'Time Budget Categories' (37817).-->
+<!-- SJK, 07/07/09: TimeEstimates -> TimeBudgets (37817).-->
+<!-- CSK, 07/07/09: Posting Principles workspace deleted (37669).-->
+<!-- CSK, 07/07/09: Accounts workspace moved to General Ledger folder (37669).-->
+<!-- SJK, 14/07/09: New Dialog 'Time Budget Revisions' (37831).-->
+<!-- RMA, 18/07/09: Move Interest and Reminder workspaces to AR group (37623).-->
+<!-- RMA, 23/07/09: Redesign of Customer Home (37635).-->
+<!-- MJA, 03/08/09: JobSubscriptions dialog removed (37627).-->
+<!-- RMA, 31/08/09: Renaming Reminder Workspace (37554).-->
+<!-- RMA, 23/07/09: Redesign of Customer Home structure (37635).-->
+<!-- RMA, 08/10/09: New workspace: Company Customer Home (37635).-->
+<!-- MJA, 08/10/09: Subscriptions reorganized (37626).-->
+<!-- MJA, 08/10/09: Opportunities added (38017).-->
+<!-- CSK, 09/10/09: Accounts workspace renamed to GlobalAccounts (37691).-->
+<!-- CSK, 09/10/09: Companies workspace replaced with CompanyHome (37818).-->
+<!-- CSK, 09/10/09: New Financial Period Closing workspace added (38029).-->
+<!-- CSK, 09/10/09: New Financial Reporting workspace added (38030).-->
+<!-- CSK, 09/10/09: New Journals workspace added (38032).-->
+<!-- CSK, 09/10/09: New Financial Analysis workspace added (38033).-->
+<!-- MJA, 28/10/09: Single dialog Weekly Speedsheet added (37802).-->
+<!-- KRN, 03/11/09: Single dialog JobOverview added (38087).-->
+<!-- RMA, 03/11/09: New workspace: Finance Budget Home (38025).-->
+<!-- CSK, 02/11/09: New Local Chart of Accounts workspace (38084).-->
+<!-- AMC, 13/11/09: New workspace: My Drafts (38106).-->
+<!-- KRN, 17/11/09: API for Requisition/RequestForQuote/PurchaseOrder Lines (38106).-->
+<!-- RMA, 15/12/09: New Vendor Home and Company Vendor Home workspaces (38166).-->
+<!-- JSV, 11/01/10: New workspace for Time & Expense registration (37948).-->
+<!-- CSK, 29/01/10: Company Home renamed to Companies (37818).-->
+<!-- SJK, 03/03/10: New window Amount Budgets (38201).-->
+<!-- SJK, 03/03/10: New window Amount Budget Revisions (38202).-->
+<!-- CSK, 31/03/10: Single dialog FinanceMetrics added (38409).-->
+<!-- JSV, 22/04/10: New single dialog workspace SD_StandardDocumentArchiveSetup (38211).-->
+<!-- PSZ, 07/06/10: New workspace: Jobs Setup (38529).-->
+<!-- KRN, 29/06/10: NotificationsView auto plug in (38601).-->
+<!-- KRN, 01/07/10: Notifications home workspace (38617).-->
+<!-- CSK, 12/07/10: New single dialog workspace SD_ShowJournals (38638).-->
+<!-- SJK, 05/08/10: New workspace job batch (38712).-->
+<!-- SJK, 20/09/10: TimeBudgetCategories renamed to TimeBudgetResources (38887).-->
+<!-- KRN, 21/09/10: Supervisor time and expense approval workspace (38894).-->
+<!-- BPE, 04/10/10: 3 new single dialog workspaces related to invoices and invoice reconciliations (38927).-->
+<!-- SBA, 28/10/10: No references to icons workspace1.png and iconFolder.png (39033).-->
+<!-- BPE, 29/10/10: Removed Journal Listing dialog (38994).-->
+<!-- MJA, 02/11/10: Show Job Subscription Orders dialog added (37561).-->
+<!-- BPE, 04/11/10: Rearranged SD_ShowJobInvoiceReconciliations (38927). -->
+<!-- SBA, 08/11/10: Adding ShowCurrentUserNotifications (39067).-->
+<!-- BPE, 08/11/10: New single dialogs (39048).-->
+<!-- SBA, 12/11/10: Remove unsupported workspaces from menu (39099).-->
+<!-- SBA, 19/11/10: New workspace Job Entries (39138) -->
+<!-- CSK, 03/12/10: New single dialog workspace SD_CompanyOverview (39071).-->
+<!-- KUN, 15/12/10: New single dialog workspace SD_InvoiceAllocationLines (39226).-->
+<!-- PSZ, 16/12/10: New workspace for project manager time and expense approval (39206).-->
+<!-- KUN, 21/12/10: New vendor invoice workspace (39094).-->
+<!-- KUN, 22/12/10: New purchase process workspace (39095).-->
+<!-- CSK, 23/02/11: New Financial Operations workspace (39452).-->
+<!-- PSZ, 25/02/11: New single dialog workspaces for combined reg. of time, expenses, mileage (39419).-->
+<!-- PSZ, 04/03/11: New workspace for user management (39462).-->
+<!-- PSZ, 08/03/11: New workspace for employee management (39467).-->
+<!-- SBA, 11/03/11: New workspace Batch job invoicing (39471). -->
+<!-- PSZ, 15/03/11: New workspace for job revenue recognition (39481).-->
+<!-- PSZ, 30/03/11: New workspaces for system setup (39512).-->
+<!-- CSK, 05/04/11: New Dimensions workspace (39492).-->
+<!-- CSK, 05/04/11: New Finance Setup workspace (39498).-->
+<!-- CSK, 02/05/11: New Accounts workspace (39547).-->
+<!-- SJK, 09/03/11: New window EventContactPersons (39390).-->
+<!-- SJK, 11/03/11: New workspace Contact Companies in new group CRM (39479).-->
+<!-- SJK, 30/03/11: Opportunity workspace placed in CRM menu (39513).-->
+<!-- SJK, 31/03/11: New single dialog workspace for API_EventContactPersons (39517).-->
+<!-- SJK, 01/04/11: New workspace Contact Person in CRM menu (39516).-->
+<!-- SJK, 05/04/11: New workspace Events in CRM menu (39520).-->
+<!-- SJK, 07/04/11: New single dialog workspace for ContactCompanyEmployees (39531).-->
+<!-- SJK, 12/04/11: New single dialog workspace for OpportunityEmployees (39550).-->
+<!-- SJK, 04/05/11: New Single dialog workspace for ContactCompanyAddresses (39606).-->
+<!-- SJK, 16/05/11: New Single dialog workspace for ContactManagementSetup (39642).-->
+<!-- SJK, 18/05/11: New workspace Contact Management Setup (39657).-->
+<!-- PSZ, 19/05/11: New single dialog Supervisor Time Sheet Status (39616).-->
+<!-- PSZ, 30/05/11: Renamed TimeAndExpenseRegistration workspace (39683).-->
+<!-- SJK, 09/06/11: New workspaces for trade (39731).-->
+<!-- CSK, 28/06/11: New Customer Payments workspace (39749).-->
+<!-- CSK, 14/07/11: Show single dialog workspace for ShowAllInvoices (39767).-->
+<!-- SBA, 15/07/11: New workspace Job Invoices (39489). -->
+<!-- JSV, 15/07/11: Single dialog workspace for new dialog Invoice Preparation (39768).-->
+<!-- CSK, 25/07/11: New Fixed Assets workspace (39789).-->
+<!-- MJA, 26/07/11: New dialog API_JobBudgetTypeSelection (39728).-->
+<!-- PSZ, 02/08/11: Replace Job Batch and Revenue Recognition with Job Administration (39803).-->
+<!-- PSZ, 03/08/11: Put Employees in group Human Resources, rename User Management to Access Control (39807).-->
+<!-- JSV, 03/08/11: Icons on the groups (39808). -->
+<!-- CSK, 05/08/11: New single dialog workspaces Analytix Prompts and Analytix InfoView (39798).-->
+<!-- JSV, 03/08/11: Newer icons and empty group for Subscriptions, with an icon (39808). -->
+<!-- JSV, 09/08/11: Remove "My Workspaces" group. Shorter titles for supervisor and PM approval (39808).-->
+<!-- CSK, 10/08/11: New Customer Reporting workspace (39822).-->
+<!-- CSK, 10/08/11: New Vendor Reporting workspace (39823).-->
+<!-- JSV, 10/08/11: Renaming icons (39808).-->
+<!-- CSK, 10/08/11: New Manager Reporting workspace (39838).-->
+<!-- CSK, 10/08/11: New Reporting workspace (39839).-->
+<!-- PSZ, 11/08/11: New Job Reporting workspace (39842).-->
+<!-- PSZ, 12/08/11: New CRM Reporting workspace (39848).-->
+<!-- JSV, 12/08/11: New single dialog workspace SD_JobDailyTimeRegistration (39845).-->
+<!-- CSK, 01/09/11: Rename Analytix Prompts dialog to Report Criteria (39911).-->
+<!-- CSK, 01/09/11: General folder renamed to Reporting and repositioned (39839).-->
+<!-- JSV, 02/09/11: Rename DraftInvoiceEditing to DraftInvoices (39256).-->
+<!-- JSV, 05/09/11: Changes in order and some titles, and GeneralLedgerSetup moved to Setup (39808).-->
+<!-- PSZ, 06/09/11: Added missing single dialogs GroupUsers and AccessLevelUsers (39462).-->
+<!-- KUN, 15/09/11: Change order of menu item (39940). -->
+<!-- MJA, 16/09/11: Added Subscription workspaces (39951).-->
+<!-- PSZ, 21/09/11: Rename Access Control back to Users (39462).-->
+<!-- KUN, 27/09/11: Approval hierarchy setup workspace (39973) -->
+<!-- SJK, 30/09/11: Removed API_EventContactPersons (39678).-->
+<!-- KUN, 04/10/11: New approval workspace (40000).-->
+<!-- BPE, 17/10/11: Removed CreateBudgetModel (40040).-->
+<!-- CSK, 07/11/11: New single dialog workspace SD_ShowGeneralJournalLines (40104).-->
+<!-- LPA, 07/11/11: New courses workspace (40139).-->
+<!-- LPA, 09/11/11: New recruitment workspace (40140).-->
+<!-- CSK, 14/11/11: New single dialog workspace SD_FinanceEntryAnalysis (40162).-->
+<!-- SJK, 16/11/11: New workspaces SD_API_JobBudgetsCard, SD_API_JobBudgetsTable (40153).-->
+<!-- ARO, 24/11/11: Added SD_CustomerLevelSetup (40201).-->
+<!-- CSK, 24/11/11: New DetailedVendorEntries workspace (40211).-->
+<!-- CSK, 06/12/11: New Banking Setup workspace (40276).-->
+<!-- CSK, 08/12/11: New Format Specification workspace (40281).-->
+<!-- PSZ, 15/12/11: New Dashboards workspace (40302).-->
+<!-- CSK, 19/12/11: New Bank Reconciliations workspace (40282).-->
+<!-- CSK, 19/12/11: New Collections workspace (40305).-->
+<!-- CSK, 19/12/11: New Payments workspace (40308).-->
+<MMSL xmlns="http://www.deltek.com/ns/mmsl" version="0.6">
+  <Menu>
+    <Group title="Time &amp; Expenses" icon="TimeAndExpense">
+      <Workspace title="Time &amp; Expenses" source="TimeAndExpenseRegistration" />
+      <Workspace title="Supervisor Approval" source="SupervisorTimeAndExpenseApproval" />
+      <Workspace title="Project Manager Approval" source="ProjectManagerTimeAndExpenseApproval" />
+    </Group>
+    
+    <Group title="Jobs" icon="JobCost">
+      <Workspace title="Jobs" source="Jobs" />
+      <Workspace title="Work Orders" source="WorkOrders" />
+      <Workspace title="Job Administration" source="JobAdministration" />
+      <Workspace title="Blanket Invoicing" source="BlanketInvoicing" />
+      <Workspace title="Batch Invoicing" source="BatchJobInvoicing" />
+      <Workspace title="Job Invoices" source="JobInvoices" />
+      <Workspace title="Job Entries" source="JobEntries" />
+      <Workspace title="Job Reporting" source="JobReporting" />
+    </Group>
+    <Group title="Contact Management" icon="ContactManagement">
+      <Workspace title="Contact Companies" source="ContactCompanies" />
+      <Workspace title="Contact Persons" source="ContactPersons" />
+      <Workspace title="Opportunities" source="Opportunities" />
+      <Workspace title="Events" source="Events" />
+      <Workspace title="Campaigns" source="Campaigns" />
+      <Workspace title="Update Responsible Employee" source="UpdateResponsibleEmployee" />
+      <If condition="stringSysPar('BPMServerURL') != ''">
+        <Workspace title="CRM Reporting" source="CRMReporting" />
+      </If>
+    </Group>
+    <Group title="Accounts Receivable" icon="AccountsReceivable">
+      <Workspace source="Customers" title="Customers" />
+      <Workspace source="CompanyCustomers" title="Company Customers" />
+      <Workspace source="CustomerPayments" title="Customer Payments" />
+      <Workspace source="CustomerProvisions" title="Customer Provisions" />
+      <Workspace source="Interest" title="Interest" />
+      <Workspace source="Reminder" title="Reminders" />
+      <Workspace source="DetailedCustomerEntries" title="Customer Entries" />
+      <Workspace source="ARReporting" title="Customer Reporting" />
+    </Group>
+    <Group title="Accounts Payable" icon="AccountsPayable">
+      <Workspace source="Vendors" title="Vendors" />
+      <Workspace source="CompanyVendors" title="Company Vendors" />
+      <Workspace source="VendorInvoices" title="Vendor Invoices" />
+      <Workspace source="PurchaseProcesses" title="Purchase Processes" />
+      <Workspace source="DetailedVendorEntries" title="Vendor Entries" />
+      <Workspace source="APReporting" title="Vendor Reporting" />
+    </Group>
+    <Group title="General Ledger" icon="GeneralLedger">
+      <Workspace title="Financial Operations" source="FinancialOperations" />
+      <Workspace title="Financial Analysis" source="FinancialAnalysis" />
+      <Workspace title="Companies" source="CompanyHome" />
+      <Workspace title="Accounts" source="GlobalAccounts" />
+      <Workspace title="Dimensions" source="Dimensions" />
+      <Workspace title="Fixed Assets" source="FixedAssets" />
+      <Workspace title="Financial Reporting" source="FinancialReporting" />
+      <Workspace title="Approvals" source="Approvals" />
+    </Group>
+    <Group title="Finance Budgets" icon="FinanceBudgets">
+      <If condition="hasAddOn(129)">
+        <Workspace source="BudgetTemplates" title="Budget Templates" />
+        <Workspace source="MyBudgets" title="Finance Budgets" />
+      </If>
+      <Workspace title="Budget" source="FinanceBudgets" />
+    </Group>
+    <Group title="Banking" icon="Banking">
+      <Workspace title="Payments" source="BankPayments" />
+      <Workspace title="Collections" source="Collections" />
+      <Workspace title="Bank Reconciliations" source="BankReconciliations" />
+    </Group>
+    <Group title="Sales Orders" icon="SalesOrders">
+      <Workspace title="Sales Orders" source="SalesOrders" />
+      <Workspace title="Batch Invoicing" source="BatchOrderInvoicing" />
+    </Group>
+    <Group title="Subscription Orders" icon="Subscription">
+      <Workspace title="Subscription Orders" source="SubscriptionHome" />
+    </Group>
+    <Group title="Human Resources" icon="HumanResources">
+      <Workspace title="Employees" source="Employees" />
+      <Workspace title="Courses" source="Courses" />
+      <Workspace title="Recruitment" source="Recruitment" />
+    </Group>
+    <Group title="Reporting" icon="Reporting.png">
+      <Workspace title="Reports" source="Reporting" />
+      <Workspace title="Manager Reporting" source="ManagerReporting" />
+      <Workspace title="Dashboards" source="Dashboards" />
+    </Group>
+    <Group title="Setup" icon="Setup">
+      <Workspace title="Exchange Rates" source="Currency" />
+      <Workspace title="System Setup" source="SystemSetup" />
+      <Workspace title="Jobs Setup" source="JobsSetup" />
+      <Workspace title="Contact Management Setup" source="ContactManagementSetup" />
+      <Workspace title="General Ledger Setup" source="GeneralLedgerSetup" />
+      <Workspace title="Banking Setup" source="BankingSetup" />
+      <Workspace title="Format Specification" source="FormatSpecification" />
+      <Workspace title="Sales Orders Setup" source="OrderSetup" />
+      <Workspace title="Subscription Setup" source="SubscriptionSetup" />
+      <Workspace title="Users" source="UserManagement" />
+      <Workspace title="Documents and Notes" source="DocumentsAndNotes" />
+      <Workspace title="Layouts" source="Layouts" />
+      <Workspace title="Notifications" source="Notifications" />
+      <Workspace title="Approval Hierarchies" source="ApprovalHierarchies" />
+    </Group>
+    <Group title="Single Dialogs" icon="SingleDialogs">
+      <Group title="General Ledger">
+        <Group title="Registration">
+          <Workspace title="General Journal" source="SD_GeneralJournal" />
+          <Workspace title="General Journal Templates" source="SD_GeneralJournalTemplates" />
+          <Workspace title="Journal Copying" source="SD_GeneralJournalCopying" />
+          <Workspace title="Posting" source="SD_Posting" />
+          <Workspace title="Print Posting Journal" source="SD_P_PostingJournal" />
+          <Workspace title="G/L Reallocation" source="SD_FinanceReallocation" />
+          <Workspace title="Finance Reconciliation" source="SD_FinanceReconciliation" />
+          <Workspace title="Print Currency Report" source="SD_P_CurrencyReport" />
+          <Workspace title="Year-End Closing" source="SD_YearEndClosing" />
+          <Workspace title="Show Year End Closing" source="SD_ShowYearEndClosing" />
+          <Workspace title="Intercompany Invoicing" source="SD_IntercompanyInvoicing" />
+          <Workspace title="Open Entry Intercompany Account Statement" source="SD_OpenEntryIntCompStatement" />
+          <Workspace title="Interest Calculation of Intercompany Entries" source="SD_InterestCalcOfIntCompEntry" />
+        </Group>
+        <Group title="Lookup">
+          <Workspace title="Account Ledger" source="SD_AccountLedger" />
+          <Workspace title="Dimension Card" source="SD_DimensionCard" />
+          <Workspace title="Company Overview" source="SD_CompanyOverview" />
+          <Workspace title="Finance Entry Analysis" source="SD_FinanceEntryAnalysis" />
+          <Workspace title="Show G/L Entries" source="SD_ShowFinanceEntry" />
+          <Workspace title="Show Journals" source="SD_ShowJournals" />
+          <Workspace title="Show General Journals" source="SD_ShowGeneralJournals" />
+          <Workspace title="Show General Journal Lines" source="SD_ShowGeneralJournalLines" />
+          <Workspace title="Show Journal Foundation" source="SD_ShowJournalFoundation" />
+          <Workspace title="Show Intercompany Invoice Details" source="SD_ShowIntercompanyInvoiceDetails" />
+          <Workspace title="Show Intercompany Entries" source="SD_ShowIntercompanyEntries" />
+          <Workspace title="Show Finance Reconciliation" source="SD_ShowFinanceReconciliation" />
+        </Group>
+        <Group title="Reporting">
+          <Workspace title="G/L Report Columns" source="SD_FinanceReportColumns" />
+          <Workspace title="G/L Report Selection Criteria{pl}" source="SD_FinanceReportTargetGroups" />
+          <Workspace title="G/L Report Set-Up" source="SD_FinanceReports" />
+          <Workspace title="G/L Report Notes" source="SD_FinanceReportNotes" />
+          <Workspace title="G/L Report Metrics" source="SD_FinanceMetrics" />
+          <Workspace title="G/L Report Metric List" source="SD_FinanceMetricList" />
+          <Workspace title="Reprint G/L Reports" source="SD_ReprintFinanceReports" />
+          <Workspace title="Show G/L Report Output Data" source="SD_ShowFinanceReportOutputData" />
+          <Workspace title="Print G/L Report" source="SD_P_FinanceReport" />
+          <Workspace title="Report Groups" source="SD_ReportGroups" />
+          <Workspace title="Specification of Dimension Reports" source="SD_SpecOfDimensionReports" />
+          <Workspace title="Ad Hoc Analysis" source="SD_KeyFigures" />
+          <Workspace title="Print Trial Balance" source="SD_P_TrialBalance" />
+          <Workspace title="Print Balance Sheet" source="SD_P_BalanceSheet" />
+          <Workspace title="Print Income Statement" source="SD_P_IncomeStatement" />
+          <Workspace title="Print Balance Overview" source="SD_P_BalanceOverview" />
+          <Workspace title="Print General Ledger" source="SD_P_MainLedger" />
+          <Workspace title="Print Currency Positions" source="SD_P_CurrencyPositions" />
+        </Group>
+        <Group title="Tax{VAT}">
+          <Workspace title="Tax Codes" source="SD_VATCodes" />
+          <Workspace title="Tax Tables" source="SD_VATTables" />
+          <Workspace title="G/L Tax Codes" source="SD_FinanceVATCodes" />
+          <Workspace title="G/L Tax Tables" source="SD_FinanceVATTables" />
+          <Workspace title="Tax Reporting Units" source="SD_VATReporingUnits" />
+          <Workspace title="Tax Reporting Unit Selection" source="SD_VATRepUnitSelection" />
+          <Workspace title="Tax Settlement" source="SD_VATSettlement" />
+          <Workspace title="Tax Specification{F}" source="SD_VATSpecification" />
+          <Workspace title="Print Tax Settlement" source="SD_P_VATSpecification" />
+          <Workspace title="Print Tax Reconciliation" source="SD_P_VATSettlement" />
+          <Workspace title="Print EU Tax Reconciliation" source="SD_P_EUVATSettlement" />
+          <Workspace title="Tax Report Fields" source="SD_VATReportFields" />
+          <Workspace title="Tax Report Specification" source="SD_VATReportSpecification" />
+          <Workspace title="Print Tax Report" source="SD_P_VATReport" />
+        </Group>
+        <Group title="Data Exchange">
+          <Workspace title="Import Data" source="SD_ImportData" />
+          <Workspace title="Show Imported Files" source="SD_ShowImportedFiles" />
+          <Workspace title="Show Imported Data" source="SD_ShowImportedData" />
+          <Workspace title="Export Data" source="SD_ExportData" />
+          <Workspace title="Show Exported Files" source="SD_ShowExportedFiles" />
+          <Workspace title="Show Exported Data" source="SD_ShowExportedData" />
+          <Workspace title="Show Exported Job Entries" source="SD_ShowExportedJobEntries" />
+          <Workspace title="Data Agents" source="SD_DataAgents" />
+          <Workspace title="Import Modes" source="SD_ImportModes" />
+          <Workspace title="Conversion Tables" source="SD_ConversionTables" />
+          <Workspace title="Conversion Groups" source="SD_ConversionGroups" />
+          <Workspace title="Conversion Rules" source="SD_ConversionRules" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Company Information" source="SD_CompanyInfo" />
+          <Workspace title="Company Locations" source="SD_CompanyLocations" />
+          <Workspace title="Fiscal Year Templates" source="SD_FiscalYearTemplates" />
+          <Workspace title="Fiscal Year" source="SD_FiscalYear" />
+          <Workspace title="Account Information Card" source="SD_AccountCard" />
+          <Workspace title="Locations" source="SD_Locations" />
+          <Workspace title="Entities" source="SD_Entities" />
+          <Workspace title="Projects" source="SD_Projects" />
+          <Workspace title="Purpose" source="SD_Purpose" />
+          <Workspace title="Specification 1" source="SD_Specification1" />
+          <Workspace title="Specification 2" source="SD_Specification2" />
+          <Workspace title="Specification 3" source="SD_Specification3" />
+          <Workspace title="Local Specification 1" source="SD_LocalSpec1" />
+          <Workspace title="Local Specification 2" source="SD_LocalSpec2" />
+          <Workspace title="Local Specification 3" source="SD_LocalSpec3" />
+          <Workspace title="Posting Descriptions" source="SD_PostingDescriptions" />
+          <Workspace title="Posting References" source="SD_PostingReferences" />
+          <Workspace title="Intercompany Accounts" source="SD_IntercompanyAccounts" />
+          <Workspace title="Trans. No. Series" source="SD_TransactionNumberSeries" />
+          <Workspace title="Allocation Codes" source="SD_AllocationCodes" />
+          <Workspace title="Registration Codes" source="SD_RegistrationCodes" />
+          <Workspace title="Derived Dimensions" source="SD_DerivedDimensions" />
+          <Workspace title="Dimension Combinations" source="SD_DimensionCombinations" />
+          <Workspace title="Show Dimension Combination Usage" source="SD_ShowDimensionCombUsage" />
+          <Workspace title="Dimension Derivations" source="SD_DimensionDerivations" />
+          <Workspace title="G/L Allocation Combinations" source="SD_FinanceAllocationCombinations" />
+          <Workspace title="Company Allocation Combinations" source="SD_CompanyAllocationCombinations" />
+          <Workspace title="Dimension Sets" source="SD_DimensionSets" />
+          <Workspace title="Line Styles" source="SD_LineStyles" />
+          <Workspace title="Transaction Types" source="SD_TransactionTypes" />
+          <Workspace title="Transaction Type Groups" source="SD_TransactionTypeGroups" />
+          <Workspace title="Journal Setup" source="SD_JournalSetup" />
+          <Workspace title="Posting Period Setup" source="SD_PostingPeriodSetup" />
+        </Group>
+        <Group title="Structure">
+          <Workspace title="Company Structure" source="SD_CompanyStructure" />
+          <Workspace title="Account Structure" source="SD_AccountStructure" />
+          <Workspace title="Location Structure" source="SD_LocationStructure" />
+          <Workspace title="Entity Structure" source="SD_EntityStructure" />
+          <Workspace title="Project Structure" source="SD_ProjectStructure" />
+          <Workspace title="Purpose Structure" source="SD_PurposeStructure" />
+          <Workspace title="Specification 1 Structure" source="SD_Specification1Structure" />
+          <Workspace title="Specification 2 Structure" source="SD_Specification2Structure" />
+          <Workspace title="Specification 3 Structure" source="SD_Specification3Structure" />
+          <Workspace title="Local Specification 1 Structure" source="SD_LocalSpec1Structure" />
+          <Workspace title="Local Specification 2 Structure" source="SD_LocalSpec2Structure" />
+          <Workspace title="Local Specification 3 Structure" source="SD_LocalSpec3Structure" />
+        </Group>
+        <Group title="Delete">
+          <Workspace title="Delete posted general journals" source="SD_RemovePostedGeneralJournals" />
+        </Group>
+      </Group>
+      <Group title="Budget">
+        <Group title="Registration">
+          <Workspace title="Finance Budgets" source="SD_FinanceBudgets" />
+          <Workspace title="Finance Budget Line Details" source="SD_FinanceBudgetLineDetails" />
+          <Workspace title="Finance Budget Project Lines" source="SD_FinanceBudgetProjectLines" />
+          <Workspace title="Finance Budget Direct Cost Lines" source="SD_FinanceBudgetDirectCostLines" />
+          <Workspace title="Finance Budget Line Actuals" source="SD_FinanceBudgetLineActuals" />
+          <Workspace title="Budget Settlement Line Details" source="SD_BudgetSettlementLineDetails" />
+          <Workspace title="Referencing Budget Settlements" source="SD_ReferencingBudgetSettlements" />
+          <Workspace title="Reverse Budget Settlements" source="SD_ReverseBudgetSettlements" />
+          <Workspace title="Related Budget Direct Cost Lines" source="SD_RelatedBudgetDirectCostLines" />
+          <Workspace title="Previous Finance Budget Lines" source="SD_PreviousFinanceBudgetLines" />
+          <Workspace title="Finance Budget Employees" source="SD_FinanceBudgetEmployees" />
+          <Workspace title="Finance Budget Employee Income" source="SD_FinanceBudgetEmployeeIncome" />
+          <Workspace title="Finance Budget Employee Details" source="SD_FinanceBudgetEmployeeDetails" />
+          <Workspace title="Related Budget Employees" source="SD_RelatedBudgetEmployees" />
+          <Workspace title="Previous Finance Budget Employees" source="SD_PreviousFinanceBudgetEmployees" />
+          <Workspace title="Budget Journal" source="SD_BudgetJournal" />
+          <Workspace title="Budget Reallocation" source="SD_BudgetReallocation" />
+        </Group>
+        <Group title="Lookup">
+          <Workspace title="Finance Sub Budget Lines" source="SD_FinanceSubBudgetLines" />
+          <Workspace title="Budget Settlement Overview" source="SD_BudgetSettlementOverview" />
+          <Workspace title="Sum Budget Settlement Overview" source="SD_SumBudgetSettlementOverview" />
+          <Workspace title="Budget Inspection" source="SD_BudgetInspection" />
+          <Workspace title="Budget Specification" source="SD_BudgetSpecification" />
+          <Workspace title="Show Budget Entries" source="SD_ShowBudgetEntries" />
+          <Workspace title="Budget Control" source="SD_BudgetControl" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Budget Templates" source="SD_BudgetTemplates" />
+          <Workspace title="Budget Template Line Details" source="SD_BudgetTemplateLineDetails" />
+          <Workspace title="Budget Template Sub Budgets" source="SD_BudgetTemplateSubBudgets" />
+          <Workspace title="Budget Distribution Key Details" source="SD_BudgetDistributionKeyDetails" />
+          <Workspace title="Budget Hierarchies" source="SD_BudgetHierarchies" />
+          <Workspace title="Budget Hierarchy Details" source="SD_BudgetHierarchyDetails" />
+          <Workspace title="Budget Employee Categories" source="SD_BudgetEmployeeCategories" />
+          <Workspace title="Budget Employee Category Details" source="SD_BudgetEmployeeCategoryDetails" />
+          <Workspace title="Budget Models" source="SD_BudgetModels" />
+          <Workspace title="Budget Groups" source="SD_BudgetGroups" />
+          <Workspace title="Commitment Levels" source="SD_CommitmentLevels" />
+          <Workspace title="Commitment Rules" source="SD_CommitmentRules" />
+          <Workspace title="Allocation Keys" source="SD_AllocationKeys" />
+          <Workspace title="Price Registers" source="SD_PriceRegisters" />
+          <Workspace title="Price Areas" source="SD_PriceAreas" />
+        </Group>
+      </Group>
+      <Group title="Fixed Assets">
+        <Group title="Registration">
+          <Workspace title="Asset Adjustment" source="SD_AssetAdjustment" />
+          <Workspace title="Asset Disposal" source="SD_AssetSale" />
+          <Workspace title="Asset Relocation" source="SD_AssetRelocation" />
+          <Workspace title="Asset Internal Sale" source="SD_AssetInternalSale" />
+          <Workspace title="Depreciation Adjustment" source="SD_DepreciationAdjustment" />
+        </Group>
+        <Group title="Lookup">
+          <Workspace title="Asset Ledger Card" source="SD_AssetLedgerCard" />
+          <Workspace title="Asset History" source="SD_AssetHistories" />
+          <Workspace title="Show Asset Adjustments" source="SD_ShowAssetAdjustments" />
+        </Group>
+        <Group title="Reporting">
+          <Workspace title="Print Asset Listing" source="SD_P_AssetList" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Asset Groups" source="SD_AssetGroups" />
+          <Workspace title="Assets" source="SD_Assets" />
+        </Group>
+      </Group>
+      <Group title="Accounts Receivable">
+        <Group title="Registration">
+          <Workspace title="Customer Payments" source="SD_CustomerPayments" />
+          <Workspace title="Customer Open Entry Reconciliation" source="SD_CustomerOpenEntryReconciliation" />
+          <Workspace title="Debtor Provisions by Invoice" source="SD_CustomerAccrualsByInvoice" />
+          <Workspace title="Select Interest Criteria" source="SD_SelectInterestCriteria" />
+          <Workspace title="Select Reminder Criteria" source="SD_SelectReminderCriteria" />
+          <Workspace title="Approve Interest Criteria" source="SD_ApproveInterestCriteria" />
+          <Workspace title="Approve Reminder Criteria" source="SD_ApproveReminderCriteria" />
+          <Workspace title="Change Interest Charge Selection" source="SD_ChangeInterestSelection" />
+          <Workspace title="Change Reminder Selection" source="SD_ChangeReminderSelection" />
+          <Workspace title="Change Reminder Texts" source="SD_ChangeReminderTexts" />
+          <Workspace title="Export Customer Entries" source="SD_ExportCustomerEntries" />
+        </Group>
+        <Group title="Lookup">
+          <Workspace title="Open Entry Customer Statement" source="SD_OpenEntryCustomerStatement" />
+          <Workspace title="Periodic Customer Statement" source="SD_PeriodicCustomerStatement" />
+          <Workspace title="Customer Entry Analysis" source="SD_CustomerEntryAnalysis" />
+          <Workspace title="Show Customer Reconciliation" source="SD_ShowCustomerReconciliations" />
+          <Workspace title="Show Customer Accrual Journals" source="SD_ShowCustomerAccrualJournals" />
+          <Workspace title="Show Reminders" source="SD_ShowReminders" />
+          <Workspace title="Show Interest Charge Notices" source="SD_ShowInterestChargeNotices" />
+          <Workspace title="Show All Invoices" source="SD_ShowAllInvoices" />
+        </Group>
+        <Group title="Reporting">
+          <Workspace title="Print Historical Customer Statement" source="SD_P_HistoricalCustomerStatement" />
+          <Workspace title="Print A/R Balance List" source="SD_P_CustomerBalanceList" />
+          <Workspace title="Print A/R Aging Report" source="SD_P_CustomerAgingReport" />
+          <Workspace title="Print Customer Statistics" source="SD_P_CustomerStatistics" />
+          <Workspace title="Print Customer Group Statistics" source="SD_P_CustomerGroupStatistics" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Customer Information Card" source="SD_CustomerCard" />
+          <Workspace title="Payment Information" source="SD_PaymentInformation" />
+          <Workspace title="Company Specific Customer Information Card" source="SD_CompanyCustomerCard" />
+          <Workspace title="Company Specific Payment Information" source="SD_CompanyCustomerPaymentInfo" />
+          <Workspace title="Customer Discount Agreements" source="SD_CustomerDiscountAgreements" />
+          <Workspace title="End Users" source="SD_EndCustomers" />
+          <Workspace title="Customer Budgets" source="SD_CustomerBudgets" />
+          <Workspace title="Customer Level Setup" source="SD_CustomerLevelSetup" />
+          <Workspace title="Interest Charge/Reminder Principles" source="SD_InterestReminderPrinciples" />
+          <Workspace title="Interest Tables" source="SD_InterestTables" />
+          <Workspace title="Reminder Text Groups" source="SD_ReminderTextGroups" />
+          <Workspace title="Reminder Texts" source="SD_ReminderTexts" />
+        </Group>
+      </Group>
+      <Group title="Accounts Payable">
+        <Group title="Registration">
+          <Workspace title="Vendor Invoices" source="SD_VendorInvoices" />
+          <Workspace title="Invoice Allocation" source="SD_InvoiceAllocation" />
+          <Workspace title="Approve Invoices" source="SD_ApproveInvoices" />
+          <Workspace title="Approval Lists" source="SD_ApprovalLists" />
+          <Workspace title="Reallocate Invoices" source="SD_InvoiceReallocation" />
+          <Workspace title="Invoice Reconciliation" source="SD_InvoiceReconciliation" />
+          <Workspace title="Invoice Control" source="SD_InvoiceControl" />
+          <Workspace title="Requisitions{Internal}" source="SD_Requisitions" />
+          <Workspace title="Requests for Quote" source="SD_RequestsForQuote" />
+          <Workspace title="Request for Quote Overview" source="SD_RequestForQuoteList" />
+          <Workspace title="Purchase Orders" source="SD_PurchaseOrders" />
+          <Workspace title="Purchase Receipt" source="SD_PurchaseReceipt" />
+          <Workspace title="Purchase Order Line Overview" source="SD_PurchaseOrderLineOverview" />
+          <Workspace title="Show Purchase Order Lines" source="SD_ShowPurchaseOrderLines" />
+          <Workspace title="A/P Open Entry Reconciliation" source="SD_VendorOpenEntryReconciliation" />
+          <Workspace title="Vendor Subcontractor Reconciliation" source="SD_VendorSubcontractorReconciliation" />
+          <Workspace title="Royalty Selection" source="SD_P_RoyaltyBillingSelection" />
+          <Workspace title="Royalty Billing" source="SD_P_RoyaltySettlement" />
+        </Group>
+        <Group title="Lookup">
+          <Workspace title="Vendor Open Entry Statement" source="SD_VendorOpenEntryStatement" />
+          <Workspace title="Periodic Vendor Statement" source="SD_PeriodicVendorStatement" />
+          <Workspace title="Vendor Entry Analysis" source="SD_VendorEntryAnalysis" />
+          <Workspace title="Show Vendor Invoices" source="SD_ShowVendorInvoices" />
+          <Workspace title="Show Invoice Allocation Lines" source="SD_ShowInvoiceAllocationLines" />
+          <Workspace title="Show Vendor Reconciliation" source="SD_ShowVendorReconciliation" />
+          <Workspace title="Show Vendor Subcontractor Reconciliation" source="SD_ShowVendorSubcontractorReconciliation" />
+          <Workspace title="Show Purchase Transactions" source="SD_ShowPurchaseVouchers" />
+        </Group>
+        <Group title="Reporting">
+          <Workspace title="Print Invoice Status" source="SD_P_InvoiceStatus" />
+          <Workspace title="Print Approval List" source="SD_P_ApprovalList" />
+          <Workspace title="Print A/P Balance List" source="SD_P_VendorBalanceList" />
+          <Workspace title="Print A/P Aging Report" source="SD_P_VendorAgingReport" />
+          <Workspace title="Print Periodic Vendor Statement" source="SD_P_PeriodicVendorStatement" />
+          <Workspace title="Print A/P Statistics" source="SD_P_VendorStatistics" />
+          <Workspace title="Print Vendor Report" source="SD_P_VendorReport" />
+          <Workspace title="Print A/P Suspense Overview" source="SD_P_APSuspenseOverview" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Vendor Information Card" source="SD_VendorCard" />
+          <Workspace title="Payment Control" source="SD_PaymentControl" />
+          <Workspace title="Company Specific Vendor Information Card" source="SD_CompanyVendorInfoCard" />
+          <Workspace title="Company Specific Payment Control" source="SD_CompanyVendorPaymentControl" />
+          <Workspace title="Holders of Approval" source="SD_HoldersOfApproval" />
+          <Workspace title="Royalty Agreements" source="SD_RoyaltyAgreements" />
+        </Group>
+        <Group title="Delete">
+          <Workspace title="Delete Purchase Orders" source="SD_RemovePurchaseOrders" />
+        </Group>
+      </Group>
+      <Group title="Banking">
+        <Group title="Payment">
+          <Workspace title="Payment Selection" source="SD_PaymentSelection" />
+          <Workspace title="Change Payment Selection" source="SD_ChangePaymentSelection" />
+          <Workspace title="Change Payment Selection by Vendor" source="SD_ChangePaymentSelectionByVendor" />
+          <Workspace title="Payment Files" source="SD_PaymentFiles" />
+          <Workspace title="Print Check" source="SD_P_Check" />
+          <Workspace title="Read Payment Status{imp}" source="SD_ImportPaymentStatus" />
+          <Workspace title="Show Read Payment Status" source="SD_ShowImportedPaymentStatus" />
+          <Workspace title="Payment Reporting" source="SD_PaymentReports" />
+          <Workspace title="Print out Payment Listing" source="SD_P_PaymentList" />
+          <Workspace title="Payment Journal" source="SD_PaymentJournal" />
+          <Workspace title="Print Payment Overview" source="SD_P_PaymentOverview" />
+          <Workspace title="Show Payment Orders" source="SD_ShowPaymentOrders" />
+          <Workspace title="Show Payment Reconciliation" source="SD_ShowPaymentReconciliations" />
+          <Workspace title="Show Payment Remittance" source="SD_ShowPaymentRemittance" />
+          <Workspace title="Show Vendor Entry Payment" source="SD_ShowVendorEntryPayment" />
+        </Group>
+        <Group title="Customer Payment">
+          <Workspace title="Collection Selection" source="SD_CollectionSelection" />
+          <Workspace title="Change Collection Selection" source="SD_ChangeCollectionSelection" />
+          <Workspace title="Collection Files" source="SD_CollectionFiles" />
+          <Workspace title="Read Customer Payments" source="SD_ImportCustomerPayments" />
+          <Workspace title="Show Customer Payments" source="SD_ShowCustomerPayments" />
+          <Workspace title="Customer Payment Reporting" source="SD_CustomerPaymentReporting" />
+          <Workspace title="Show Collection Orders" source="SD_ShowCollectionOrder" />
+        </Group>
+        <Group title="Bank Reconciliations">
+          <Workspace title="Petty Cash Accounts" source="SD_PettyCashAccounts" />
+          <Workspace title="Print Follow-Up Selection" source="SD_P_FollowUpSelection" />
+          <Workspace title="Bank Reconciliations" source="SD_BankReconciliations" />
+          <Workspace title="Show Bank Reconciliation" source="SD_ShowBankReconciliation" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Payment Agents" source="SD_PaymentAgentCard" />
+          <Workspace title="External Accounts" source="SD_ExternalAccounts" />
+          <Workspace title="Payment Modes" source="SD_PaymentModes" />
+          <Workspace title="Customer Payment Modes" source="SD_CustomerPaymentModes" />
+        </Group>
+      </Group>
+      <Group title="Inventory">
+        <Group title="Registration">
+          <Workspace title="Inventory Change{pl}" source="SD_ItemMovements" />
+          <Workspace title="Serial Number Movement{pl}" source="SD_SerialNumberMovements" />
+          <Workspace title="Warehouse Transactions" source="SD_WarehouseTransactions" />
+          <Workspace title="Picking Lists" source="SD_PickingLists" />
+          <Workspace title="Print Picking List" source="SD_P_PickingList" />
+          <Workspace title="Inventory Count Listing" source="SD_InventoryCountList" />
+          <Workspace title="Inventory Count{Operation}" source="SD_StockCount" />
+          <Workspace title="Serial No. Count" source="SD_SerialNumberInventoryCount" />
+          <Workspace title="Inventory Count by Stock Location" source="SD_LocationInventoryCount" />
+          <Workspace title="Approve Count" source="SD_ApproveCount" />
+          <Workspace title="Production Selection" source="SD_ProductionSelection" />
+          <Workspace title="BOM Production" source="SD_BOMProduction" />
+          <Workspace title="Production Reports" source="SD_ProductionReporting" />
+          <Workspace title="Update Item Reservations{1}" source="SD_UpdateItemReservations" />
+          <Workspace title="Item Substitution" source="SD_ItemSubstitution" />
+        </Group>
+        <Group title="Lookup">
+          <Workspace title="Inventory Overview" source="SD_ItemList" />
+          <Workspace title="Item Information" source="SD_ItemInformation" />
+          <Workspace title="Item Assortment" source="SD_ItemAssortment" />
+          <Workspace title="Inventory Profiles" source="SD_InventoryProfiles" />
+        </Group>
+        <Group title="Reporting">
+          <Workspace title="Print Understock List" source="SD_P_ShortageList" />
+          <Workspace title="Print Inventory Journal" source="SD_P_InventoryJournal" />
+          <Workspace title="Print Inventory Balance Listing" source="SD_P_InventoryList" />
+          <Workspace title="Print Inventory Listing" source="SD_P_StockList" />
+          <Workspace title="Print Requirement Analysis" source="SD_P_ProductionRequirements" />
+          <Workspace title="Print Item Statistics" source="SD_P_ItemStatistics" />
+          <Workspace title="Print Item Group Statistics" source="SD_P_ItemGroupStatistics" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Warehouse Information Card" source="SD_InventoryCard" />
+          <Workspace title="Item Group Information Card" source="SD_ItemGroupCard" />
+          <Workspace title="Pricing Combinations" source="SD_AssortedGroups" />
+          <Workspace title="Item Information Card" source="SD_ItemCard" />
+          <Workspace title="Bill of Materials Information Card" source="SD_BOMCard" />
+          <Workspace title="Copy BOM" source="SD_BOMCopying" />
+          <Workspace title="Serial Number Information" source="SD_SerialNumberInformation" />
+          <Workspace title="Import Serial Numbers" source="SD_ImportSerialNumbers" />
+          <Workspace title="Property Information Card" source="SD_PropertyCard" />
+          <Workspace title="Item Properties" source="SD_ItemProperties" />
+          <Workspace title="Price Lists" source="SD_PriceLists" />
+          <Workspace title="Quantity Discounts" source="SD_QuantityDiscounts" />
+          <Workspace title="Change Price Lists" source="SD_ChangeInPriceLists" />
+          <Workspace title="Import Price Lists" source="SD_ImportPriceLists" />
+          <Workspace title="Item Discount Agreements" source="SD_ItemDiscountAgreements" />
+          <Workspace title="Discount Table" source="SD_DiscountTable" />
+          <Workspace title="Catalogs" source="SD_Catalogs" />
+        </Group>
+        <Group title="Delete">
+          <Workspace title="Delete Item Entries" source="SD_RemoveItemEntries" />
+        </Group>
+      </Group>
+      <Group title="Sales Orders">
+        <Group title="Registration">
+          <Workspace title="Quote" source="SD_Quotation" />
+          <Workspace title="Sales Orders" source="SD_SalesOrders" />
+          <Workspace title="Order Lines" source="SD_OrderLines" />
+          <Workspace title="Order Information" source="SD_OrderInformation" />
+          <Workspace title="Credit Orders" source="SD_CreditOrders" />
+          <Workspace title="Invoice to Credit Order" source="SD_InvoiceToCreditOrder" />
+          <Workspace title="Footers" source="SD_Footers" />
+          <Workspace title="Order Status" source="SD_OrderStatus" />
+          <Workspace title="Unblocking" source="SD_PrintBlocked" />
+          <Workspace title="Consignments" source="SD_Consignments" />
+          <Workspace title="Print Quote" source="SD_P_Quotation" />
+          <Workspace title="Print Order Confirmation" source="SD_P_OrderConfirmation" />
+          <Workspace title="Print Main Order" source="SD_P_MainOrder" />
+        </Group>
+        <Group title="Delivery">
+          <Workspace title="Packing Lists" source="SD_PickingReports" />
+          <Workspace title="Packing List Lines" source="SD_PickingListLines" />
+          <Workspace title="Serial Number Entry" source="SD_SerialNumberReporting" />
+          <Workspace title="Back Order Register" source="SD_BackOrderRegister" />
+          <Workspace title="Update Back Order Register" source="SD_BackOrderRegisterUpdate" />
+          <Workspace title="Item Allocation" source="SD_ItemAllocation" />
+          <Workspace title="Bar Code Entries" source="SD_BarcodeTransactions" />
+          <Workspace title="Print Packing List" source="SD_P_PackingList" />
+          <Workspace title="Print Packing Slip" source="SD_P_DeliveryNote" />
+          <Workspace title="Print Returns List" source="SD_P_ReturnsNote" />
+          <Workspace title="Print Bill of Lading" source="SD_P_ConsignmentNote" />
+          <Workspace title="Print Label" source="SD_P_Label" />
+          <Workspace title="Print Consignment Slip" source="SD_P_ConsignmentSheet" />
+          <Workspace title="Print Customs Document" source="SD_P_CustomsDocument" />
+        </Group>
+        <Group title="Invoicing">
+          <Workspace title="Invoices" source="SD_Invoices" />
+          <Workspace title="Credit Memos" source="SD_CreditMemos" />
+          <Workspace title="Invoicing Listing" source="SD_Invoicing" />
+          <Workspace title="Crediting Listing" source="SD_Crediting" />
+          <Workspace title="Invoicing on Account" source="SD_InvoicingOnAccount" />
+          <Workspace title="Print Invoice" source="SD_P_Invoice" />
+          <Workspace title="Print Credit Memo" source="SD_P_CreditMemo" />
+          <Workspace title="Print Main Order Invoice" source="SD_P_MainOrderInvoice" />
+        </Group>
+        <Group title="Lookup">
+          <Workspace title="Sales Calculation" source="SD_ItemSalesCalculations" />
+          <Workspace title="Show Packing Slip" source="SD_ShowDeliveryNote" />
+          <Workspace title="Show Invoice" source="SD_ShowInvoice" />
+          <Workspace title="Show Credit Memo" source="SD_ShowCreditMemo" />
+        </Group>
+        <Group title="Reporting">
+          <Workspace title="Print Order Volume" source="SD_P_OrdreVolume" />
+          <Workspace title="Print Order Listing" source="SD_P_OrderList" />
+          <Workspace title="Print Back Order Listing" source="SD_P_BackOrderList" />
+          <Workspace title="Print Invoice Statistics" source="SD_P_InvoiceStatistics" />
+          <Workspace title="Print COGS Suspense Overview" source="SD_P_COGSSuspense" />
+        </Group>
+        <Group title="Commission">
+          <Workspace title="Commission Agreements" source="SD_CommissionAgreements" />
+          <Workspace title="Commission Calculation" source="SD_CommissionCalculation" />
+          <Workspace title="Print Commission Statistics" source="SD_P_CommissionStatistics" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Charges{Code}" source="SD_ChargeCodes" />
+          <Workspace title="Charge Tables" source="SD_ChargeTables" />
+          <Workspace title="Destination Information Card" source="SD_DestinationCard" />
+          <Workspace title="Destination Properties" source="SD_DestinationProperties" />
+          <Workspace title="Footer Templates" source="SD_FooterTemplates" />
+        </Group>
+      </Group>
+      <Group title="Item Purchase">
+        <Group title="Registration">
+          <Workspace title="Item Purchase Orders" source="SD_ItemPurchaseOrders" />
+          <Workspace title="Item Purchase Order Lines" source="SD_ItemPurchaseOrderLines" />
+          <Workspace title="Item Purchase Selection" source="SD_PurchaseSelection" />
+          <Workspace title="Sales Order to Item Purchase Orders" source="SD_SalesOrderToItemPurchaseOrders" />
+          <Workspace title="Print Item Purchase Order" source="SD_P_ItemPurchaseOrder" />
+        </Group>
+        <Group title="Receipt">
+          <Workspace title="Item Receipt" source="SD_ItemReceipt" />
+          <Workspace title="Serial Number Receipt" source="SD_SerialNumberReceipt" />
+        </Group>
+        <Group title="Reporting">
+          <Workspace title="Print Item Receipt" source="SD_P_Receipt" />
+          <Workspace title="Print Receipt Listing" source="SD_P_ReceiptList" />
+          <Workspace title="Print Item Purchase Order Overview" source="SD_P_ItemPurchaseOrderList" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Suppliers" source="SD_ItemSuppliers" />
+          <Workspace title="Seasonal Models" source="SD_SeasonalModels" />
+        </Group>
+        <Group title="Delete">
+          <Workspace title="Delete Item Purchase Orders" source="SD_RemoveItemPurchaseOrders" />
+        </Group>
+      </Group>
+      <Group title="Job Cost">
+        <Group title="Creation">
+          <Workspace title="Jobs" source="SD_Jobs" />
+          <Workspace title="Job Information" source="SD_JobInformation" />
+          <Workspace title="Job Descriptions" source="SD_JobDescriptions" />
+          <Workspace title="Job Price Information" source="SD_JobPriceInformation" />
+          <Workspace title="Fixed Exchange Rate Information" source="SD_FixedExchRateInformation" />
+          <Workspace title="Job Parameter Selection" source="SD_JobParameterSelection" />
+          <Workspace title="Job Employees" source="SD_JobEmployees" />
+          <Workspace title="Job Tasks" source="SD_JobTasks" />
+          <Workspace title="Employee Control" source="SD_EmployeeControl" />
+          <Workspace title="Job Collections" source="SD_JobCollections" />
+          <Workspace title="Job Phases" source="SD_JobPhases" />
+          <Workspace title="Main Jobs" source="SD_MainJobs" />
+          <Workspace title="Distribute to Subjobs" source="SD_DistributeToSubjobs" />
+          <Workspace title="Postponed Job Budget Copying" source="SD_PostponedJobBudgetCopying" />
+        </Group>
+        <Group title="Budgeting">
+          <Workspace title="Job Budgets" source="SD_JobBudgets" />
+          <Workspace title="Periodic Job Budgets" source="SD_PeriodicJobBudgets" />
+          <Workspace title="Periodic Forecasting" source="SD_PeriodicSumJobBudgets" />
+          <Workspace title="Forecast Management" source="SD_ForecastManagement" />
+          <Workspace title="Time Budgets" source="SD_TimeBudgets" />
+          <Workspace title="Amount Budgets" source="SD_AmountBudgets" />
+          <Workspace title="Job Budget Time Details" source="SD_JobBudgetTimeDetails" />
+          <Workspace title="Time Budget Resources" source="SD_TimeBudgetResources" />
+          <Workspace title="Job Budget Texts" source="SD_JobBudgetTexts" />
+          <Workspace title="Job Budget Item Lines" source="SD_JobBudgetItemLines" />
+          <Workspace title="Job Budget Revisions" source="SD_JobBudgetRevisions" />
+          <Workspace title="Time Budget Revisions" source="SD_TimeBudgetRevisions" />
+          <Workspace title="Amount Budget Revisions" source="SD_AmountBudgetRevisions" />
+          <Workspace title="Approve Job Budgets{Imp}" source="SD_ApproveJobBudgets" />
+          <Workspace title="Job Budget Merging" source="SD_JobBudgetMerging" />
+          <Workspace title="Show Purchase Orders" source="SD_ShowPurchaseOrders" />
+          <Workspace title="Job Planning" source="SD_JobPlanning" />
+          <Workspace title="Timing Plans" source="SD_TimingPlans" />
+          <Workspace title="Job Traffic Status" source="SD_JobTrafficStatus" />
+          <Workspace title="Job Traffic Status Revisions" source="SD_JobTrafficStatusRevisions" />
+          <Workspace title="Job Progress" source="SD_JobProgress" />
+          <Workspace title="Job Progress History" source="SD_JobProgressHistory" />
+          <Workspace title="Task Progress" source="SD_TaskProgress" />
+          <Workspace title="Job Budget Line Dependencies" source="SD_JobBudgetLineDependencies" />
+          <Workspace title="Job Budget Line Overview" source="SD_JobBudgetOverview" />
+          <Workspace title="Employee Budget Line Overview" source="SD_EmployeeBudgetLineOverview" />
+          <Workspace title="Quote Editing" source="SD_QuoteEditing" />
+          <Workspace title="Quote Revisions" source="SD_QuoteRevisions" />
+          <Workspace title="Print Job Quote" source="SD_P_JobQuotation" />
+          <Workspace title="Print Job Order Confirmation" source="SD_P_JobOrderConfirmation" />
+        </Group>
+        <Group title="Registration">
+          <Workspace title="Job Journal" source="SD_JobJournal" />
+          <Workspace title="Time Sheets" source="SD_TimeSheets" />
+          <Workspace title="Daily Time Sheets" source="SD_DailyTimeSheets" />
+          <Workspace title="Weekly SpeedSheet" source="SD_TimeRegistration" />
+          <Workspace title="SpeedSheet" source="SD_DailyTimeRegistration" />
+          <Workspace title="Expense Sheets{0}" source="SD_ExpenseSheets" />
+          <Workspace title="Mileage Sheets" source="SD_MileageSheets" />
+          <Workspace title="Favorites" source="SD_JobFavorites" />
+          <Workspace title="Approve Time Sheets" source="SD_ApproveTimeSheets" />
+          <Workspace title="Approval Time Sheets" source="SD_ApprovalTimeSheets" />
+          <Workspace title="Approve Time Sheet Lines" source="SD_ApproveTimeSheetLines" />
+          <Workspace title="Approve Expense Sheet Lines" source="SD_ApproveExpenseSheetLines" />
+          <Workspace title="Approve Job Registrations" source="SD_ApproveJobRegistrations" />
+          <Workspace title="Supervisor Time Sheet Status" source="SD_SupervisorTimeSheetStatus" />
+          <Workspace title="Central Time Sheet Transfer" source="SD_CentralTimeSheetTransfer" />
+          <Workspace title="Job Reallocation" source="SD_JobReallocation" />
+          <Workspace title="Job Reallocation by Job" source="SD_JobReallocationByJob" />
+          <Workspace title="Batch Job Reallocation" source="SD_BatchJobReallocation" />
+          <Workspace title="Job Accruals" source="SD_JobAccruals" />
+          <Workspace title="Batch Job Accrual" source="SD_BatchJobAccrual" />
+          <Workspace title="Job Accrual Plans" source="SD_JobAccrualPlans" />
+          <Workspace title="Job Transfer" source="SD_JobTransfer" />
+        </Group>
+        <Group title="Revenue Recognition">
+          <Workspace title="Job Revenue Recognition" source="SD_JobRevenueRecognition" />
+          <Workspace title="Job Revenue Recognition Details" source="SD_JobRevenueRecognitionDetails" />
+          <Workspace title="Evaluation of Work in Progress" source="SD_EvaluationOfWorkInProgress" />
+          <Workspace title="Employee Revenue Distribution" source="SD_EmployeeRevenueDistribution" />
+        </Group>
+        <Group title="Invoicing">
+          <Workspace title="Invoicing Plans" source="SD_InvoicingPlans" />
+          <Workspace title="Invoicing Plans by Bill To Customer" source="SD_InvoicingPlansByBillToCustomer" />
+          <Workspace title="Invoice Selection" source="SD_InvoiceSelection" />
+          <Workspace title="On Account Invoice Selection" source="SD_OnAccountInvoiceSelection" />
+          <Workspace title="Bill To Customer Distribution" source="SD_BillToCustomerDistribution" />
+          <Workspace title="Itemize Invoice Selection" source="SD_ItemizeInvoiceSelection" />
+          <Workspace title="Invoice Preparation" source="SD_InvoicePreparation" />
+          <Workspace title="Blanket Invoice Selection" source="SD_BlanketInvoiceSelection" />
+          <Workspace title="Job Selection in Blanket Invoice Selection" source="SD_JobSelectionBlanketInvSelections" />
+          <Workspace title="Blanket Invoicing Overview" source="SD_BlanketInvoicingOverview" />
+          <Workspace title="Approve Invoice Selection" source="SD_ApproveInvoiceSelection" />
+          <Workspace title="Job Invoice Crediting" source="SD_JobInvoiceCrediting" />
+          <Workspace title="Invoice Draft Status" source="SD_InvoiceDraftStatus" />
+          <Workspace title="Invoice Editing" source="SD_InvoiceEditing" />
+          <Workspace title="Job Invoicing" source="SD_JobInvoicing" />
+          <Workspace title="Job Crediting" source="SD_JobCrediting" />
+          <Workspace title="Job Invoices On Account" source="SD_JobInvoicesOnAccount" />
+          <Workspace title="Job Invoice Allocation" source="SD_JobInvoiceAllocation" />
+          <Workspace title="Itemize Job Invoice Allocation" source="SD_ItemizeJobInvoiceAllocation" />
+          <Workspace title="Batch Job Invoice Allocation" source="SD_BatchJobInvoiceAllocation" />
+          <Workspace title="Job Invoice History" source="SD_JobInvoiceHistory" />
+        </Group>
+        <Group title="Lookup">
+          <Workspace title="Job Card" source="SD_JobCard" />
+          <Workspace title="Financial Job Card" source="SD_FinancialJobCard" />
+          <Workspace title="Pending Job Actions" source="SD_PendingJobActions" />
+          <Workspace title="Job Overview" source="SD_JobOverview" />
+          <Workspace title="Show Job Invoice" source="SD_ShowJobInvoice" />
+          <Workspace title="Show Job Credit Memo" source="SD_ShowJobCreditMemo" />
+          <Workspace title="Display Reconciliation Of Job Invoice On Account" source="SD_ShowReconciliationOfJobInvoiceOnAccount" />
+          <Workspace title="Show Job Transfers" source="SD_ShowJobTransfers" />
+          <Workspace title="Job Search" source="SD_JobSearch" />
+          <Workspace title="Job Entry Overview" source="SD_JobEntryOverview" />
+          <Workspace title="Job Entry Analysis" source="SD_JobEntryAnalysis" />
+          <Workspace title="Job Invoice Overview" source="SD_JobInvoiceOverview" />
+          <Workspace title="Show Job Invoice Reconciliations" source="SD_ShowJobInvoiceReconciliations" />
+          <Workspace title="Show Invoice Foundation" source="SD_ShowInvoiceFoundation" />
+          <Workspace title="Show Job Reallocation" source="SD_ShowJobReallocation" />
+          <Workspace title="Job Purchase Processes" source="SD_JobPurchaseProcesses" />
+          <Workspace title="Show Job Revenue Journals" source="SD_ShowJobRevenueJournals" />
+          <Workspace title="Show Job Invoice Allocation Reconciliations" source="SD_ShowJobInvoiceAllocationReconciliations" />
+          <Workspace title="Show Job Invoice Allocation Entries" source="SD_ShowJobInvoiceAllocationEntries" />
+        </Group>
+        <Group title="Reporting">
+          <Workspace title="Print Job Volume" source="SD_P_JobVolume" />
+          <Workspace title="Print Job Report" source="SD_P_JobReport" />
+          <Workspace title="Print Employee Report" source="SD_P_EmployeeReport" />
+          <Workspace title="Print Job Profitability" source="SD_P_JobProfitability" />
+          <Workspace title="Print Job Balance List" source="SD_P_JobBalanceList" />
+          <Workspace title="Print Time Sheet Overview" source="SD_P_TimeSheetOverview" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Job Parameters" source="SD_JobParameters" />
+          <Workspace title="Job Parameter Selection Rules" source="SD_JobParameterSelectionRules" />
+          <Workspace title="Job Parameter Derivation Fields" source="SD_JobParameterDerivationFields" />
+          <Workspace title="Job Groups" source="SD_JobGroups" />
+          <Workspace title="Activities" source="SD_Activities" />
+          <Workspace title="Task Lists" source="SD_TaskLists" />
+          <Workspace title="Approve Tasks" source="SD_ApproveTasks" />
+          <Workspace title="Job Price Lists" source="SD_JobPriceLists" />
+          <Workspace title="Job Price Groups" source="SD_JobPriceGroups" />
+          <Workspace title="Job Surcharge Rules" source="SD_JobSurchargeRules" />
+          <Workspace title="Invoice Layout Rules" source="SD_InvoiceLayoutRules" />
+          <Workspace title="Invoice Details Layout Rules" source="SD_InvoiceDetailsLayoutRules" />
+          <Workspace title="Job Allocation Combinations" source="SD_JobAllocationCombinations" />
+          <Workspace title="Job Posting References" source="SD_JobPostingReferences" />
+          <Workspace title="Time Sheet References" source="SD_TimeSheetReferences" />
+          <Workspace title="Standard Job Budget Texts" source="SD_StandardJobBudgetTexts" />
+          <Workspace title="Standard Invoice Text Lists" source="SD_StandardInvoiceTextLists" />
+          <Workspace title="Mileage Rules" source="SD_MileageRules" />
+        </Group>
+      </Group>
+      <Group title="Resource Planning">
+        <Group title="Allocation">
+          <Workspace title="Employee Absence Calendars" source="SD_EmployeeAbsenceCalendars" />
+          <Workspace title="Absence Calendar Lines" source="SD_AbsenceCalendarLines" />
+          <Workspace title="Employee Calendars" source="SD_EmployeeCalendars" />
+          <Workspace title="Detailed Planning" source="SD_DetailedPlanning" />
+          <Workspace title="Detailed Employee Planning" source="SD_DetailedEmployeePlanning" />
+          <Workspace title="Skill Requirements" source="SD_SkillRequirement" />
+          <Workspace title="Task Staffing" source="SD_TaskStaffing" />
+          <Workspace title="Task Search" source="SD_TaskSearch" />
+        </Group>
+        <Group title="Lookup">
+          <Workspace title="Browse Employee Skills" source="SD_BrowseEmployeeSkills" />
+        </Group>
+        <Group title="Reporting">
+          <Workspace title="Print Employee Load" source="SD_P_EmployeeLoad" />
+          <Workspace title="Print Planning Conflicts" source="SD_P_PlanningConflicts" />
+          <Workspace title="Print Resource Requirement" source="SD_P_ResourceRequirement" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Level Lists" source="SD_LevelLists" />
+          <Workspace title="Skills" source="SD_Skills" />
+          <Workspace title="Employee Skills" source="SD_EmployeeSkills" />
+        </Group>
+      </Group>
+      <Group title="Human Resources">
+        <Group title="Registration">
+          <Workspace title="Employee Positions" source="SD_EmployeePositions" />
+          <Workspace title="Compensation Agreements" source="SD_CompensationAgreements" />
+          <Workspace title="Stock Option Agreements" source="SD_StockOptionAgreements" />
+          <Workspace title="Stock Option Exercisings" source="SD_StockOptionExercisings" />
+          <Workspace title="Personnel Requisitions" source="SD_PersonnelRequisitions" />
+          <Workspace title="Course Participants" source="SD_CourseParticipants" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Position Information Card" source="SD_PositionInformationCard" />
+          <Workspace title="Compensation Types" source="SD_CompensationTypes" />
+          <Workspace title="Share Information Card" source="SD_StockInformationCard" />
+          <Workspace title="Stock Option Agreement Types" source="SD_StockOptionAgreementTypes" />
+          <Workspace title="Personnel Requisition Types" source="SD_PersonnelRequisitionTypes" />
+          <Workspace title="Course Types" source="SD_CourseTypes" />
+          <Workspace title="Course Information Card" source="SD_CourseInformationCard" />
+        </Group>
+      </Group>
+      <Group title="Subscription">
+        <Group title="Registration">
+          <Workspace title="Subscription Orders" source="SD_SubscriptionOrders" />
+          <Workspace title="Subscription Order Lines" source="SD_SubscriptionOrderLines" />
+          <Workspace title="Subscription Changes" source="SD_SubscriptionHistories" />
+          <Workspace title="Subscription Updating" source="SD_SubscriptionUpdate" />
+          <Workspace title="Update Subscription Orders" source="SD_UpdateSubscriptionOrders" />
+        </Group>
+        <Group title="Invoicing">
+          <Workspace title="Prepare Subscription Invoicing" source="SD_PrepareSubscriptionInvoicing" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Subscription Information Card" source="SD_SubscriptionInformationCard" />
+          <Workspace title="Price Adjustment Principles" source="SD_PriceAdjustmentPrinciples" />
+          <Workspace title="Price Index Tables" source="SD_PriceIndexTables" />
+        </Group>
+      </Group>
+      <Group title="Contact Management">
+        <Group title="Registration">
+          <Workspace title="Event Flow" source="SD_EventFlow" />
+          <Workspace title="Campaigns" source="SD_Campaigns" />
+          <Workspace title="Events" source="SD_Events" />
+          <Workspace title="Event Contact Persons" source="SD_EventContactPersons" />
+          <Workspace title="Opportunities" source="SD_Opportunities" />
+          <Workspace title="Opportunity Employees" source="SD_OpportunityEmployees" />
+          <Workspace title="Opportunity Partners" source="SD_OpportunityPartners" />
+          <Workspace title="Opportunity Budgets" source="SD_OpportunityBudgets" />
+          <Workspace title="Contact Person Relations" source="SD_ContactPersonRelations" />
+          <Workspace title="Contact Company Relations" source="SD_ContactCompanyRelations" />
+        </Group>
+        <Group title="Lookup">
+          <Workspace title="Event Flow per Contact Company" source="SD_EventFlowPerContactCompany" />
+          <Workspace title="Event Flow by Contact Person" source="SD_EventflowPerPerson" />
+          <Workspace title="Events Per Contact Company" source="SD_EventsPerContactCompany" />
+          <Workspace title="Events Per Employee" source="SD_EventsPerEmployee" />
+          <Workspace title="Opportunities by Contact Company" source="SD_OpportunitiesByContactCompany" />
+          <Workspace title="Job Events" source="SD_JobEvents" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="Contact Companies" source="SD_ContactCompanys" />
+          <Workspace title="Contact Company Employees" source="SD_ContactCompanyEmployees" />
+          <Workspace title="Contact Company Addresses" source="SD_ContactCompanyAddresses" />
+          <Workspace title="Contact Company Targeting Codes" source="SD_ContactCompanyTargetingCodes" />
+          <Workspace title="Contact Persons" source="SD_ContactPersons" />
+          <Workspace title="Contact Person Targeting Codes" source="SD_ContactPersonTargetingCodes" />
+          <Workspace title="Contact Group Types" source="SD_ContactGroupTypes" />
+          <Workspace title="Contact Groups" source="SD_ContactGroups" />
+          <Workspace title="Event Flow Types" source="SD_EventFlowTypes" />
+          <Workspace title="Event Plans" source="SD_EventPlans" />
+          <Workspace title="Opportunity Types" source="SD_OpportunityTypes" />
+          <Workspace title="Targeting Codes" source="SD_TargetingCodes" />
+          <Workspace title="Update Responsible Employee" source="SD_UpdateResponsibleEmployee" />
+          <Workspace title="Contact Management Setup" source="SD_ContactManagementSetup" />
+        </Group>
+        <Group title="Delete">
+          <Workspace title="Delete Contact Data" source="SD_RemoveContactData" />
+        </Group>
+      </Group>
+      <Group title="EU Statistics">
+        <Group title="List System">
+          <Workspace title="Sales List System Reports" source="SD_SalesListSystemReports" />
+          <Workspace title="Sales List System Items" source="SD_SalesListSystemEntries" />
+        </Group>
+        <Group title="Intrastat">
+          <Workspace title="Intrastat Reports" source="SD_IntrastatReports" />
+          <Workspace title="Intrastat Declarations" source="SD_IntrastatDeclarations" />
+          <Workspace title="Intrastat Items" source="SD_IntrastatEntries" />
+        </Group>
+        <Group title="Report Basis">
+          <Workspace title="Show EU Invoices" source="SD_ShowEUInvoices" />
+          <Workspace title="Show EU Item Receipts" source="SD_ShowEUItemReceipts" />
+        </Group>
+      </Group>
+      <Group title="Set-Up">
+        <Group title="Access Control">
+          <Workspace title="User Types" source="SD_UserTypes" />
+          <Workspace title="Groups" source="SD_Groups" />
+          <Workspace title="Users" source="SD_Users" />
+          <Workspace title="Actions" source="SD_Functions" />
+          <Workspace title="View Groups" source="SD_DatabaseAccessGroups" />
+          <Workspace title="Group Users" source="SD_GroupUsers" />
+          <Workspace title="Access Information" source="SD_AccessInformation" />
+          <Workspace title="Reset Password" source="SD_ResetPassword" />
+          <Workspace title="Change Password" source="SD_Change_Password" />
+          <Workspace title="Change Database Password" source="SD_ChangeDatabasePassword" />
+          <Workspace title="Access Levels" source="SD_AccessLevels" />
+          <Workspace title="Access Lists" source="SD_AccessLists" />
+          <Workspace title="User Access Levels" source="SD_UserAccessLevels" />
+          <Workspace title="Show Itemized User Access Level" source="SD_ShowItemizedUserAccessLevel" />
+          <Workspace title="Show Security Log" source="SD_ShowSecurityLog" />
+        </Group>
+        <Group title="Set-up">
+          <Workspace title="System Information" source="SD_SystemInformation" />
+          <Workspace title="System Parameters" source="SD_SystemParameters" />
+          <Workspace title="Company Parameters" source="SD_CompanyParameters" />
+          <Workspace title="System Numbers" source="SD_SystemNumbers" />
+          <Workspace title="Number Series{pl}" source="SD_NumberSeries" />
+          <Workspace title="Popup Fields" source="SD_PopupFields" />
+          <Workspace title="Option Lists" source="SD_OptionLists" />
+          <Workspace title="Countries" source="SD_Countries" />
+          <Workspace title="Address Formats" source="SD_AddressFormats" />
+          <Workspace title="Postal Districts" source="SD_PostalDistricts" />
+          <Workspace title="Language Texts" source="SD_LanguageTexts" />
+          <Workspace title="Exchange Rate Tables" source="SD_ExchangeRateTables" />
+          <Workspace title="Euro Exchange Rate Table" source="SD_EuroExchangeRateTable" />
+          <Workspace title="Currency Rounding" source="SD_CurrencyRounding" />
+          <Workspace title="Selection Criterion Specification" source="SD_TargetGroup" />
+          <Workspace title="Selection Criterion Specification Types" source="SD_TargetGroupTypes" />
+          <Workspace title="Week Calendars" source="SD_WeekCalendars" />
+          <Workspace title="Holiday Calendars" source="SD_HolidayCalendars" />
+          <Workspace title="Employees" source="SD_Employees" />
+          <Workspace title="Employee Categories" source="SD_EmployeeCategories" />
+          <Workspace title="Employee Commission Agreements" source="SD_EmployeeCommissionAgreement" />
+          <Workspace title="Teams" source="SD_Teams" />
+          <Workspace title="Team Generators" source="SD_TeamGenerators" />
+          <Workspace title="Calculate Work Hours" source="SD_CalculateWorkHours" />
+          <Workspace title="Linking Rules" source="SD_LinkingRules" />
+          <Workspace title="Rules of Validation" source="SD_ValidationRules" />
+          <Workspace title="Modulus Calculation" source="SD_ModulusCalculation" />
+          <Workspace title="Installation Information" source="SD_Installation_Information" />
+          <Workspace title="Support Documentation" source="SD_SupportDocumentation" />
+          <Workspace title="Internal Test" source="SD_InternalTest" />
+        </Group>
+        <Group title="Approval">
+          <Workspace title="Approval Groups" source="SD_ApprovalGroups" />
+          <Workspace title="Approval Objects" source="SD_ApprovalObjects" />
+          <Workspace title="Approvals" source="SD_Approvals" />
+          <Workspace title="Approval Changes" source="SD_ApprovalChanges" />
+          <Workspace title="Approval Hierarchy Selection" source="SD_ApprHierarchySelect" />
+          <Workspace title="Approval Hierarchies" source="SD_ApprovalHierarchies" />
+          <Workspace title="Approval Hierarchy Rules" source="SD_ApprHierarchyRules" />
+        </Group>
+        <Group title="Layout">
+          <Workspace title="Window Layouts" source="SD_WindowLayouts" />
+          <Workspace title="Print Layout{pl}" source="SD_PrintoutLayouts" />
+          <Workspace title="Window Layout Groups" source="SD_LayoutGroups" />
+          <Workspace title="Printers" source="SD_Printers" />
+          <Workspace title="Paper Formats" source="SD_PaperFormats" />
+          <Workspace title="Printer Selection" source="SD_PrinterSelection" />
+          <Workspace title="Print Layout Selection" source="SD_PrintLayoutSelection" />
+        </Group>
+        <Group title="Document Handling">
+          <Workspace title="Document Archives" source="SD_DocumentArchives" />
+          <Workspace title="Document Revision History" source="SD_DocumentRevisions" />
+          <Workspace title="Standard Document Archive Setup" source="SD_StandardDocumentArchiveSetup" />
+        </Group>
+        <Group title="Note">
+          <Workspace title="Notes" source="SD_Notes" />
+          <Workspace title="Note Types" source="SD_NoteTypes" />
+        </Group>
+        <Group title="Popup Reminder">
+          <Workspace title="Popup Reminders" source="SD_PopupReminders" />
+        </Group>
+        <Group title="Workflow">
+          <Workspace title="Life Cycle Definitions" source="SD_LifeCycleDefinitions" />
+          <Workspace title="Life Cycle Transition Definitions" source="SD_LifeCycleTransitionDefinitions" />
+          <Workspace title="Notification Categories" source="SD_NotificationCategories" />
+          <Workspace title="Notification Types" source="SD_NotificationTypes" />
+          <Workspace title="Group Notification Types" source="SD_GroupNotificationTypes" />
+          <Workspace title="User Notification Types" source="SD_UserNotificationTypes" />
+          <Workspace title="General Monitors" source="SD_GeneralMonitors" />
+          <Workspace title="Monitors" source="SD_Monitors" />
+          <Workspace title="Life Cycles" source="SD_LifeCycles" />
+          <Workspace title="Life Cycle Transitions" source="SD_LifeCycleTransition" />
+          <Workspace title="Notifications{Workflow}" source="SD_Notifications" />
+          <Workspace title="User Notifications" source="SD_UserNotifications" />
+          <Workspace title="Show My Notifications" source="SD_ShowCurrentUserNotifications" />
+          <Workspace title="Email Alerts Setup" source="SD_EmailAlertsSetup" />
+          <Workspace title="Email Alerts Templates" source="SD_EmailAlertsTemplates" />
+          <Workspace title="Email Alerts Distributions" source="SD_EmailAlertsDistributions" />
+        </Group>
+        <Group title="Database Schema">
+          <Workspace title="Database Relations" source="SD_DatabaseRelations" />
+        </Group>
+        <Group title="Reporting">
+          <Workspace title="Reporting Hierarchies" source="SD_ReportingHierarchies" />
+          <Workspace title="Reporting Hierarchy Nodes" source="SD_ReportingHierarchyNodes" />
+          <Workspace title="Node Attributes" source="SD_RepHierarchyNodeAttributes" />
+          <Workspace title="Node Collections" source="SD_RepHierarchyNodeJoint" />
+          <Workspace title="Dimension Groupings" source="SD_DimensionGroupings" />
+        </Group>
+        <Group title="Delete">
+          <Workspace title="Delete Security Log" source="SD_RemoveSecurityLog" />
+        </Group>
+      </Group>
+      <Group title="Format Specification">
+        <Group title="Output Data Format">
+          <Workspace title="Specification of Output Data Formats" source="SD_SpecOfOutputDataFormats" />
+          <Workspace title="Specification of Output Data Forms" source="SD_SpecOfOutputDataForms" />
+          <Workspace title="Specification of Output Data Records" source="SD_SpecOfOutputDataRecords" />
+          <Workspace title="Specification of Output Data Fields" source="SD_SpecOfOutputDataFields" />
+        </Group>
+        <Group title="Input Data Format">
+          <Workspace title="Specification of Input Data Formats" source="SD_SpecOfInputDataFormats" />
+          <Workspace title="Specification of Input Data Forms" source="SD_SpecOfInputDataForms" />
+          <Workspace title="Specification of Input Data Records" source="SD_SpecOfInputDataRecords" />
+          <Workspace title="Specification of Input Data Fields" source="SD_SpecOfInputDataFields" />
+        </Group>
+        <Group title="Outgoing Payment Format">
+          <Workspace title="Specification of Outgoing Payment Formats" source="SD_SpecOfOutgoingPaymentFormats" />
+          <Workspace title="Specification of Outgoing Payment Forms" source="SD_SpecOfOutgoingPaymentForms" />
+          <Workspace title="Export Payment Forms" source="SD_ExportPaymentForms" />
+        </Group>
+        <Group title="Customer Payment Format">
+          <Workspace title="Specification of Customer Payment Formats" source="SD_SpecOfCustomerPaymentFormats" />
+          <Workspace title="Specification of Customer Payment Forms" source="SD_SpecOfCustomerPaymentForms" />
+          <Workspace title="Export Customer Payment Forms" source="SD_ExportCustomerPaymentForms" />
+        </Group>
+        <Group title="Import Format">
+          <Workspace title="Specification of Import Formats" source="SD_SpecOfImportFormats" />
+          <Workspace title="Specification of Import Forms" source="SD_SpecOfImportForms" />
+          <Workspace title="Export Import Forms" source="SD_ExportImportForms" />
+        </Group>
+        <Group title="Export Format">
+          <Workspace title="Specification of Export Formats" source="SD_SpecOfExportFormats" />
+          <Workspace title="Specification of Export Forms" source="SD_SpecOfExportForms" />
+          <Workspace title="Export Export Forms" source="SD_ExportExportForms" />
+        </Group>
+      </Group>
+      <Group title="API">
+        <Group title="Accounts Payable">
+          <Group title="Lookup">
+            <Workspace title="Requisition Lines API" source="SD_API_RequisitionLines" />
+            <Workspace title="Request for Quote Lines API" source="SD_API_RequestForQuoteLines" />
+            <Workspace title="Purchase Order Lines API" source="SD_API_PurchaseOrderLines" />
+          </Group>
+        </Group>
+        <Group title="Job Cost">
+          <Group title="Creation">
+            <Workspace title="Employee Control Lines" source="SD_EmployeeControlLines" />
+          </Group>
+          <Group title="Budgeting">
+            <Workspace title="Job Budgets API" source="SD_API_JobBudgets" />
+            <Workspace title="Periodic Job Budgets API" source="SD_API_PeriodicJobBudgets" />
+            <Workspace title="Job Budget Type Selection API" source="SD_API_JobBudgetTypeSelection" />
+            <Workspace title="Job Budgets Card API" source="SD_API_JobBudgetsCard" />
+            <Workspace title="Job Budgets Table API" source="SD_API_JobBudgetsTable" />
+          </Group>
+          <Group title="Registration">
+            <Workspace title="Time Sheet Lines" source="SD_TimeSheetLines" />
+            <Workspace title="Transfer Time Sheet Lines" source="SD_TransferTimeSheetLines" />
+            <Workspace title="Daily Time Sheet Lines API" source="SD_API_DailyTimeSheetLines" />
+            <Workspace title="Job Time Registration" source="SD_JobDailyTimeRegistration" />
+            <Workspace title="Transfer Daily Time Sheet Lines" source="SD_TransferDailyTimeSheetLines" />
+            <Workspace title="Expense Sheet Lines" source="SD_ExpenseSheetLines" />
+            <Workspace title="Transfer Expense Sheet Lines" source="SD_TransferExpenseSheetLines" />
+            <Workspace title="Time Sheet Line Expenses" source="SD_TimeSheetLineExpenses" />
+            <Workspace title="Time Sheet Line Mileage" source="SD_TimeSheetLineMileage" />
+            <Workspace title="Daily Time Sheet Line Expenses" source="SD_DailyTimeSheetLineExpenses" />
+            <Workspace title="Daily Time Sheet Line Mileage" source="SD_DailyTimeSheetLineMileage" />
+          </Group>
+          <Group title="Invoicing">
+            <Workspace title="Draft Invoice Entry API" source="SD_API_DraftInvoiceEntry" />
+            <Workspace title="Show Job Invoice On Account Reconciliations" source="SD_ShowJobInvoiceOnAccountReconciliations" />
+          </Group>
+          <Group title="Lookup">
+            <Workspace title="Show Job Subscription Orders" source="SD_ShowJobSubscriptionOrders" />
+          </Group>
+          <Group title="Setup">
+            <Workspace title="Tasks API" source="SD_API_Tasks" />
+          </Group>
+        </Group>
+        <Group title="Contact Management">
+          <Workspace title="Contact Group Members" source="SD_ContactGroupMembers" />
+          <Workspace title="Contact Companies API" source="SD_API_ContactCompanies" />
+          <Workspace title="Opportunity Partners API" source="SD_API_OpportunityPartners" />
+          <Group title="Registration">
+            <Workspace title="Opportunity Budgets API" source="SD_API_OpportunityBudgets" />
+          </Group>
+        </Group>
+        <Group title="Reporting">
+          <Workspace source="SD_ReportCriteria" title="Report Criteria" />
+          <Workspace source="SD_AnalytixInfoView" title="Analytix InfoView" />
+        </Group>
+        <Group title="Setup">
+          <Group title="Workflow">
+            <Workspace title="Email Alerts Setup API" source="SD_API_EmailAlertsSetup" />
+          </Group>
+        </Group>
+      </Group>
+      <Group title="Import">
+        <Group title="Access Control">
+          <Workspace source="SD_ImportAccessInformation" title="Import Access Information" />
+          <Workspace source="SD_ImportAccessLevels" title="Import Access Levels" />
+          <Workspace source="SD_ImportGroups" title="Import Groups" />
+          <Workspace source="SD_ImportUsers" title="Import Users" />
+          <Workspace source="SD_ImportUserTypes" title="Import User Types" />
+        </Group>
+        <Group title="Bank">
+          <Workspace source="SD_ImportBankReconciliations" title="Import Bank Reconciliations" />
+          <Workspace source="SD_ImportBankSetup" title="Import Bank Setup" />
+        </Group>
+        <Group title="Basics">
+          <Workspace source="SD_ImportPostingDescriptions" title="Import Posting Descriptions" />
+          <Workspace source="SD_ImportDimensionGroupings" title="Import Dimension Groupings" />
+          <Workspace source="SD_ImportApprovalHierarchies" title="Import Approval Hierarchies" />
+          <Workspace source="SD_ImportLinkingRules" title="Import Linking Rules" />
+          <Workspace source="SD_ImportPopupFields" title="Import Popup Fields" />
+          <Workspace source="SD_ImportReportingHierarchy" title="Import Reporting Hierarchy" />
+          <Workspace source="SD_ImportSystemInformation" title="Import System Information" />
+          <Workspace source="SD_ImportExchangeRates" title="Import Exchange Rates" />
+          <Workspace source="SD_ImportChargeCodes" title="Import Charge Codes" />
+          <Workspace source="SD_ImportDocumentArchives" title="Import Document Archives" />
+          <Workspace source="SD_ImportCountries" title="Import Countries" />
+          <Workspace source="SD_ImportTargetGroups" title="Import Selection Criterion Specification{1}" />
+          <Workspace source="SD_ImportNotes" title="Import Notes" />
+          <Workspace source="SD_ImportNotificationCategories" title="Import Notification Categories" />
+          <Workspace source="SD_ImportSystemparameter" title="Import System Parameters" />
+          <Workspace source="SD_ImportOptionLists" title="Import Option Lists" />
+          <Workspace source="SD_ImportEmployees" title="Import Employees" />
+          <Workspace source="SD_ImportTeamGenerators" title="Import Team Generators" />
+          <Workspace source="SD_ImportTeams" title="Import Teams" />
+          <Workspace source="SD_ImportWeekCalendars" title="Import Week Calendars" />
+          <Workspace source="SD_ImportHolidayCalendars" title="Import Holiday Calendars" />
+          <Workspace source="SD_ImportLanguageTexts" title="Import Language Texts" />
+          <Workspace source="SD_ImportLayoutSelectionRules" title="Import Layout Selection Rules" />
+          <Workspace source="SD_InitializeInstanceKeys" title="Initialize Instance Keys" />
+        </Group>
+        <If condition="hasAddOn(129)">
+          <Group title="Budget">
+            <Workspace source="SD_ImportFinanceBudgetTemplates" title="Import Finance Budget Templates" />
+          </Group>
+        </If>
+        <Group title="Contact Management">
+          <Workspace source="SD_ImportHRTables" title="Import HR Tables" />
+          <Workspace source="SD_ImportEvents" title="Import Events" />
+          <Workspace source="SD_ImportEventFlowTypes" title="Import Event Flow Types" />
+          <Workspace source="SD_ImportEventPlans" title="Import Event Plans" />
+          <Workspace source="SD_ImportCampaigns" title="Import Campaigns" />
+          <Workspace source="SD_ImportContactCompanies" title="Import Contact Companies" />
+          <Workspace source="SD_ImportContactGroups" title="Import Contact Groups" />
+          <Workspace source="SD_ImportContactPersons" title="Import Contact Persons" />
+          <Workspace source="SD_ImportContactRelations" title="Import Contact Relations" />
+        </Group>
+        <Group title="Customer">
+          <Workspace source="SD_ImportCustomers" title="Import Customers" />
+          <Workspace source="SD_ImportCompanyCustomers" title="Import Company Customers" />
+          <Workspace source="SD_ImportInterestReminderSetup" title="Import Interest Reminder Setup" />
+          <Workspace source="SD_ImportInterestChargeNotices" title="Import Interest Charge Notices" />
+          <Workspace source="SD_ImportEndCustomers" title="Import End Customers" />
+        </Group>
+        <Group title="Fixed Assets">
+          <Workspace source="SD_ImportAssets" title="Import Assets" />
+          <Workspace source="SD_ImportAssetAdjustments" title="Import Asset Selection" />
+          <Workspace source="SD_ImportAssetGroups" title="Import Asset Groups" />
+        </Group>
+        <Group title="General Ledger">
+          <Workspace source="SD_ImportDerivedDimensions" title="Import Derived Dimensions" />
+          <Workspace source="SD_ImportPostingReferences" title="Import Posting References" />
+          <Workspace source="SD_ImportBudgetInformation" title="Import Budget Information" />
+          <Workspace source="SD_ImportEntriesStructure" title="Import Entries Structure" />
+          <Workspace source="SD_ImportDataAgents" title="Import Data Agents" />
+          <Workspace source="SD_ImportDimensionDerivations" title="Import Dimension Derivations" />
+          <Workspace source="SD_ImportDimensionCombination" title="Import Dimension Combination" />
+          <Workspace source="SD_ImportFinanceDimensions" title="Import GL dimensions" />
+          <Workspace source="SD_ImportFinanceVATTables" title="Import GL Tax Tables" />
+          <Workspace source="SD_ImportFinanceReports" title="Import GL Reports" />
+          <Workspace source="SD_ImportCompanyAllocationCombinations" title="Import Company Allocation Combinations" />
+          <Workspace source="SD_ImportCompanyInformation" title="Import Company Information" />
+          <Workspace source="SD_ImportAllocationCodes" title="Import Allocation Codes" />
+          <Workspace source="SD_ImportPurposeStructure" title="Import Purpose Structure" />
+          <Workspace source="SD_ImportGeneralJournal" title="Import General Journal" />
+          <Workspace source="SD_ImportAccountStructure" title="Import Account Structure" />
+          <Workspace source="SD_ImportConversionTables" title="Import Conversion Tables" />
+          <Workspace source="SD_ImportLocalSpec1Structure" title="Import Local Spec. 1 Structure" />
+          <Workspace source="SD_ImportLocalSpec2Structure" title="Import Local Spec. 2 Structure" />
+          <Workspace source="SD_ImportLocalSpec3Structure" title="Import Local Spec. 3 Structure" />
+          <Workspace source="SD_ImportIntercompanyAccounts" title="Import Intercompany Accounts" />
+          <Workspace source="SD_ImportVATTables" title="Import Tax Tables" />
+          <Workspace source="SD_ImportVATCodes" title="Import Tax Codes" />
+          <Workspace source="SD_ImportVATReportingUnits" title="Import VAT Reporting Units" />
+          <Workspace source="SD_ImportPriceRegisters" title="Import Price Registers" />
+          <Workspace source="SD_ImportProjectStructure" title="Import Project Structure" />
+          <Workspace source="SD_ImportReportGroups" title="Import Report Groups" />
+          <Workspace source="SD_ImportRegistrationCodes" title="Import Registration Codes" />
+          <Workspace source="SD_ImportSpec1Structure" title="Import Spec. 1 Structure" />
+          <Workspace source="SD_ImportSpec2Structure" title="Import Spec. 2 Structure" />
+          <Workspace source="SD_ImportSpec3Structure" title="Import Spec. 3 Structure" />
+          <Workspace source="SD_ImportLocationStructure" title="Import Location Structure" />
+          <Workspace source="SD_ImportFinanceAllocationCombinations" title="Import Finance Allocation Combinations" />
+          <Workspace source="SD_ImportTransactionTypes" title="Import Transaction Types" />
+          <Workspace source="SD_ImportTransactionTypeGroups" title="Import Transaction Type Groups" />
+          <Workspace source="SD_ImportJournalSetup" title="Import Journal Setup" />
+          <Workspace source="SD_ImportPostingPeriodSetup" title="Import Posting Period Setup" />
+        </Group>
+        <Group title="Item Information">
+          <Workspace source="SD_ImportPriceListsStandard" title="Import Price Lists" />
+          <Workspace source="SD_ImportCatalogs" title="Import Catalogs" />
+          <Workspace source="SD_ImportWarehouseTransactions" title="Import Warehouse Transactions" />
+          <Workspace source="SD_ImportDiscountTableLines" title="Import Discount Table Lines" />
+          <Workspace source="SD_ImportItems" title="Import Items" />
+          <Workspace source="SD_ImportItemMovements" title="Import Inventory Change" />
+        </Group>
+        <Group title="Job Cost">
+          <Workspace source="SD_ImportJobAllocationCombinations" title="Import Job Allocation Combinations" />
+          <Workspace source="SD_ImportActivities" title="Import Activities" />
+          <Workspace source="SD_ImportDailyTimeSheets" title="Import Daily Time Sheets" />
+          <Workspace source="SD_ImportEmployeeCategories" title="Import Employee Categories" />
+          <Workspace source="SD_ImportTaskLists" title="Import Task Lists" />
+          <Workspace source="SD_ImportJobJournal" title="Import Job Journal" />
+          <Workspace source="SD_ImportJobRevenueRecognition" title="Import Job Revenue Recognition" />
+          <Workspace source="SD_ImportJobSurchargeRules" title="Import Job Surcharge Rules" />
+          <Workspace source="SD_ImportQuoteEditing" title="Import Quote Editing" />
+          <Workspace source="SD_ImportTimeSheets" title="Import Time Sheets" />
+          <Workspace source="SD_ImportExpenseSheets" title="Import Expense Sheets" />
+          <Workspace source="SD_ImportJobGroups" title="Import Job Groups" />
+          <Workspace source="SD_ImportJobPriceGroups" title="Import Job Price Groups" />
+          <Workspace source="SD_ImportJobParameters" title="Import Job Parameters" />
+          <Workspace source="SD_ImportJobParSelectionRules" title="Import Job Parameter Selection Rules" />
+          <Workspace source="SD_ImportJobPriceLists" title="Import Job Price Lists" />
+          <Workspace source="SD_ImportJobExchangeRates" title="Import Job Exchange Rates" />
+          <Workspace source="SD_ImportInvoiceLayoutRules" title="Import Invoice Layout Rules" />
+          <Workspace source="SD_ImportInvoiceDetailsLayoutRules" title="Import Invoice Details Layout Rules" />
+          <Workspace source="SD_ImportEmployeeControl" title="Import Employee Control" />
+          <Workspace source="SD_ImportJobParDerivationFields" title="Import Job Parameter Derivation Fields" />
+          <Workspace source="SD_ImportJobFavorites" title="Import Favorites" />
+          <Workspace source="SD_ImportJobEmployees" title="Import Job Employees" />
+          <Workspace source="SD_ImportJobInvoicingOnAccount" title="Import Job Invoicing On Account" />
+          <Workspace source="SD_ImportJobs" title="Import Jobs" />
+          <Workspace source="SD_ImportPeriodicSumJobBudgets" title="Import Periodic Forecasts" />
+          <Workspace source="SD_ImportJobCollections" title="Import Job Collections" />
+          <Workspace source="SD_ImportMileageRules" title="Import Mileage Rules" />
+        </Group>
+        <Group title="Order Information">
+          <Workspace source="SD_ImportInvoices" title="Import Invoices" />
+          <Workspace source="SD_ImportConsignments" title="Import Consignments" />
+          <Workspace source="SD_ImportOrders" title="Import Orders" />
+        </Group>
+        <Group title="Purchase">
+          <Workspace source="SD_ImportItemPurchaseOrders" title="Import Item Purchase Orders" />
+          <Workspace source="SD_ImportSeasonalModels" title="Import Seasonal Models" />
+        </Group>
+        <Group title="Resource Planning">
+          <Workspace source="SD_ImportSkills" title="Import Skills" />
+        </Group>
+        <Group title="Staff">
+          <Workspace source="SD_ImportCourses" title="Import Courses" />
+          <Workspace source="SD_ImportCompensationAgreements" title="Import Compensation Agreements" />
+          <Workspace source="SD_ImportRecruitment" title="Import Recruitment" />
+          <Workspace source="SD_ImportEmployeePositions" title="Import Employee Positions" />
+          <Workspace source="SD_ImportStockOptionAgreements" title="Import Stock Option Agreements" />
+        </Group>
+        <Group title="Subscription">
+          <Workspace source="SD_ImportSubscriptionOrders" title="Import Subscription Orders" />
+          <Workspace source="SD_ImportSubscriptions" title="Import Subscription Information Card" />
+          <Workspace source="SD_ImportPriceIndexTables" title="Import Price Index Tables" />
+          <Workspace source="SD_ImportPriceAdjustmentPrinciples" title="Import Price Adjustment Principles" />
+        </Group>
+        <Group title="Vendor">
+          <Workspace source="SD_ImportCompanyVendors" title="Import Company Vendors" />
+          <Workspace source="SD_ImportPurchaseOrders" title="Import Purchase Orders" />
+          <Workspace source="SD_ImportRequisitions" title="Import Requisitions" />
+          <Workspace source="SD_ImportVendors" title="Import Vendors" />
+          <Workspace source="SD_ImportVendorInvoices" title="Import Vendor Invoices" />
+        </Group>
+        <Group title="Workflow">
+          <Workspace source="SD_ImportLifeCycleDefinitions" title="Import Life Cycle Definitions" />
+          <Workspace source="SD_ImportLifeCycles" title="Import Life Cycles" />
+          <Workspace source="SD_ImportMonitors" title="Import Monitors" />
+        </Group>
+      </Group>
+    </Group>
+  </Menu>
+  <Auto>
+    <Workspace title="To-Dos" source="NotificationsView" icon="notification" pluginId="com.maconomy.client.workspace.viewbased" />
+  </Auto>
+</MMSL>
+

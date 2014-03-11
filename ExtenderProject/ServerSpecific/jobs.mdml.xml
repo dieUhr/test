@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- RMA, 06/04/09: Create empty forms for every dialog (37642).-->
+<!-- KRN, 02/06/09: New xml tags (37750).-->
+<!-- JSV, 02/07/09: Insert Original layout converted from mdl and filter layout (37802).-->
+<!-- RMA, 23/07/09: Summary view for Customer Home workspace (37635).-->
+<!-- SBA, 19/10/09: Adding compact mode of filter (38052).-->
+
+
+<!-- SBA, 19/10/09: Adding job creation wizard layouts (38053).-->
+<!-- MJA, 27/10/09: Update Original layout and remove Empty layout (37802).-->
+<!-- CSK, 13/11/09: New Overview_Vertical view added for Analysis workspace (38033).-->
+<!-- SBA, 22/01/10: Adding Reference element and cleaning up Original (38218).-->
+<!-- CSK, 29/01/10: CompanyHome filter view added for Companies workspace (37818).-->
+<!-- CSK, 19/02/10: Predefined filters added to CompanyHome filter view (37818).-->
+<!-- SBA, 26/02/10: Cleaning up Original (38214).-->
+<!-- KRN, 26/03/10: Job invoiceable setup (38387). -->
+<!-- JSV, 29/04/10: Use FullBoolean for Boolean fields open in new or update state (38472).-->
+<!-- KRN, 21/05/10: Workspace structure updated (38501). -->
+<!-- SJK, 25/05/10: Filter button restrictions converted to common expression language (38492).-->
+<!-- KUN, 07/07/10: Added group and columns for user update information (38625).-->
+<!-- MJA, 08/07/10: Change grid to references (38630).-->
+<!-- KRN, 14/07/10: Controlbar options (38604).-->
+<!-- KRN, 16/07/10: Actions available in demo (38606).-->
+<!-- CSK, 02/08/10: Changes to Overview_Vertical view (38706).-->
+<!-- KRN, 03/09/10: Create and copy job wizards in filter (38605).-->
+<!-- BPE, 08/09/10: Changed layout to use global definition dimensions (38745). -->
+<!-- KRN, 09/09/10: Options on control bar (38676).-->
+<!-- KRN, 13/09/10: JobHome demo view name updated (38735).-->
+<!-- KRN, 16/09/10: Wizards layout improved (38605).-->
+<!-- SJK, 13/10/10: New fields CustomerJobOptionListNumber1-3 and SelectedCustomerJobOption1-3 (38948).-->
+<!-- KRN, 18/10/10: No mandatory customer <Reference> field (38605).-->
+<!-- KRN, 18/10/10: Shadow title on copy job new job number field (38605).-->
+<!-- SJK, 05/11/10: Customer job option list fields in separate island (38948).-->
+<!-- KRN, 19/11/10: Supplement fields for descriptions (38986).-->
+<!-- SBA, 24/11/10: Make filter robust for users without employees (39151).-->
+<!-- JSV, 29/11/10: Compact block for Original filter (39106).-->
+<!-- SBA, 02/12/10: Redefining DepartmentJobs to align with PSO (39133).-->
+<!-- CSK, 03/12/10: CompanyHome filter improved (39093).-->
+<!-- JSV, 09/12/10: Show field TransferToPeoplePlanner (38640).-->
+<!-- KRN, 15/12/10: Description Source on ambigious reference fields (38986).-->
+<!-- JSV, 17/12/10: Only show TransferToPeoplePlanner if has addon 128 and include in wizard (38640).-->
+<!-- KRN, 17/12/10: Wizards layout improved (38605).-->
+<!-- SBA, 20/12/10: Layouts improved (38501).-->
+<!-- KRN, 20/01/11: Invoice Proposal not applicable in wizard demo layout for demo data (39313).-->
+<!-- KRN, 25/01/11: Delete action in demo job home information layout (39308).-->
+<!-- KRN, 26/01/11: Job Number in wizard when create new job (39309).-->
+<!-- CSK, 25/02/11: Boolean fields and workspace link in Overview_Vertical (39379).-->
+<!-- SJK, 08/06/11: Filter for Contact Company Home (39697).-->
+<!-- PSZ, 20/06/11: Original layout should be placed as the first layout (39299).-->
+<!-- JSV, 21/06/11: New filter option "Invoicing" with another layout (39464).-->
+<!-- CSK, 28/06/11: New syntax for links (39747).-->
+<!-- PSZ, 11/07/11: PSO Jobs workspace changes (39759).-->
+<!-- CSK, 12/07/11: CustomerHome, CompanyCustomerHome and CompanyHome filters merged in RelatedJobs	(39763).-->
+<!-- JSV, 14/07/11: Apply style justifyLeft to Basic Information group (39770). -->
+<!-- PSZ, 11/08/11: Added Analytix_JobProfitability_Budget and Analytix_SingleJobForecast (39843).-->
+<!-- PSZ, 17/08/11: Added Analytix_ARTransactions (39843).-->
+<!-- PSZ, 17/08/11: Improvements to JobHome_Information layout (39850).-->
+<!-- PSZ, 17/08/11: Added icon for InfoView actions (39868).-->
+<!-- JSV, 17/08/11: Icon on links (39862).-->
+<!-- SBA, 18/08/11: Adding trigger for sub job creation (39853). -->
+<!-- SBA, 31/08/11: Using trigger refresh when copying jobs (39908). -->
+<!-- PSZ, 13/09/11: Use 'by Task' version of Job Profitability Budget report (39932).-->
+<!-- PSZ, 15/09/11: Add Template field to JobHome_Information (39939).-->
+<!-- CSK, 22/09/11: Dates in Analytix links must be formatted using dateToAnalytixPrompt (39943).-->
+<!-- PSZ, 22/09/11: Change creation wizard (39962).-->
+<!-- PSZ, 27/09/11: Align Subjob creation wizard with Job creation wizard (39975).-->
+<!-- SJK, 03/10/11: Action should be available on Job Information as default (39993).-->
+<!-- PSZ, 05/10/11: Add shadow titles for selected relations (40004).-->
+<!-- PSZ, 07/10/11: Fix broken Open in InfoView link (40017).-->
+<!-- CSK, 19/10/11: New removed from creation wizard title (40064).-->
+<!-- PSZ, 21/10/11: Use search view TemplateJobSelection for template job field (40048).-->
+<!-- PSZ, 17/11/11: Remove unused layouts (40178).-->
+<!-- SBA, 21/11/11: Use of disabled for actions (40189).-->
+<!-- KRN, 01/12/11: Adjusting color coding limits on Factor (40240).-->
+<!-- SJK, 07/12/11: wizard to create job from opportunity (40275).-->
+<!-- LPA, 15/12/11: Open job template field in CreateSubJob Wizard (40268). -->
+<MDML xmlns="http://www.deltek.com/ns/mdml" version="0.78">
+  <Layout source="Jobs">
+    <FilterPane>
+      <Define>
+        <Function name="IsWrittenUp" value="TotalBillingPriceUpDownCurrency gt 0" />
+        <Function name="IsWrittenDown" value="TotalBillingPriceUpDownCurrency lt 0" />
+        <Function name="HasOverrun" value="JobProgressHoursBaselineDeviation gt 0" />
+        <Style name="AlertWriteUp" ref="trafficlightGreen" condition="IsWrittenUp()" />
+        <Style name="AlertWriteDown" ref="trafficlightRed" condition="IsWrittenDown()" />
+        <Style name="FactorTooLow" parameters="Factor" ref="trafficlightRed" condition="Factor lt 1.5" />
+        <Style name="FactorLow" parameters="Factor" ref="trafficlightYellow" condition="1.5 le Factor and Factor lt 2.0" />
+        <Style name="FactorIsGood" parameters="Factor" ref="trafficlightGreen" condition="2.0 le Factor" />
+      </Define>
+      <Filter name="Standard">
+        <Compact>
+          <Description template="^1 (^2), ^3" arguments="JobName;JobNumber;Name1" />
+        </Compact>
+        <Columns>
+          <Field source="JobNumber" />
+          <Field source="JobName" />
+          <Field source="Name1" />
+          <Field source="JobGroup" />
+          <Field source="NotInvoiceable" />
+          <Field source="InternalJob" />
+          <Field source="Status" />
+          <Field source="ConvertedBy" />
+          <Field source="ConversionDate" />
+          <Field source="ProjectManagerNumber" />
+          <Field source="SalesPersonNumber" />
+        </Columns>
+      </Filter>
+      <Filter name="JobHome">
+        <Actions>
+          <Action source="primary-&gt;Jobs.Create" wizard="CreateJobWizard" disabled="false" />
+          <Action source="primary-&gt;Jobs.CopyJob" wizard="CopyJobWizard" disabled="JobNumber='' defaultTo true" />
+          <Action source="mount-&gt;ImportJobs.Import" wizard="ImportWizard" disabled="false" />
+        </Actions>
+        <ControlBar>
+          <Selection default="MyOpenJobs">
+            <Option title="My Open Jobs" name="MyOpenJobs" restriction="ProjectManagerNumber = UserEmployeeNumber() and Closed = false and Template = false" />
+            <Option title="All My Jobs" name="AllMyJobs" restriction="ProjectManagerNumber = UserEmployeeNumber() and Template = false" />
+            <Option title="Department Jobs" name="DepartmentJobs" restriction="if (UserEmployeeNumber() != '') then (LocationName = stringEnvVar('user.employeeinfo.EntityName') and Template = false) else false" />
+            <Option title="Open Jobs" name="OpenJobs" restriction="Closed = false and Template = false" />
+            <Option title="Invoicing" name="Invoicing" restriction="Closed = false and Template = false and NotInvoiceable = false" />
+            <Option title="All Jobs" name="AllJobs" />
+          </Selection>
+        </ControlBar>
+        <Compact>
+          <Description template="^1 (^2), ^3" arguments="JobName;JobNumber;Name1" />
+        </Compact>
+        <Columns>
+          <If condition="maconomy:isSelectedOption('Invoicing')">
+            <Field source="JobNumber" name="Invoicing_JobNumber" />
+            <Field source="Name1" title="Customer" name="Invoicing_Name1" />
+            <Field source="JobName" name="Invoicing_JobName" />
+            <Field source="ProjectManagerName" name="Invoicing_ProjectManagerName" />
+            <UnitField source="FixedPriceCurrency" unitSource="Currency" name="Invoicing_FixedPriceCurrency" />
+            <UnitField source="TotalOpenBillingPriceCurrency" unitSource="Currency" title="Open Billing" name="Invoicing_TotalOpenBillingPriceCurrency" />
+            <UnitField source="InvoicedOnAccountCurrency" unitSource="Currency" title="Invoiced On Account" name="Invoicing_InvoicedOnAccountCurrency" />
+            <UnitField source="OnAccountNetCurrency" unitSource="Currency" title="Net On Account" name="Invoicing_OnAccountNetCurrency" />
+            <Field source="LastInvoiceDate" name="Invoicing_LastInvoiceDate" />
+            <Field source="ApprovedForInvoiceEditing" name="Invoicing_ApprovedForInvoiceEditing" />
+          </If>
+          <Else>
+            <Field source="JobNumber" name="NotInvoicing_JobNumber" />
+            <Field source="Name1" title="Customer2" name="NotInvoicing_Name1" />
+            <If condition="maconomy:booleanSysPar('UseCustomerLevel2')">
+              <Field source="LevelName" size="medium" name="NotInvoicing_UseCustomerLevel2_LevelName" />
+            </If>
+            <Field source="JobName" name="NotInvoicing_JobName" />
+            <Field source="LocationName" name="NotInvoicing_LocationName" />
+            <Field source="ProjectManagerNumber" name="NotInvoicing_ProjectManagerNumber" />
+            <Field source="ProjectManagerName" name="NotInvoicing_ProjectManagerName" />
+            <UnitField source="FixedPriceCurrency" unitSource="Currency" name="NotInvoicing_FixedPriceCurrency" />
+            <Field source="HoursRegistered" size="tiny" title="Hours, Reg." name="NotInvoicing_HoursRegistered" />
+            <UnitField source="TotalRegCostPriceBase" unitSource="BaseCurrency" title="Reg. Cost, Base" name="NotInvoicing_TotalRegCostPriceBase" />
+            <UnitField source="TotalRegBillingPriceBase" unitSource="BaseCurrency" title="Reg. Billing, Base" name="NotInvoicing_TotalRegBillingPriceBase" />
+            <Field source="JobFactorRegistered" size="tiny" title="Factor, Reg." style="FactorTooLow(JobFactorRegistered),FactorIsGood(JobFactorRegistered),FactorLow(JobFactorRegistered)" name="NotInvoicing_JobFactorRegistered" />
+            <Field source="JobFactorRevenueRecognized" size="tiny" title="Factor, Rev. Rec." style="FactorTooLow(JobFactorRevenueRecognized),FactorIsGood(JobFactorRevenueRecognized),FactorLow(JobFactorRevenueRecognized)" name="NotInvoicing_JobFactorRevenueRecognized" />
+            <Field source="HoursBudgeted" size="tiny" title="Hours, Bud." name="NotInvoicing_HoursBudgeted" />
+            <UnitField source="BudgetCostPrice" unitSource="BaseCurrency" title="Bud. Cost, Base" name="NotInvoicing_BudgetCostPrice" />
+            <UnitField source="BudgetBillingPriceBase" unitSource="BaseCurrency" title="Bud. Billing, Base" name="NotInvoicing_BudgetBillingPriceBase" />
+            <Field source="JobFactorBudgeted" size="tiny" title="Factor, Bud." style="FactorTooLow(JobFactorBudgeted),FactorIsGood(JobFactorBudgeted),FactorLow(JobFactorBudgeted)" name="NotInvoicing_JobFactorBudgeted" />
+            <UnitField source="TotalOpenBillingPriceCurrency" unitSource="Currency" title="Open Billing, Curr." name="NotInvoicing_TotalOpenBillingPriceCurrency" />
+            <UnitField source="TotalInvoicedBillingPriceCurrency" unitSource="Currency" title="Inv. Billing, Curr." name="NotInvoicing_TotalInvoicedBillingPriceCurrency" />
+            <Link title="Up/Down" template="-" disabled="true" size="small" style="justifyCenter" name="NotInvoicing_UpDown">
+              <Override condition="IsWrittenUp()">
+                <Link icon="WriteUp" template="" disabled="false" />
+              </Override>
+              <ElseOverride condition="IsWrittenDown()">
+                <Link icon="WriteDown" template="" disabled="false" />
+              </ElseOverride>
+            </Link>
+            <Link title="Overrun" template="-" size="small" disabled="true" style="justifyCenter" name="NotInvoicing_Overrun">
+              <Override condition="HasOverrun()">
+                <Link icon="Yellow-warning" template="" disabled="false" />
+              </Override>
+            </Link>
+            <UnitField source="TotalBillingPriceUpDownCurrency" unitSource="Currency" title="Up/down, Curr." style="AlertWriteUp,AlertWriteDown" name="NotInvoicing_TotalBillingPriceUpDownCurrency" />
+            <Field source="JobFactorInvoiced" size="tiny" title="Factor, Inv." style="FactorTooLow(JobFactorInvoiced),FactorIsGood(JobFactorInvoiced),FactorLow(JobFactorInvoiced)" name="NotInvoicing_JobFactorInvoiced" />
+            <Link title="% Completed" template="" disabled="false" name="NotInvoicing_PercentCompleted">
+              <Override condition="JobProgressCostCompletionPercentageUpdated = 0">
+                <Link icon="ProgressBar_0" />
+              </Override>
+              <ElseOverride condition="JobProgressCostCompletionPercentageUpdated lt 15">
+                <Link icon="ProgressBar_10" />
+              </ElseOverride>
+              <ElseOverride condition="JobProgressCostCompletionPercentageUpdated lt 25">
+                <Link icon="ProgressBar_20" />
+              </ElseOverride>
+              <ElseOverride condition="JobProgressCostCompletionPercentageUpdated lt 35">
+                <Link icon="ProgressBar_30" />
+              </ElseOverride>
+              <ElseOverride condition="JobProgressCostCompletionPercentageUpdated lt 45">
+                <Link icon="ProgressBar_40" />
+              </ElseOverride>
+              <ElseOverride condition="JobProgressCostCompletionPercentageUpdated lt 55">
+                <Link icon="ProgressBar_50" />
+              </ElseOverride>
+              <ElseOverride condition="JobProgressCostCompletionPercentageUpdated lt 65">
+                <Link icon="ProgressBar_60" />
+              </ElseOverride>
+              <ElseOverride condition="JobProgressCostCompletionPercentageUpdated lt 75">
+                <Link icon="ProgressBar_70" />
+              </ElseOverride>
+              <ElseOverride condition="JobProgressCostCompletionPercentageUpdated lt 85">
+                <Link icon="ProgressBar_80" />
+              </ElseOverride>
+              <ElseOverride condition="JobProgressCostCompletionPercentageUpdated lt 100">
+                <Link icon="ProgressBar_90" />
+              </ElseOverride>
+              <ElseOverride condition="JobProgressCostCompletionPercentageUpdated = 100">
+                <Link icon="ProgressBar_100" />
+              </ElseOverride>
+            </Link>
+          </Else>
+        </Columns>
+      </Filter>
+      <Filter name="RelatedJobs">
+        <Parameters>
+          <Parameter name="ShowCustomerPar" type="boolean" />
+          <Parameter name="ShowCompanyPar" type="boolean" />
+        </Parameters>
+        <ControlBar>
+          <Selection default="OpenNotTemplateJobs">
+            <Option name="OpenNotTemplateJobs" title="Open Jobs" restriction="not Closed and not Template" />
+            <Option name="InvoiceableNotTemplateJobs" title="Invoiceable Jobs" restriction="not NotInvoiceable and not Template" />
+            <Option name="AllJobs" title="All Jobs" />
+          </Selection>
+        </ControlBar>
+        <Columns>
+          <Field source="JobNumber" />
+          <Field source="JobName" />
+          <If condition="ShowCustomerPar">
+            <Field source="CustomerNumber" />
+          </If>
+          <If condition="ShowCompanyPar">
+            <Field source="SettlingCompany" />
+          </If>
+          <Field source="ProjectManagerNumber" />
+          <Field source="SalesPersonNumber" />
+          <Field source="TotalInvoicedBillingPriceBase" />
+          <Field source="TotalInvoicedCostPriceBase" />
+          <Field source="TotalBillingPriceUpDownBase" />
+          <Field source="TotalRevenueRecognizedBase" />
+          <Field source="InvoicedOnAccountBase" />
+          <Field source="OnAccountNetBase" />
+        </Columns>
+      </Filter>
+      <Filter name="Demo_ContactCompanyHome">
+        <ControlBar>
+          <Selection default="OpenNotTemplateJobs">
+            <Option name="OpenNotTemplateJobs" title="Open Jobs" restriction="not Closed and not Template" />
+            <Option name="AllJobs" title="All Jobs" restriction="not Template" />
+          </Selection>
+        </ControlBar>
+        <Columns>
+          <Field source="JobNumber" />
+          <Field source="JobName" />
+          <Field source="ProjectManagerName" title="Project Manager" />
+          <Field source="SalesPerson" />
+          <UnitField source="FixedPriceCurrency" unitSource="Currency" />
+          <UnitField source="BudgetBillingPriceCurrency" unitSource="Currency" title="Budgeted Billing Price" />
+          <UnitField source="QuotationPriceCurrency" unitSource="Currency" title="Quote Price" />
+          <Field source="StartingDate" />
+          <Field source="ExpectedEndingDate" />
+          <Field source="ActualEndingDate" />
+          <Link workspace="Jobs" template="More details..." title="" icon="WorkspaceLink">
+            <Target pane="Jobs_Filter">
+              <Restriction template="Selected Job" expression="JobNumber=target.JobNumber" />
+              <Focus>
+                <Match field="JobNumber" value="JobNumber" />
+              </Focus>
+            </Target>
+          </Link>
+        </Columns>
+      </Filter>
+    </FilterPane>
+    <UpperPane>
+      <Define>
+        <Include fragment="GD_Dimensions" />
+        <Trigger name="CreateSubJob">
+          <Assign source="CustomerNumber" value="parent.primary-&gt;MainJob.CustomerNumber" />
+          <Assign source="MainJobNumber" value="parent.primary-&gt;MainJob.JobNumber" />
+          <Assign source="TemplateJobNumber" value="parent.primary-&gt;MainJob.TemplateJobNumber" />
+          <Assign source="TemplateJobNameVar" value="parent.primary-&gt;MainJob.TemplateJobNameVar" />
+        </Trigger>
+        <Trigger name="CreateOpportunityJob">
+          <Assign source="JobName" value="parent.Description" />
+          <Assign source="OpportunityNumber" value="parent.OpportunityNumber" />
+        </Trigger>
+        <Trigger name="refresh">
+          <Refresh type="workspace" />
+        </Trigger>
+      </Define>
+      <Wizard name="CreateSubJobWizard" title="Create Sub Job">
+        <Page form="CreateSubJobPage1" title="New Sub Job" preTrigger="CreateSubJob" />
+      </Wizard>
+      <Wizard name="CreateJobWizard" title="Create Job">
+        <Page form="CreateJobPage1" title="Select Template Job" />
+        <Page form="CreateJobPage2" title="Job Specific Information" />
+      </Wizard>
+      <Wizard name="CopyJobWizard" title="Copy Job" postTrigger="refresh">
+        <Page form="CopyJobPage1" title="Create new job from existing job." />
+      </Wizard>
+      <Wizard name="CreateOpportunityJobWizard" title="Convert to Job">
+        <Page form="CreateOpportunityJobPage1" title="New Job" preTrigger="CreateOpportunityJob" />
+      </Wizard>
+      <Form name="Full">
+        <Actions all="true" />
+        <Row>
+          <Column>
+            <Group title="Customer">
+              <Reference foreignKey="CustomerNumber_Customer" descriptionSource="Name1" />
+            </Group>
+            <Group title="Company">
+              <Reference foreignKey="CompanyNumber_CompanyInformation" />
+              <Field source="BaseCurrency" />
+            </Group>
+            <Group title="Job">
+              <Reference foreignKey="JobNumber_JobHeader" />
+              <Field source="JobGroup" />
+              <Field source="DepartmentNumber" />
+              <Reference foreignKey="ProjectManagerNumber_Employee" />
+              <Reference foreignKey="SalesPersonNumber_Employee" />
+              <Reference foreignKey="AccountManagerNumber_Employee" />
+              <Field source="Responsible" />
+              <Boolean source="Template" title="Template Job" />
+              <Field source="ReferenceJobNumber" />
+              <Boolean source="IncludeInForecast" />
+              <Field source="JobEntryTaskGroupStatusVar" title="Task Group Status" />
+              <If condition="hasAddOn(128)">
+                <Boolean source="TransferToPeoplePlanner" />
+              </If>
+            </Group>
+            <Group title="Invoicing">
+              <Field source="InvoiceLayout" />
+              <Field source="DetailedInvoiceLayout" />
+              <Field source="JobInvoiceableVar" />
+              <Boolean source="AllowProjectManagerInvoiceProposal" />
+              <Boolean source="AllowEmployeeInvoiceProposal" />
+              <Boolean source="CloseAtEndInvoicing" />
+              <Boolean source="EndInvoiced" />
+              <Field source="InvoiceTextListName" />
+            </Group>
+            <Group title="Status">
+              <Field source="Status" />
+              <Field source="ConvertedBy" />
+              <Field source="ConversionDate" />
+              <BooleanGroup title="Blocked for">
+                <Boolean source="BlockedForTimeRegistrations" title="Time Registrations" />
+                <Boolean source="BlockedForAmountRegistrations" title="Amount Registrations" />
+                <Boolean source="BlockedForInvoicing" title="Invoicing" />
+                <Boolean source="BlockedForBudgeting" title="Budgeting" />
+              </BooleanGroup>
+              <Field source="WorkCompletedDate" />
+              <Field source="Closed" />
+              <Field source="ActualEndingDate" title="Date" />
+            </Group>
+            <Group ref="UserUpdateGroup" />
+          </Column>
+          <Column>
+            <Group title="Description{0}">
+              <Field source="Description1" title="Internal" />
+              <Field source="Description2" title="" />
+              <Field source="Description3" title="" />
+              <Field source="Remark" title="Customer" />
+              <Field source="Reference" title="Ref." />
+              <Field source="BlanketInvoiceReference" />
+              <Field source="TheYear" />
+              <Field source="StartingDate" />
+              <Field source="ExpectedEndingDate" />
+            </Group>
+            <Group title="Price">
+              <Pair firstSource="Currency" secondSource="LimitBillingPriceCurrency" title="Max. Billing Price" />
+              <Pair firstSource="Currency" secondSource="QuotationPriceCurrency" title="Effective Quote Price" />
+              <Pair firstSource="Currency" secondSource="FixedPriceCurrencyVar" title="Fixed Price" />
+            </Group>
+            <Group title="Creation">
+              <Boolean source="JobFromTemplateVar" title="Create from Template" />
+              <Reference foreignKey="TemplateJobNumber_JobHeader" descriptionSource="TemplateJobNameVar" keySearchView="TemplateJobSelection" descriptionSearchView="TemplateJobSelection" />
+              <Field source="OpportunityNumber" />
+            </Group>
+            <Group title="Copying">
+              <Field source="NewJobNumberVar" title="New Job No." />
+              <Boolean source="IncludeTextsVar" title="Include Budget Texts" />
+              <Boolean source="IncludeItemLinesVar" title="Include Item Lines" />
+            </Group>
+            <Group title="Approval">
+              <Field source="ApprovalSuperior" title="Supervisor, Time" />
+              <Field source="ApprovalProjectManager" title="Project Manager, Time" />
+              <Field source="ApprovalSuperiorExpenses" title="Supervisor, Exp." />
+              <Field source="ApprProjectManagerExpenses" title="Project Manager, Exp." />
+            </Group>
+            <Group title="Link Jobs">
+              <Field source="NumberOfSubJobs" />
+              <Reference foreignKey="MainJobNumber_JobHeader" title="Main Job" />
+            </Group>
+            <Group title="Access Level">
+              <Reference foreignKey="AccessLevelName_AccessLevelHeader" keyShadowTitle="Name" descriptionShadowTitle="Description" />
+            </Group>
+            <Group title="Registration">
+              <Field source="JobAllocationName" title="Job Allocation" />
+              <Field source="EmployeeControl" />
+              <Field source="TaskList" />
+            </Group>
+            <Group title="Budgeting">
+              <Field source="HoursPerManDay" />
+              <Boolean source="TimeBudgetInDays" />
+            </Group>
+            <Group title="Customer Job Option Lists">
+              <Pair firstSource="CustomerJobOptionListNumber1" secondSource="SelectedCustomerJobOption1" firstShadowTitle="List" secondShadowTitle="Value" appearance="maximized" />
+              <Pair firstSource="CustomerJobOptionListNumber2" secondSource="SelectedCustomerJobOption2" firstShadowTitle="List" secondShadowTitle="Value" appearance="maximized" />
+              <Pair firstSource="CustomerJobOptionListNumber3" secondSource="SelectedCustomerJobOption3" firstShadowTitle="List" secondShadowTitle="Value" appearance="maximized" />
+            </Group>
+          </Column>
+        </Row>
+        <Row>
+          <Group title="Dimension Combination">
+            <Reference foreignKey="DimensionCombNumber_DimensionCombHeader" />
+          </Group>
+        </Row>
+        <Row>
+          <Group title="Derived Company">
+            <Grid>
+              <Header cells="|Value|;|Description|;|Overwrite|" title="" />
+              <Row cells="CompanyNumberVar;ResponsibleCompanyNameVar;OverwriteCompany#" title="Company" />
+            </Grid>
+          </Group>
+        </Row>
+        <Row>
+          <Group ref="DerivedDimensionWithDescriptionGroup" />
+        </Row>
+        <Row>
+          <Group title="Employees">
+            <Reference foreignKey="EmployeeNumber1_Employee" title="Employee 1" />
+            <Reference foreignKey="EmployeeNumber2_Employee" title="Employee 2" />
+            <Reference foreignKey="EmployeeNumber3_Employee" title="Employee 3" />
+            <Reference foreignKey="EmployeeNumber4_Employee" title="Employee 4" />
+            <Reference foreignKey="EmployeeNumber5_Employee" title="Employee 5" />
+            <Reference foreignKey="EmployeeNumber6_Employee" title="Employee 6" />
+            <Reference foreignKey="EmployeeNumber7_Employee" title="Employee 7" />
+            <Reference foreignKey="EmployeeNumber8_Employee" title="Employee 8" />
+            <Reference foreignKey="EmployeeNumber9_Employee" title="Employee 9" />
+            <Reference foreignKey="EmployeeNumber10_Employee" title="Employee 10" />
+          </Group>
+        </Row>
+        <Row>
+          <Group title="Extra Fields">
+            <Column>
+              <Field source="Text1" />
+              <Field source="Text2" />
+              <Field source="Text3" />
+              <Field source="Text4" />
+              <Field source="Text5" />
+              <Field source="Text6" />
+              <Field source="Text7" />
+              <Field source="Text8" />
+              <Field source="Text9" />
+              <Field source="Text10" />
+              <Field source="Text11" />
+              <Field source="Text12" />
+              <Field source="Text13" />
+              <Field source="Text14" />
+              <Field source="Text15" />
+              <Field source="Text16" />
+              <Field source="Text17" />
+              <Field source="Text18" />
+              <Field source="Text19" />
+              <Field source="Text20" />
+              <Field source="JobHeaderExtensionText1Var" />
+              <Field source="JobHeaderExtensionText2Var" />
+              <Field source="JobHeaderExtensionText3Var" />
+              <Field source="JobHeaderExtensionText4Var" />
+              <Field source="JobHeaderExtensionText5Var" />
+              <Field source="JobHeaderExtensionBoolean1Var" />
+              <Field source="JobHeaderExtensionBoolean2Var" />
+              <Field source="JobHeaderExtensionBoolean3Var" />
+              <Field source="JobHeaderExtensionBoolean4Var" />
+              <Field source="JobHeaderExtensionBoolean5Var" />
+            </Column>
+            <Column>
+              <Field source="Date1" />
+              <Field source="Date2" />
+              <Field source="Date3" />
+              <Field source="Date4" />
+              <Field source="Date5" />
+              <Field source="JobHeaderExtensionDate1Var" />
+              <Field source="JobHeaderExtensionDate2Var" />
+              <Field source="JobHeaderExtensionDate3Var" />
+              <Field source="JobHeaderExtensionDate4Var" />
+              <Field source="JobHeaderExtensionDate5Var" />
+              <Field source="JobHeaderExtensionAmount1Var" />
+              <Field source="JobHeaderExtensionAmount2Var" />
+              <Field source="JobHeaderExtensionAmount3Var" />
+              <Field source="JobHeaderExtensionAmount4Var" />
+              <Field source="JobHeaderExtensionAmount5Var" />
+              <Field source="Popup1" />
+              <Field source="Popup2" />
+              <Field source="Popup3" />
+              <Field source="Popup4" />
+              <Field source="Popup5" />
+              <Field source="JobHeaderExtensionPopup1Var" />
+              <Field source="JobHeaderExtensionPopup2Var" />
+              <Field source="JobHeaderExtensionPopup3Var" />
+              <Field source="JobHeaderExtensionPopup4Var" />
+              <Field source="JobHeaderExtensionPopup5Var" />
+              <Field source="CustomerPopup1" />
+              <Field source="CustomerPopup2" />
+              <Field source="CustomerPopup3" />
+              <Field source="CustomerPopup4" />
+              <Field source="CustomerPopup5" />
+            </Column>
+          </Group>
+        </Row>
+      </Form>
+      <Form name="CreateJobPage1">
+        <Actions>
+          <Create />
+        </Actions>
+        <Group>
+          <Reference foreignKey="TemplateJobNumber_JobHeader" keySuggestions="onDemand" descriptionSuggestions="onDemand" descriptionSource="TemplateJobNameVar" title="Template" keySearchView="TemplateJobSelection" descriptionSearchView="TemplateJobSelection" />
+        </Group>
+      </Form>
+      <Form name="CreateJobPage2">
+        <Actions>
+          <Create />
+        </Actions>
+        <If condition="TemplateJobNumber != ''">
+          <Row>
+            <Group>
+              <Reference foreignKey="TemplateJobNumber_JobHeader" descriptionSource="TemplateJobNameVar" title="Template Job" open="false" />
+              <Field source="TemplateJobCustomerNumberVar" title="Template Job Customer" open="false" />
+            </Group>
+          </Row>
+        </If>
+        <Row>
+          <Group>
+            <If condition="TemplateJobNumber = '' or TemplateJobCustomerNumberVar = ''">
+              <Reference foreignKey="CustomerNumber_Customer" keyMandatory="true" descriptionSource="Name1" />
+            </If>
+            <ElseIf condition="not TemplateJobInternalJobVar">
+              <Reference foreignKey="CustomerNumber_Customer" descriptionSource="Name1" />
+            </ElseIf>
+            <If condition="isEnvVarDefined('solutionconfiguration.ShowJobNumberWithJobName') and booleanEnvVar('solutionconfiguration.ShowJobNumberWithJobName')">
+              <Field source="JobNumber" shadowTitle="Blank for default job no." size="large" />
+            </If>
+            <Field source="JobName" />
+            <Reference foreignKey="ProjectManagerNumber_Employee" />
+            <Reference foreignKey="LocationName_Location" keyShadowTitle="Name" descriptionShadowTitle="Description" />
+            <If condition="TemplateJobNumber = ''">
+              <Field source="JobGroup" />
+              <Field source="JobInvoiceableVar" />
+              <If condition="hasAddOn(128)">
+                <Boolean source="TransferToPeoplePlanner" />
+              </If>
+            </If>
+          </Group>
+        </Row>
+      </Form>
+      <Form name="CreateSubJobPage1">
+        <Actions>
+          <Create />
+        </Actions>
+        <Row>
+          <Group title="Derived From Main Job">
+            <Description template="^2 (^1)" arguments="parent.primary-&gt;MainJob.JobNumber;parent.primary-&gt;MainJob.JobName" title="Main Job" />
+            <Description template="^2 (^1)" arguments="parent.primary-&gt;MainJob.CustomerNumber;parent.primary-&gt;MainJob.Name1" title="Customer" />
+            <Reference foreignKey="TemplateJobNumber_JobHeader" keySuggestions="onDemand" descriptionSuggestions="onDemand" descriptionSource="TemplateJobNameVar" title="Template Job" keySearchView="TemplateJobSelection" descriptionSearchView="TemplateJobSelection" />
+          </Group>
+        </Row>
+        <Row>
+          <Group>
+            <If condition="isEnvVarDefined('solutionconfiguration.ShowJobNumberWithJobName') and booleanEnvVar('solutionconfiguration.ShowJobNumberWithJobName')">
+              <Field source="JobNumber" shadowTitle="Blank for default job no." size="large" />
+            </If>
+            <Field source="JobName" />
+            <Reference foreignKey="ProjectManagerNumber_Employee" />
+            <Reference foreignKey="LocationName_Location" keyShadowTitle="Name" descriptionShadowTitle="Description" />
+          </Group>
+        </Row>
+      </Form>
+      <Form name="CreateOpportunityJobPage1">
+        <Actions>
+          <Create />
+        </Actions>
+        <Row>
+          <Group>
+            <If condition="isEnvVarDefined('solutionconfiguration.ShowJobNumberWithJobName') and booleanEnvVar('solutionconfiguration.ShowJobNumberWithJobName')">
+              <Field source="JobNumber" shadowTitle="Blank for default job no." size="large" />
+            </If>
+            <Field source="JobName" />
+            <Reference foreignKey="ProjectManagerNumber_Employee" />
+            <Reference foreignKey="LocationName_Location" keyShadowTitle="Name" descriptionShadowTitle="Description" />
+          </Group>
+        </Row>
+      </Form>
+      <Form name="CopyJobPage1">
+        <Actions>
+          <Update />
+        </Actions>
+        <Row>
+          <Group>
+            <Reference foreignKey="JobNumber_JobHeader" title="Copy from" open="false" />
+            <BooleanGroup title="Include">
+              <Boolean source="IncludeTextsVar" title="Budget Texts" />
+              <Boolean source="IncludeItemLinesVar" title="Item Lines" />
+            </BooleanGroup>
+          </Group>
+        </Row>
+        <Row>
+          <Group>
+            <Field source="NewJobNumberVar" shadowTitle="Blank for default job no." />
+          </Group>
+        </Row>
+      </Form>
+      <Form name="Overview_Vertical">
+        <Column>
+          <Group title="Job">
+            <Reference foreignKey="JobNumber_JobHeader" />
+            <Reference foreignKey="CustomerNumber_Customer" descriptionSource="Name1" />
+            <Reference foreignKey="ProjectManagerNumber_Employee" />
+            <Reference foreignKey="SalesPersonNumber_Employee" />
+            <Field source="Description1" title="Description" style="fullWidth" />
+          </Group>
+          <Group title="General Information">
+            <Field source="JobGroup" />
+            <Field source="DepartmentNumber" />
+            <Field source="InvoiceLayout" />
+            <Field source="DetailedInvoiceLayout" />
+            <Field source="BlockedForBudgeting" title="Blocked for Budgeting" />
+            <Field source="BlockedForTimeRegistrations" title="Blocked for Time Reg." />
+            <Field source="BlockedForAmountRegistrations" title="Blocked for Amount Reg." />
+            <Field source="BlockedForInvoicing" title="Blocked for Invoicing" />
+            <Field source="InvoiceTextListName" />
+          </Group>
+          <Group>
+            <Link workspace="Jobs" template="More details..." title=" " tooltip="Job workspace" appearance="maximized" icon="WorkspaceLink">
+              <Target pane="Jobs_Filter">
+                <Restriction template="Selected Job" expression="JobNumber=target.JobNumber" />
+                <Focus>
+                  <Match field="JobNumber" value="JobNumber" />
+                </Focus>
+              </Target>
+            </Link>
+          </Group>
+        </Column>
+      </Form>
+      <Form name="JobHome_Information">
+        <Actions all="true">
+          <Exclude>
+            <Create />
+            <Action source="CopyJob" />
+          </Exclude>
+          <Delete appearance="standard" />
+        </Actions>
+        <Column>
+          <Group title="Basic Information" style="textAlignment">
+            <Reference foreignKey="JobNumber_JobHeader" />
+            <Reference foreignKey="CustomerNumber_Customer" keySource="CustomerNumber" descriptionSource="Name1" />
+            <Link workspace="Customers" template="Customer details..." title="" icon="WorkspaceLink">
+              <Style anchor="both" />
+              <Target pane="Customers_Filter">
+                <Restriction template="Selected Customer" expression="CustomerNumber=target.CustomerNumber" />
+                <Focus>
+                  <Match value="CustomerNumber" field="CustomerNumber" />
+                </Focus>
+              </Target>
+            </Link>
+            <Link workspace="CompanyHome" template="Company details..." title="" icon="WorkspaceLink">
+              <Style anchor="both" />
+              <Target pane="Company_Filter">
+                <Restriction template="Selected Company" expression="CompanyNumber=target.CompanyNumber" />
+                <Focus>
+                  <Match value="CompanyNumber" field="CompanyNumber" />
+                </Focus>
+              </Target>
+            </Link>
+            <Field source="JobGroup" />
+            <Field source="InvoiceLayout" />
+            <Field source="DetailedInvoiceLayout" />
+            <UnitField source="FixedPriceCurrencyVar" unitSource="Currency" title="Fixed Price" />
+            <Field source="Status" />
+            <Field source="InvoiceTextListName" />
+          </Group>
+          <Group ref="DimensionGroup" />
+        </Column>
+        <Column>
+          <Group title="Responsible">
+            <Reference foreignKey="ProjectManagerNumber_Employee" />
+            <Reference foreignKey="SalesPersonNumber_Employee" />
+          </Group>
+          <Group title="Job Information">
+            <Field source="TheYear" />
+            <Range firstSource="StartingDate" lastSource="ExpectedEndingDate" title="Start and ending" size="medium" />
+            <Field source="JobInvoiceableVar" appearance="interval" />
+            <BooleanGroup title="Blocked for">
+              <Boolean source="BlockedForTimeRegistrations" title="Time Registrations" />
+              <Boolean source="BlockedForAmountRegistrations" title="Amount Registrations" />
+              <Boolean source="BlockedForBudgeting" title="Budgeting" />
+              <Boolean source="BlockedForInvoicing" title="Invoicing" />
+            </BooleanGroup>
+            <BooleanGroup title="Invoicing">
+              <Boolean source="AllowProjectManagerInvoiceProposal" title="Allow PM Proposals" />
+              <Boolean source="AllowEmployeeInvoiceProposal" title="Allow Employee Proposals" />
+              <Boolean source="ToBeBlanketInvoiced" />
+            </BooleanGroup>
+            <If condition="hasAddOn(128)">
+              <BooleanGroup title="People Planner">
+                <Boolean source="TransferToPeoplePlanner" />
+              </BooleanGroup>
+            </If>
+            <BooleanGroup>
+              <Boolean source="Template" title="Template Job" />
+            </BooleanGroup>
+          </Group>
+        </Column>
+        <Column>
+          <Group title="Job Description">
+            <Field source="Description1" appearance="maximized" />
+          </Group>
+          <Group title="Time &amp; Expense Approval">
+            <PairHeader firstTitle="Time" secondTitle="Expenses" />
+            <Pair firstSource="ApprovalSuperior" secondSource="ApprovalSuperiorExpenses" title="Supervisor" />
+            <Pair firstSource="ApprovalProjectManager" secondSource="ApprProjectManagerExpenses" title="Project Manager" />
+          </Group>
+          <Group ref="UserUpdateGroup" />
+        </Column>
+      </Form>
+      <Browser name="Analytix_JobProfitability_Budget" loginRules="loginAnalytix()">
+        <Actions>
+          <Exclude>
+            <Refresh />
+            <Revert />
+          </Exclude>
+        </Actions>
+        <If condition="not inEmpty()">
+          <Url value="urlOpenReport()">
+            <Query field="sType" value="wid" />
+            <Query field="token" value="^1" arguments="bo:getToken()" />
+            <Query field="sPath" value="^1" arguments="reportFolderInUrl()" />
+            <Query field="sDocName" value="Job Profitability Budget, by Task" />
+            <Query field="NAII" value="Y" />
+            <Query field="sOutputFormat" value="H" />
+            <Query field="sRefresh" value="N" />
+            <Query field="lsSInclude closed jobs (Yes/No):" value="Yes" />
+            <Query field="lsSBudget Type:" value="^1" arguments="popupOrdinal(CurrentBudgetType)" />
+            <Query field="lsSJob No:" value="^1" arguments="JobNumber" />
+          </Url>
+        </If>
+      </Browser>
+      <Browser name="Analytix_ARTransactions" loginRules="loginAnalytix()">
+        <Actions>
+          <Exclude>
+            <Refresh />
+            <Revert />
+          </Exclude>
+        </Actions>
+        <If condition="not inEmpty()">
+          <Url value="urlOpenReport()">
+            <Query field="sType" value="wid" />
+            <Query field="token" value="^1" arguments="bo:getToken()" />
+            <Query field="sPath" value="^1" arguments="reportFolderInUrl()" />
+            <Query field="sDocName" value="AR Transactions" />
+            <Query field="NAII" value="Y" />
+            <Query field="sOutputFormat" value="H" />
+            <Query field="sRefresh" value="N" />
+            <Query field="lsSAging Based on:" value="Due Date" />
+            <Query field="lsSCurrency Type:" value="Company" />
+            <Query field="lsSInclude Blocked:" value="Yes" />
+            <Query field="lsSSeparate Blocked:" value="No" />
+            <Query field="lsSStatement Date:" value="^1" arguments="dateToAnalytixPrompt(userDate())" />
+            <Query field="lsSJob No:" value="^1" arguments="JobNumber" />
+          </Url>
+        </If>
+      </Browser>
+    </UpperPane>
+  </Layout>
+</MDML>
+
